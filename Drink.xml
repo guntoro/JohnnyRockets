@@ -1,0 +1,83 @@
+<Burger>
+
+  <Item>
+    <ItemID=D101>
+    <Description>Small Coke</Description>
+    <Cost>1.00</Cost>
+	<Flavor>Coke</Flavor>
+	<Quantity>1</Quantity>
+  </Item>
+  
+  <Item>
+    <ItemID=D102>
+    <Description>Large Coke</Description>
+    <Cost>1.50</Cost>
+	<Flavor>Coke</Flavor>
+	<Quantity>2</Quantity>
+  </Item>
+  
+  <Item>
+    <ItemID=D103>
+    <Description>Small Diet Coke</Description>
+    <Cost>1.00</Cost>
+	<Flavor>Diet Coke</Flavor>
+	<Quantity>1</Quantity>
+  </Item>
+  
+  <Item>
+    <ItemID=D104>
+    <Description>Large Coke</Description>
+    <Cost>1.50</Cost>
+	<Flavor>Diet Coke</Flavor>
+	<Quantity>2</Quantity>
+  </Item>
+  
+  <Item>
+    <ItemID=D105>
+    <Description>Small Sprite</Description>
+    <Cost>1.00</Cost>
+	<Flavor>Sprite</Flavor>
+	<Quantity>1</Quantity>
+  </Item>
+  
+  <Item>
+    <ItemID=D106>
+    <Description>Large Sprite</Description>
+    <Cost>1.50</Cost>
+	<Flavor>Sprite</Flavor>
+	<Quantity>2</Quantity>
+  </Item>
+  
+  <Item>
+    <ItemID=D107>
+    <Description>Small Root-beer</Description>
+    <Cost>1.00</Cost>
+	<Flavor>Root-beer</Flavor>
+	<Quantity>1</Quantity>
+  </Item>
+  
+  <Item>
+    <ItemID=D108>
+    <Description>Large Root-beer</Description>
+    <Cost>1.50</Cost>
+	<Flavor>Root-beer</Flavor>
+	<Quantity>2</Quantity>
+  </Item>
+  
+  <Item>
+    <ItemID=D109>
+    <Description>Coffee</Description>
+    <Cost>1.50</Cost>
+	<Flavor>Coffee</Flavor>
+	<Quantity>1</Quantity>
+  </Item>
+  
+  <Item>
+    <ItemID=D110>
+    <Description>Tea</Description>
+    <Cost>1.50</Cost>
+	<Flavor>Tea</Flavor>
+	<Quantity>1</Quantity>
+  </Item>  
+
+</Burger>
