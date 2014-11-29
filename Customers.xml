@@ -1,0 +1,39 @@
+<Customers>
+
+  <Customer>
+    <CustomerID>CS5108</CustomerID>
+    <Name>Cynthia Browne</Name>
+    <Address>71 Circuit Ct., Wheaton, MN-89321</Address>
+    <Phone>(532) 555-3813</Phone>
+    <E-mail>cynthia@brownes.com</E-mail>
+    <Spending>800</Spending>
+  </Customer>
+
+  <Customer>
+    <CustomerID>CS5771</CustomerID>>
+    <Name>Steve Bones</Name>
+    <Address>900 Lawton Street, Wheaton, MN-89211</Address>
+    <Phone>(533) 555-5434</Phone>
+    <E-mail>sbone@mail.com</E-mail>
+    <Spending>105</Spending>
+  </Customer>
+
+  <Customer>
+    <CustomerID>CS5308</CustomerID>
+    <Name>Cindy Kaufmann</Name>
+    <Address>31 Alice Avenue, Delton, MN-89011</Address>
+    <Phone>(532) 555-7212</Phone>
+    <E-mail>cka@ispnet.net</E-mail>
+    <Spending>125</Spending>
+  </Customer>
+
+  <Customer>
+    <CustomerID>CS5821</CustomerID>
+    <Name>Howard Li</Name>
+    <Address>4312 East Oak Avenue, Youngston, MN-89318</Address>
+    <Phone>(532) 555-3921</Phone>
+    <E-mail>how@li.com</E-mail>
+    <Spending>50</Spending>
+  </Customer>
+
+</Customers>

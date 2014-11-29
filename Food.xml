@@ -1,0 +1,63 @@
+<Burger>
+
+  <Item>
+    <ItemID=B101>
+    <Description>Cheese Burger</Description>
+    <Cost>2.00</Cost>
+    <Ingredient1>Bun</Ingredient1>
+    <QI1>1</QI1>
+	<Ingredient2>Patty</Ingredient2>
+    <QI2>1</QI2>
+	<Ingredient3>Lettuce</Ingredient3>
+    <QI3>1</QI3>
+	<Ingredient4>Tomato</Ingredient4>
+    <QI4>1</QI4>
+	<Ingredient5>Mayonnaise</Ingredient5>
+    <QI5>1</QI5>
+	<Ingredient6>Cheese</Ingredient6>
+    <QI6>1</QI6>
+    <Ingredient7>-</Ingredient6>
+    <QI7>1</QI7>    
+  </Item>
+  
+  <Item>
+    <ItemID=B102>
+    <Description>Bacon Cheese Burger</Description>
+    <Cost>3.00</Cost>
+    <Ingredient1>Bun</Ingredient1>
+    <QI1>1</QI1>
+	<Ingredient2>Patty</Ingredient2>
+    <QI2>1</QI2>
+	<Ingredient3>Lettuce</Ingredient3>
+    <QI3>1</QI3>
+	<Ingredient4>Tomato</Ingredient4>
+    <QI4>1</QI4>
+	<Ingredient5>Bacon</Ingredient5>
+	<QI5>2</QI5>
+	<Ingredient6>Cheese</Ingredient6>
+    <QI6>1</QI6>
+	<Ingredient7>Mayonnaise</Ingredient7>
+    <QI7>1</QI7>    
+  </Item>
+  
+  <Item>
+    <ItemID=B103>
+    <Description>Chicken Burger</Description>
+    <Cost>3.00</Cost>
+    <Ingredient1>Bun</Ingredient1>
+    <QI1>1</QI1>
+	<Ingredient2>Patty</Ingredient2>
+    <QI2>1</QI2>
+	<Ingredient3>Lettuce</Ingredient3>
+    <QI3>1</QI3>
+	<Ingredient4>Tomato</Ingredient4>
+    <QI4>1</QI4>
+	<Ingredient5>Chicken</Ingredient5>
+	<QI5>1</QI5>
+	<Ingredient6>Mayonnaise</Ingredient6>
+    <QI6>1</QI6>
+	<Ingredient7>-</Ingredient7>
+    <QI7>1</QI7>    
+  </Item>
+
+</Burger>
