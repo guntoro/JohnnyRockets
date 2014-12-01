@@ -5,11 +5,38 @@
  */
 package team34;
 
+import java.io.File;
+import java.io.IOException;
+import javax.swing.text.Document;
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.parsers.ParserConfigurationException;
+import org.w3c.dom.NodeList;
+import org.xml.sax.SAXException;
+
 /**
  *
  * @author Owner
  */
 public class Login extends javax.swing.JFrame {
+    
+    // Constants
+    private static final int MAX_CUSTOMERRECORDS = 25;
+    
+    // Variables and Instances of Classes
+    private CustomerRecord currentCustomer;       //store an instance of current Customer which is a CustomerRecord
+    private CustomerRecord customerArray[] = new CustomerRecord[MAX_CUSTOMERRECORDS];        //store all student records
+    private int nextCustomer = 0;         // location of next empty position in the array
+    private int numCustomers = 0;         // number of input student records
+            
+    private String xmlCustomerID;      // temporary storage for customerID from xml
+    private String xmlName;       //temporary storage for customer name from xml
+    private String xmlAddress;   //temporary storage for customer address from xml
+    private String xmlPhone;          // temporary storage for customer phone from xml
+    private float xmlSpending;          // temporary storage for customer spending from xml
+    
+    
+    private Database myDatabase = new Database();       //instance of the database class
 
     /**
      * Creates new form Login
@@ -168,9 +195,17 @@ public class Login extends javax.swing.JFrame {
             if (rbCashier.isSelected())
             {
                 Cashier s1 = new Cashier();
-                s1.setVisible(true);
-        
+                s1.setVisible(true);        
                 this.setVisible(false);
+                System.out.println("Cashier selected");
+                //get contents of xml file and load the array
+                readFile("Customers.xml");        
+                // display data in the text area
+                displayData();        
+                // store student data in the database
+                storeData();        
+                //display query data
+                queryData();
             }
             
             if (rbChef.isSelected())
@@ -195,13 +230,96 @@ public class Login extends javax.swing.JFrame {
     }//GEN-LAST:event_jbLoginActionPerformed
 
     private void rbCashierActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbCashierActionPerformed
-        // TODO add your handling code here:
+        // TODO add your handling code here:        
     }//GEN-LAST:event_rbCashierActionPerformed
 
     private void rbChefActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbChefActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_rbChefActionPerformed
 
+    //the method reads info from the input XML file, and then stores it in the customerArray[] 
+    public void readFile(String filename){
+        try
+        {
+            DocumentBuilderFactory builderFactory = DocumentBuilderFactory.newInstance();
+            builderFactory.setValidating(true);
+            DocumentBuilder builder = builderFactory.newDocumentBuilder();
+            Document document = builder.parse(new File(filename));
+            NodeList list = document.getElementsByTagName("Customer");
+           
+            //This for loop gathers all the student attributes, puts them in a StudentRecord object
+            //then stores that student in the StudentArray
+            for(int i = 0; i < list.getLength(); i++)
+            { 
+                Element element = (Element)list.item(i);                
+                xmlCustomerID = getCustomerID(element);
+                xmlName = getName(element);
+                xmlAddress = getAddress(element);
+                xmlPhone = getPhone(element);
+                xmlSpending = getSpending(element);
+                CustomerRecord customer = new CustomerRecord(i, xmlCustomerID, xmlName, xmlAddress, xmlPhone, xmlSpending );
+                
+                // store student record in array
+                customerArray[nextCustomer] = customer;
+                
+                // increment number of student records and move to next position in customerArray
+                numCustomers++;
+                nextCustomer++;
+                
+            }//end for loop loading the customerArray[] with full student records
+            
+        }//end try block
+        catch (ParserConfigurationException parserException)
+        {
+            parserException.printStackTrace();   
+        }//end catch block
+        catch (SAXException saxException)
+        {
+            saxException.printStackTrace();
+        }//end catch block
+        catch (IOException ioException)
+        {
+            ioException.printStackTrace();
+        }//end catch block
+       
+    }//end readFile()
+    
+    public void displayData ()
+    {
+        for (int i = 0; i<numCustomers; i++)
+        {
+            display.append(customerArray[i].toString()+"\n");
+        }
+    }//end displayData
+ 
+    public void queryData ()
+    {
+        customertArray =  myDatabase.getQueryData();
+        display.append("\nQuery Data \n");
+        for (int i = 0; i<numCustomers; i++)
+        {
+           display.append(customerArray[i].getCustomerID()+" " + customerArray[i].getName()+"\n");
+        }
+    }//end displayData
+ 
+    public void storeData ()
+    {
+      // create table in the database
+      myDatabase.createTable();
+      
+      // store each Student Record in the table
+      for (int i = 0; i<numCustomers; i++)
+       {
+           myDatabase.storeRecord(
+                   customerArray[i].getCustomerID(), 
+                   customerArray[i].getName(),
+                   customerArray[i].getAddress(), 
+                   customerArray[i].getPhone(),
+                   customerArray[i].getEmail(),
+                   customerArray[i].getSpending());
+      }    
+    }//end storeData
+    
     /**
      * @param args the command line arguments
      */
