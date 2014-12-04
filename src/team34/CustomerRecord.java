@@ -1,9 +1,14 @@
 /*
- * StudentRecord.java
- *
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
  */
+package team34;
 
-//The StudentRecord class contains information about each student. Instances of this class are created in the Applet. 
+/**
+ *
+ * @author Owner
+ */
 public class CustomerRecord {
 
     private String CustomerID;       // first name of Student
@@ -11,10 +16,10 @@ public class CustomerRecord {
     private String Address;    // degree status of student
     private String Phone;           // student major
     private String Email;           // student major
-    private float  Spending;                 // StudentID, (contains position of student in the Array within the Applet)
+    private String  Spending;                 // StudentID, (contains position of student in the Array within the Applet)
     
     /** Creates a new instance of StudentRecord */
-    public CustomerRecord(String id ,String cName, String cAddress, String cPhone, String cEmail, float cSpending) {
+    public CustomerRecord(String id ,String cName, String cAddress, String cPhone, String cEmail, String cSpending) {
         CustomerID = id;
         Name = cName;
         Address = cAddress;
@@ -49,7 +54,7 @@ public class CustomerRecord {
         return Email;
     }//end getStudentID() 
     
-    public float getSpending(){
+    public String getSpending(){
         return Spending;
     }//end getStudentID() 
     
@@ -80,7 +85,7 @@ public class CustomerRecord {
     }//end setMajor()
     
     //sets Student ID, but it's really this students spot in the array
-    public void setSpending(float cSpending){
+    public void setSpending(String cSpending){
         Spending = cSpending;
     }//end setID()
    

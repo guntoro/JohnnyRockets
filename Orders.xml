@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Orders>
+  <Order> 
+	<OrderID>1</OrderID>
+    <OrderDate>20141201</OrderDate>
+    <OrderCustomerID>2</OrderCustomerID>
+    <ItemCode1>Cheese Burger</ItemCode1>
+    <Q1>2</Q1>
+	<ItemCode2>*</ItemCode2>
+    <Q2>*</Q2>
+	<ItemCode3>*</ItemCode3>
+    <Q3>*</Q3>
+	<ItemCode4>*</ItemCode4>
+    <Q4>*</Q4>
+	<ItemCode5>*</ItemCode5>
+    <Q5>*</Q5>
+	<TotalCost>400</TotalCost>
+  </Order>
+  
+  <Order> 
+	<OrderID>2</OrderID>
+    <OrderDate>20141201</OrderDate>
+    <OrderCustomerID>4</OrderCustomerID>
+    <ItemCode1>Bacon Cheese Burger</ItemCode1>
+    <Q1>1</Q1>
+	<ItemCode2>Cheese Burger</ItemCode2>
+    <Q2>1</Q2>
+	<ItemCode3>*</ItemCode3>
+    <Q3>*</Q3>
+	<ItemCode4>*</ItemCode4>
+    <Q4>*</Q4>
+	<ItemCode5>*</ItemCode5>
+    <Q5>*</Q5>
+	<TotalCost>500</TotalCost>
+  </Order>
+  
+  <Order> 
+	<OrderID>3</OrderID>
+    <OrderDate>20141201</OrderDate>
+    <OrderCustomerID>1</OrderCustomerID>
+    <ItemCode1>Bacon Cheese Burger</ItemCode1>
+    <Q1>1</Q1>
+	<ItemCode2>Cheese Burger</ItemCode2>
+    <Q2>1</Q2>
+	<ItemCode3>Hamburger</ItemCode3>
+    <Q3>1</Q3>
+	<ItemCode4>*</ItemCode4>
+    <Q4>*</Q4>
+	<ItemCode5>*</ItemCode5>
+    <Q5>*</Q5>
+	<TotalCost>700</TotalCost>
+  </Order>  
+
+</Orders>

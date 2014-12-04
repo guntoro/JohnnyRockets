@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Inventory>
+  <Ingredient> 
+	<IngName>Bun</IngName>
+    <Stock>500</Stock>
+  </Ingredient>
+
+  <Ingredient> 
+	<IngName>Patty</IngName>
+    <Stock>300</Stock>
+  </Ingredient>
+  
+  <Ingredient> 
+	<IngName>Bacon</IngName>
+    <Stock>200</Stock>
+  </Ingredient>
+  
+  <Ingredient> 
+	<IngName>Cheese</IngName>
+    <Stock>400</Stock>
+  </Ingredient>
+  
+  <Ingredient> 
+	<IngName>Lettuce</IngName>
+    <Stock>100</Stock>
+  </Ingredient>
+  
+  <Ingredient> 
+	<IngName>Tomato</IngName>
+    <Stock>100</Stock>
+  </Ingredient>
+  
+  <Ingredient> 
+	<IngName>Ketchup</IngName>
+    <Stock>300</Stock>
+  </Ingredient>
+  
+  <Ingredient> 
+	<IngName>Mayonnaise</IngName>
+    <Stock>300</Stock>
+  </Ingredient>
+
+</Inventory>
