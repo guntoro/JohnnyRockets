@@ -1,7 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <Burger>
 
   <Item>
-    <ItemID=D101>
+    <ItemID=1009>
     <Description>Small Coke</Description>
     <Cost>1.00</Cost>
 	<Flavor>Coke</Flavor>
@@ -9,7 +10,7 @@
   </Item>
   
   <Item>
-    <ItemID=D102>
+    <ItemID=1010>
     <Description>Large Coke</Description>
     <Cost>1.50</Cost>
 	<Flavor>Coke</Flavor>
@@ -17,7 +18,7 @@
   </Item>
   
   <Item>
-    <ItemID=D103>
+    <ItemID=1011>
     <Description>Small Diet Coke</Description>
     <Cost>1.00</Cost>
 	<Flavor>Diet Coke</Flavor>
@@ -25,7 +26,7 @@
   </Item>
   
   <Item>
-    <ItemID=D104>
+    <ItemID=1012>
     <Description>Large Coke</Description>
     <Cost>1.50</Cost>
 	<Flavor>Diet Coke</Flavor>
@@ -33,7 +34,7 @@
   </Item>
   
   <Item>
-    <ItemID=D105>
+    <ItemID=1013>
     <Description>Small Sprite</Description>
     <Cost>1.00</Cost>
 	<Flavor>Sprite</Flavor>
@@ -41,7 +42,7 @@
   </Item>
   
   <Item>
-    <ItemID=D106>
+    <ItemID=1014>
     <Description>Large Sprite</Description>
     <Cost>1.50</Cost>
 	<Flavor>Sprite</Flavor>
@@ -49,7 +50,7 @@
   </Item>
   
   <Item>
-    <ItemID=D107>
+    <ItemID=1015>
     <Description>Small Root-beer</Description>
     <Cost>1.00</Cost>
 	<Flavor>Root-beer</Flavor>
@@ -57,7 +58,7 @@
   </Item>
   
   <Item>
-    <ItemID=D108>
+    <ItemID=1016>
     <Description>Large Root-beer</Description>
     <Cost>1.50</Cost>
 	<Flavor>Root-beer</Flavor>
@@ -65,7 +66,7 @@
   </Item>
   
   <Item>
-    <ItemID=D109>
+    <ItemID=1017>
     <Description>Coffee</Description>
     <Cost>1.50</Cost>
 	<Flavor>Coffee</Flavor>
@@ -73,7 +74,7 @@
   </Item>
   
   <Item>
-    <ItemID=D110>
+    <ItemID=1018>
     <Description>Tea</Description>
     <Cost>1.50</Cost>
 	<Flavor>Tea</Flavor>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Orders>
   <Order> 
-	<OrderID>1</OrderID>
+	<OrderID>5001</OrderID>
     <OrderDate>20141201</OrderDate>
     <OrderCustomerID>2</OrderCustomerID>
     <ItemCode1>Cheese Burger</ItemCode1>
@@ -14,11 +14,11 @@
     <Q4>*</Q4>
 	<ItemCode5>*</ItemCode5>
     <Q5>*</Q5>
-	<TotalCost>400</TotalCost>
+	<TotalCost>4.00</TotalCost>
   </Order>
   
   <Order> 
-	<OrderID>2</OrderID>
+	<OrderID>5002</OrderID>
     <OrderDate>20141201</OrderDate>
     <OrderCustomerID>4</OrderCustomerID>
     <ItemCode1>Bacon Cheese Burger</ItemCode1>
@@ -31,11 +31,11 @@
     <Q4>*</Q4>
 	<ItemCode5>*</ItemCode5>
     <Q5>*</Q5>
-	<TotalCost>500</TotalCost>
+	<TotalCost>5.00</TotalCost>
   </Order>
   
   <Order> 
-	<OrderID>3</OrderID>
+	<OrderID>5003</OrderID>
     <OrderDate>20141201</OrderDate>
     <OrderCustomerID>1</OrderCustomerID>
     <ItemCode1>Bacon Cheese Burger</ItemCode1>
@@ -48,7 +48,7 @@
     <Q4>*</Q4>
 	<ItemCode5>*</ItemCode5>
     <Q5>*</Q5>
-	<TotalCost>700</TotalCost>
+	<TotalCost>7.00</TotalCost>
   </Order>  
 
 </Orders>

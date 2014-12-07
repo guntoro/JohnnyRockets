@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Customers>
   <Customer> 
-	<CustomerID>1</CustomerID>
+	<CustomerID>2001</CustomerID>
     <Name>Cynthia Browne</Name>
     <Address>71 Circuit Ct., Wheaton, MN-89321</Address>
     <Phone>(532) 555-3813</Phone>
@@ -10,7 +10,7 @@
   </Customer>
 
   <Customer>
-    <CustomerID>2</CustomerID>
+    <CustomerID>2002</CustomerID>
     <Name>Steve Bones</Name>
     <Address>900 Lawton Street, Wheaton, MN-89211</Address>
     <Phone>(533) 555-5434</Phone>
@@ -19,7 +19,7 @@
   </Customer>
 
   <Customer>
-    <CustomerID>3</CustomerID>
+    <CustomerID>2003</CustomerID>
     <Name>Cindy Kaufmann</Name>
     <Address>31 Alice Avenue, Delton, MN-89011</Address>
     <Phone>(532) 555-7212</Phone>
@@ -28,7 +28,7 @@
   </Customer>
 
   <Customer>
-    <CustomerID>4</CustomerID>
+    <CustomerID>2004</CustomerID>
     <Name>Howard Li</Name>
     <Address>4312 East Oak Avenue, Youngston, MN-89318</Address>
     <Phone>(532) 555-3921</Phone>

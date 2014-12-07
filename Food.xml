@@ -1,27 +1,22 @@
-<Burger>
+<?xml version="1.0" encoding="UTF-8"?>
+<Food>
 
   <Item>
-    <ItemID=A101>
-    <Description>5pcs Chicken Nugget</Description>
+    <ItemID=1001>
+    <Description>Chicken Nugget</Description>
     <Cost>2.00</Cost>       
   </Item>
   
   <Item>
-    <ItemID=A102>
+    <ItemID=1002>
     <Description>Fries</Description>
     <Cost>2.00</Cost>       
-  </Item>
+  </Item>  
   
   <Item>
-    <ItemID=A103>
-    <Description>Onion Ring</Description>
-    <Cost>2.00</Cost>       
-  </Item>
-  
-  <Item>
-    <ItemID=A104>
+    <ItemID=1003>
     <Description>Salad</Description>
     <Cost>3.00</Cost>       
   </Item>  
 
-</Burger>
+</Food>

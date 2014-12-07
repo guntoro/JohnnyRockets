@@ -39,5 +39,35 @@
 	<IngName>Mayonnaise</IngName>
     <Stock>300</Stock>
   </Ingredient>
+  
+  <Ingredient> 
+	<IngName>Chicken Nugget</IngName>
+    <Stock>100</Stock>
+  </Ingredient>
+  
+  <Ingredient> 
+	<IngName>Fries</IngName>
+    <Stock>300</Stock>
+  </Ingredient>
+  
+  <Ingredient> 
+	<IngName>Salad</IngName>
+    <Stock>50</Stock>
+  </Ingredient>
+  
+  <Ingredient> 
+	<IngName>Soda</IngName>
+    <Stock>500</Stock>
+  </Ingredient>
+  
+  <Ingredient> 
+	<IngName>Tea</IngName>
+    <Stock>200</Stock>
+  </Ingredient>
+  
+  <Ingredient> 
+	<IngName>Coffee</IngName>
+    <Stock>300</Stock>
+  </Ingredient>
 
 </Inventory>

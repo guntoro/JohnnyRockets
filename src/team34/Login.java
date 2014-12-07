@@ -21,48 +21,57 @@ import org.xml.sax.SAXException;
 public class Login extends javax.swing.JFrame {
     
     // Constants
-    private static final int MAX_CUSTOMERRECORDS = 25;
-    private static final int MAX_INVENTORYRECORDS = 10;
-    private static final int MAX_ORDERRECORDS = 25;
+    private static final int MAX_CUSTOMERRECORDS = 50;
+    private static final int MAX_INVENTORYRECORDS = 50;
+    private static final int MAX_ORDERRECORDS = 100;
     
     
     // Variables and Instances of Classes
-    private CustomerRecord currentCustomer;       //store an instance of current Customer which is a CustomerRecord
-    private CustomerRecord customerArray[] = new CustomerRecord[MAX_CUSTOMERRECORDS];        //store all customer records
-    private int nextCustomer = 0;       // location of next empty position in the array
-    private int numCustomers = 0;       // number of input customer records            
-    private String xmlCustomerID;       // temporary storage for customerID from xml
-    private String xmlName;             // temporary storage for customer name from xml
-    private String xmlAddress;          // temporary storage for customer address from xml
-    private String xmlPhone;            // temporary storage for customer phone from xml
-    private String xmlEmail;            // temporary storage for customer phone from xml
-    private String xmlSpending;         // temporary storage for customer spending from xml
+    public static String lastOrderNumber="5009";
     
-    private InventoryRecord currentInventory;       //store an instance of current Customer which is a CustomerRecord
-    private InventoryRecord inventoryArray[] = new InventoryRecord[MAX_INVENTORYRECORDS];        //store all customer records
-    private int nextInventory = 0;       // location of next empty position in the array
-    private int numInventory = 0;       // number of input customer records
-    private String xmlIngName;          // temporary storage for ingredient name from xml
-    private String xmlStock;            // temporary storage for ingredient stock on hand from xml
+    public String getLastOrderNumber() {
+        return lastOrderNumber;
+    }
+    public void setLastOrderNumber(String lNumber){
+        lastOrderNumber = lNumber;
+    }    
     
-    private OrderRecord currentOrder;       //store an instance of current order which is a OrderRecord
-    private OrderRecord orderArray[] = new OrderRecord[MAX_ORDERRECORDS];        //store all order records
-    private int nextOrder = 0;              // location of next empty position in the array
-    private int numOrders = 0;               // number of input order records
-    private String xmlOrderID;              // temporary storage for order ID from xml
-    private String xmlOrderDate;            // temporary storage for order date from xml
-    private String xmlOrderCustomerID;      // temporary storage for customer ID from xml
-    private String xmlItemCode1;            // temporary storage for code of item 1 from xml
-    private String xmlQ1;                   // temporary storage for quantity of item 1 from xml
-    private String xmlItemCode2;            // temporary storage for code of item 2 from xml
-    private String xmlQ2;                   // temporary storage for quantity of item 2 from xml
-    private String xmlItemCode3;            // temporary storage for code of item 3 from xml
-    private String xmlQ3;                   // temporary storage for quantity of item 3 from xml
-    private String xmlItemCode4;            // temporary storage for code of item 4 from xml
-    private String xmlQ4;                   // temporary storage for quantity of item 4 from xml
-    private String xmlItemCode5;            // temporary storage for code of item 5 from xml
-    private String xmlQ5;                   // temporary storage for quantity of item 5 from xml
-    private String xmlTotalCost;            // temporary storage for total cost or oder from xml
+    private static CustomerRecord currentCustomer;       //store an instance of current Customer which is a CustomerRecord
+    private static CustomerRecord customerArray[] = new CustomerRecord[MAX_CUSTOMERRECORDS];        //store all customer records
+    private static int nextCustomer = 0;       // location of next empty position in the array
+    private static int numCustomers = 0;       // number of input customer records            
+    private static String xmlCustomerID;       // temporary storage for customerID from xml
+    private static String xmlName;             // temporary storage for customer name from xml
+    private static String xmlAddress;          // temporary storage for customer address from xml
+    private static String xmlPhone;            // temporary storage for customer phone from xml
+    private static String xmlEmail;            // temporary storage for customer phone from xml
+    private static String xmlSpending;         // temporary storage for customer spending from xml
+    
+    private static InventoryRecord currentInventory;       //store an instance of current Customer which is a CustomerRecord
+    private static InventoryRecord inventoryArray[] = new InventoryRecord[MAX_INVENTORYRECORDS];        //store all customer records
+    private static int nextInventory = 0;       // location of next empty position in the array
+    private static int numInventory = 0;       // number of input customer records
+    private static String xmlIngName;          // temporary storage for ingredient name from xml
+    private static String xmlStock;            // temporary storage for ingredient stock on hand from xml
+    
+    private static OrderRecord currentOrder;       //store an instance of current order which is a OrderRecord
+    private static OrderRecord orderArray[] = new OrderRecord[MAX_ORDERRECORDS];        //store all order records
+    private static int nextOrder = 0;              // location of next empty position in the array
+    private static int numOrders = 0;               // number of input order records
+    private static String xmlOrderID;              // temporary storage for order ID from xml
+    private static String xmlOrderDate;            // temporary storage for order date from xml
+    private static String xmlOrderCustomerID;      // temporary storage for customer ID from xml
+    private static String xmlItemCode1;            // temporary storage for code of item 1 from xml
+    private static String xmlQ1;                   // temporary storage for quantity of item 1 from xml
+    private static String xmlItemCode2;            // temporary storage for code of item 2 from xml
+    private static String xmlQ2;                   // temporary storage for quantity of item 2 from xml
+    private static String xmlItemCode3;            // temporary storage for code of item 3 from xml
+    private static String xmlQ3;                   // temporary storage for quantity of item 3 from xml
+    private static String xmlItemCode4;            // temporary storage for code of item 4 from xml
+    private static String xmlQ4;                   // temporary storage for quantity of item 4 from xml
+    private static String xmlItemCode5;            // temporary storage for code of item 5 from xml
+    private static String xmlQ5;                   // temporary storage for quantity of item 5 from xml
+    private static String xmlTotalCost;            // temporary storage for total cost or oder from xml
     
     
     private Database myDatabase = new Database();       //instance of the database class
@@ -233,7 +242,7 @@ public class Login extends javax.swing.JFrame {
                 readInventoryXMLFile();
                 storeInventoryData();
                 readOrdersXMLFile();
-                //storeOrderData();
+                storeOrderData(); 
             }
             
             if (rbChef.isSelected())
@@ -287,38 +296,42 @@ public class Login extends javax.swing.JFrame {
                     NodeList fstNmElmntLst = fstElmnt.getElementsByTagName("CustomerID");
                     org.w3c.dom.Element fstNmElmnt = (org.w3c.dom.Element) fstNmElmntLst.item(0);
                     NodeList fstNm = fstNmElmnt.getChildNodes();
-                    xmlCustomerID = ((Node) fstNm.item(0)).getNodeValue();
-                    System.out.println("CustomerID : "  + ((Node) fstNm.item(0)).getNodeValue());
+                    xmlCustomerID = ((Node) fstNm.item(0)).getNodeValue();                    
                     
                     NodeList secNmElmntLst = fstElmnt.getElementsByTagName("Name");
                     org.w3c.dom.Element secNmElmnt = (org.w3c.dom.Element) secNmElmntLst.item(0);
                     NodeList secNm = secNmElmnt.getChildNodes();
-                    xmlName = ((Node) secNm.item(0)).getNodeValue();
-                    System.out.println("Name : " + ((Node) secNm.item(0)).getNodeValue());
+                    xmlName = ((Node) secNm.item(0)).getNodeValue();                    
                     
                     NodeList trdNmElmntLst = fstElmnt.getElementsByTagName("Address");
                     org.w3c.dom.Element trdNmElmnt = (org.w3c.dom.Element) trdNmElmntLst.item(0);
                     NodeList trdNm = trdNmElmnt.getChildNodes();
-                    xmlAddress = ((Node) trdNm.item(0)).getNodeValue();
-                    System.out.println("Address : " + ((Node) trdNm.item(0)).getNodeValue());
+                    xmlAddress = ((Node) trdNm.item(0)).getNodeValue();                    
                     
                     NodeList frtNmElmntLst = fstElmnt.getElementsByTagName("Phone");
                     org.w3c.dom.Element frtNmElmnt = (org.w3c.dom.Element) frtNmElmntLst.item(0);
                     NodeList frtNm = frtNmElmnt.getChildNodes();
-                    xmlPhone = ((Node) frtNm.item(0)).getNodeValue();
-                    System.out.println("Phone : " + ((Node) frtNm.item(0)).getNodeValue());
+                    xmlPhone = ((Node) frtNm.item(0)).getNodeValue();                    
                     
                     NodeList fivNmElmntLst = fstElmnt.getElementsByTagName("Email");
                     org.w3c.dom.Element fivNmElmnt = (org.w3c.dom.Element) fivNmElmntLst.item(0);
                     NodeList fivNm = fivNmElmnt.getChildNodes();
-                    xmlEmail = ((Node) fivNm.item(0)).getNodeValue();
-                    System.out.println("Email : " + ((Node) fivNm.item(0)).getNodeValue());
+                    xmlEmail = ((Node) fivNm.item(0)).getNodeValue();                    
                     
                     NodeList sixNmElmntLst = fstElmnt.getElementsByTagName("Spending");
                     org.w3c.dom.Element sixNmElmnt = (org.w3c.dom.Element) sixNmElmntLst.item(0);
                     NodeList sixNm = sixNmElmnt.getChildNodes();
                     xmlSpending = ((Node) sixNm.item(0)).getNodeValue();
+                    
+                    /*
+                    //Print to Output console
+                    System.out.println("CustomerID : "  + ((Node) fstNm.item(0)).getNodeValue());
+                    System.out.println("Name : " + ((Node) secNm.item(0)).getNodeValue());
+                    System.out.println("Address : " + ((Node) trdNm.item(0)).getNodeValue());
+                    System.out.println("Phone : " + ((Node) frtNm.item(0)).getNodeValue());
+                    System.out.println("Email : " + ((Node) fivNm.item(0)).getNodeValue());
                     System.out.println("Spending : " + ((Node) sixNm.item(0)).getNodeValue());
+                    */
                     
                     CustomerRecord customer = new CustomerRecord(xmlCustomerID, xmlName, xmlAddress, xmlPhone, xmlEmail, xmlSpending);
                     // store customer record in array
@@ -374,14 +387,18 @@ public class Login extends javax.swing.JFrame {
                     NodeList fstNmElmntLst = fstElmnt.getElementsByTagName("IngName");
                     org.w3c.dom.Element fstNmElmnt = (org.w3c.dom.Element) fstNmElmntLst.item(0);
                     NodeList fstNm = fstNmElmnt.getChildNodes();
-                    xmlIngName = ((Node) fstNm.item(0)).getNodeValue();
-                    System.out.println("IngName : "  + ((Node) fstNm.item(0)).getNodeValue());
+                    xmlIngName = ((Node) fstNm.item(0)).getNodeValue();                    
                     
                     NodeList secNmElmntLst = fstElmnt.getElementsByTagName("Stock");
                     org.w3c.dom.Element secNmElmnt = (org.w3c.dom.Element) secNmElmntLst.item(0);
                     NodeList secNm = secNmElmnt.getChildNodes();
                     xmlStock = ((Node) secNm.item(0)).getNodeValue();
+                    
+                    /*
+                    //Print to Output console
+                    System.out.println("IngName : "  + ((Node) fstNm.item(0)).getNodeValue());
                     System.out.println("Stock : " + ((Node) secNm.item(0)).getNodeValue());
+                    */
                     
                     InventoryRecord inventory = new InventoryRecord(xmlIngName, xmlStock);
                     // store customer record in array
@@ -422,6 +439,9 @@ public class Login extends javax.swing.JFrame {
             //System.out.println("Root element " + doc.getDocumentElement().getNodeName());
             NodeList nodeLst = doc.getElementsByTagName("Order");
             //System.out.println("Information of all customers");
+            setLastOrderNumber(Integer.toString(nodeLst.getLength()));
+            //System.out.println("*************"+Integer.toString(nodeLst.getLength()+1));
+            
 
             for (int s = 0; s < nodeLst.getLength(); s++) {
 
@@ -433,86 +453,92 @@ public class Login extends javax.swing.JFrame {
                     NodeList fstNmElmntLst = fstElmnt.getElementsByTagName("OrderID");
                     org.w3c.dom.Element fstNmElmnt = (org.w3c.dom.Element) fstNmElmntLst.item(0);
                     NodeList fstNm = fstNmElmnt.getChildNodes();
-                    xmlOrderID = ((Node) fstNm.item(0)).getNodeValue();
-                    System.out.println("OrderID : "  + ((Node) fstNm.item(0)).getNodeValue());
+                    xmlOrderID = ((Node) fstNm.item(0)).getNodeValue();                    
                     
                     NodeList secNmElmntLst = fstElmnt.getElementsByTagName("OrderDate");
                     org.w3c.dom.Element secNmElmnt = (org.w3c.dom.Element) secNmElmntLst.item(0);
                     NodeList secNm = secNmElmnt.getChildNodes();
-                    xmlOrderDate = ((Node) secNm.item(0)).getNodeValue();
-                    System.out.println("OrderDate : " + ((Node) secNm.item(0)).getNodeValue());
+                    xmlOrderDate = ((Node) secNm.item(0)).getNodeValue();                    
                     
                     NodeList trdNmElmntLst = fstElmnt.getElementsByTagName("OrderCustomerID");
                     org.w3c.dom.Element trdNmElmnt = (org.w3c.dom.Element) trdNmElmntLst.item(0);
                     NodeList trdNm = trdNmElmnt.getChildNodes();
-                    xmlOrderCustomerID = ((Node) trdNm.item(0)).getNodeValue();
-                    System.out.println("OrderCustomerID : " + ((Node) trdNm.item(0)).getNodeValue());
+                    xmlOrderCustomerID = ((Node) trdNm.item(0)).getNodeValue();                    
                     
                     NodeList frtNmElmntLst = fstElmnt.getElementsByTagName("ItemCode1");
                     org.w3c.dom.Element frtNmElmnt = (org.w3c.dom.Element) frtNmElmntLst.item(0);
                     NodeList frtNm = frtNmElmnt.getChildNodes();
-                    xmlItemCode1 = ((Node) frtNm.item(0)).getNodeValue();
-                    System.out.println("ItemCode1 : " + ((Node) frtNm.item(0)).getNodeValue());
+                    xmlItemCode1 = ((Node) frtNm.item(0)).getNodeValue();                    
                     
                     NodeList fivNmElmntLst = fstElmnt.getElementsByTagName("Q1");
                     org.w3c.dom.Element fivNmElmnt = (org.w3c.dom.Element) fivNmElmntLst.item(0);
                     NodeList fivNm = fivNmElmnt.getChildNodes();
-                    xmlQ1 = ((Node) fivNm.item(0)).getNodeValue();
-                    System.out.println("Q1 : " + ((Node) fivNm.item(0)).getNodeValue()); 
+                    xmlQ1 = ((Node) fivNm.item(0)).getNodeValue();                     
                     
                     NodeList sixNmElmntLst = fstElmnt.getElementsByTagName("ItemCode2");
                     org.w3c.dom.Element sixNmElmnt = (org.w3c.dom.Element) sixNmElmntLst.item(0);
                     NodeList sixNm = sixNmElmnt.getChildNodes();
-                    xmlItemCode2 = ((Node) sixNm.item(0)).getNodeValue();
-                    System.out.println("ItemCode2 : " + ((Node) sixNm.item(0)).getNodeValue());
+                    xmlItemCode2 = ((Node) sixNm.item(0)).getNodeValue();                    
                     
                     NodeList svnNmElmntLst = fstElmnt.getElementsByTagName("Q2");
                     org.w3c.dom.Element svnNmElmnt = (org.w3c.dom.Element) svnNmElmntLst.item(0);
                     NodeList svnNm = svnNmElmnt.getChildNodes();
-                    xmlQ2 = ((Node) svnNm.item(0)).getNodeValue();
-                    System.out.println("Q2 : " + ((Node) svnNm.item(0)).getNodeValue());
+                    xmlQ2 = ((Node) svnNm.item(0)).getNodeValue();                    
                     
                     NodeList eigNmElmntLst = fstElmnt.getElementsByTagName("ItemCode3");
                     org.w3c.dom.Element eigNmElmnt = (org.w3c.dom.Element) eigNmElmntLst.item(0);
                     NodeList eigNm = eigNmElmnt.getChildNodes();
-                    xmlItemCode3 = ((Node) eigNm.item(0)).getNodeValue();
-                    System.out.println("ItemCode3 : " + ((Node) eigNm.item(0)).getNodeValue());
+                    xmlItemCode3 = ((Node) eigNm.item(0)).getNodeValue();                    
                     
                     NodeList ninNmElmntLst = fstElmnt.getElementsByTagName("Q3");
                     org.w3c.dom.Element ninNmElmnt = (org.w3c.dom.Element) ninNmElmntLst.item(0);
                     NodeList ninNm = ninNmElmnt.getChildNodes();
-                    xmlQ3 = ((Node) ninNm.item(0)).getNodeValue();
-                    System.out.println("Q3 : " + ((Node) ninNm.item(0)).getNodeValue());
+                    xmlQ3 = ((Node) ninNm.item(0)).getNodeValue();                    
                     
                     NodeList tenNmElmntLst = fstElmnt.getElementsByTagName("ItemCode4");
                     org.w3c.dom.Element tenNmElmnt = (org.w3c.dom.Element) tenNmElmntLst.item(0);
                     NodeList tenNm = tenNmElmnt.getChildNodes();
-                    xmlItemCode4 = ((Node) tenNm.item(0)).getNodeValue();
-                    System.out.println("ItemCode4 : " + ((Node) tenNm.item(0)).getNodeValue());
+                    xmlItemCode4 = ((Node) tenNm.item(0)).getNodeValue();                    
                     
                     NodeList elvNmElmntLst = fstElmnt.getElementsByTagName("Q4");
                     org.w3c.dom.Element elvNmElmnt = (org.w3c.dom.Element) elvNmElmntLst.item(0);
                     NodeList elvNm = elvNmElmnt.getChildNodes();
-                    xmlQ4 = ((Node) elvNm.item(0)).getNodeValue();
-                    System.out.println("Q4 : " + ((Node) elvNm.item(0)).getNodeValue());
+                    xmlQ4 = ((Node) elvNm.item(0)).getNodeValue();                    
                     
                     NodeList twlNmElmntLst = fstElmnt.getElementsByTagName("ItemCode5");
                     org.w3c.dom.Element twlNmElmnt = (org.w3c.dom.Element) twlNmElmntLst.item(0);
                     NodeList twlNm = twlNmElmnt.getChildNodes();
-                    xmlItemCode5 = ((Node) twlNm.item(0)).getNodeValue();
-                    System.out.println("ItemCode5 : " + ((Node) twlNm.item(0)).getNodeValue());
+                    xmlItemCode5 = ((Node) twlNm.item(0)).getNodeValue();                    
                     
                     NodeList thrNmElmntLst = fstElmnt.getElementsByTagName("Q5");
                     org.w3c.dom.Element thrNmElmnt = (org.w3c.dom.Element) thrNmElmntLst.item(0);
                     NodeList thrNm = thrNmElmnt.getChildNodes();
-                    xmlQ5 = ((Node) thrNm.item(0)).getNodeValue();
-                    System.out.println("Q5 : " + ((Node) thrNm.item(0)).getNodeValue());
+                    xmlQ5 = ((Node) thrNm.item(0)).getNodeValue();                    
                     
                     NodeList ftnNmElmntLst = fstElmnt.getElementsByTagName("TotalCost");
                     org.w3c.dom.Element ftnNmElmnt = (org.w3c.dom.Element) ftnNmElmntLst.item(0);
                     NodeList ftnNm = ftnNmElmnt.getChildNodes();
                     xmlTotalCost = ((Node) ftnNm.item(0)).getNodeValue();
+                    
+                    /*
+                    //Print to Output console
+                    System.out.println("OrderID : "  + ((Node) fstNm.item(0)).getNodeValue());
+                    System.out.println("OrderDate : " + ((Node) secNm.item(0)).getNodeValue());
+                    System.out.println("OrderCustomerID : " + ((Node) trdNm.item(0)).getNodeValue());
+                    System.out.println("ItemCode1 : " + ((Node) frtNm.item(0)).getNodeValue());
+                    System.out.println("Q1 : " + ((Node) fivNm.item(0)).getNodeValue());
+                    System.out.println("ItemCode2 : " + ((Node) sixNm.item(0)).getNodeValue());
+                    System.out.println("Q2 : " + ((Node) svnNm.item(0)).getNodeValue());
+                    System.out.println("ItemCode3 : " + ((Node) eigNm.item(0)).getNodeValue());
+                    System.out.println("ItemCode3 : " + ((Node) eigNm.item(0)).getNodeValue());
+                    System.out.println("Q3 : " + ((Node) ninNm.item(0)).getNodeValue());
+                    System.out.println("ItemCode4 : " + ((Node) tenNm.item(0)).getNodeValue());
+                    System.out.println("Q4 : " + ((Node) elvNm.item(0)).getNodeValue());
+                    System.out.println("ItemCode5 : " + ((Node) twlNm.item(0)).getNodeValue());
+                    System.out.println("Q5 : " + ((Node) thrNm.item(0)).getNodeValue());
                     System.out.println("TotalCost : " + ((Node) ftnNm.item(0)).getNodeValue());
+                    */
+                    
                     
                     OrderRecord order = new OrderRecord(xmlOrderID, xmlOrderDate, xmlOrderCustomerID, xmlItemCode1, xmlQ1, xmlItemCode2, xmlQ2, 
                                                         xmlItemCode3, xmlQ3, xmlItemCode4, xmlQ4, xmlItemCode5, xmlQ5, xmlTotalCost);
@@ -551,9 +577,10 @@ public class Login extends javax.swing.JFrame {
                    orderArray[i].getQ4(),
                    orderArray[i].getItemCode5(),
                    orderArray[i].getQ5(),
-                   orderArray[i].getTotalCost());
+                   orderArray[i].getTotalCost());            
       }    
     }//end storeCustomerData
+    
     
     
     /**

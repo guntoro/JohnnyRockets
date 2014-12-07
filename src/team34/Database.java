@@ -93,7 +93,7 @@ public class Database {
       
     public CustomerRecord[] getQueryData ()
     {
-        CustomerRecord customerArray[] = new CustomerRecord[20];
+        CustomerRecord customerArray[] = new CustomerRecord[50];
         int numCustomers = 0;
         
         try {
@@ -168,7 +168,7 @@ public class Database {
       
     public InventoryRecord[] getQueryInventoryData ()
     {
-        InventoryRecord inventoryArray[] = new InventoryRecord[20];
+        InventoryRecord inventoryArray[] = new InventoryRecord[50];
         int numInventory = 0;
         
         try {
@@ -237,7 +237,7 @@ public class Database {
             //stmt.executeUpdate("INSERT INTO Customers VALUES ("+id+",'"+cName+"','" +cAddress+"','" +cPhone+"','"+cEmail+"','" +cSpending+"')");
             //stmt.executeUpdate("insert into Inventory " + "values  ('"+iName+"','"+iStock+"')");
             //stmt.executeUpdate("INSERT INTO Customers VALUES ("+oOrderID+",'"+oOrderDate+"','" +oCustomerID+"','" +oItemCode1+"','"+oQ1+"','" +oItemCode2+"','"+oQ2+"','" +oItemCode3+"','"+oQ3+"','" +oItemCode4+"','"+oQ4+"','" +oItemCode5+"','"+oQ5+"','" +oTotalCost+"')");            
-            stmt.executeUpdate("insert into Inventory " + "values  ('"+oOrderID+"','"+oOrderDate+"','"+oOrderCustomerID+"','"+oItemCode1+"','"+oQ1+"','"+oItemCode2+"','"+oQ2+"','"+oItemCode3+"','"+oQ3+"','"+oItemCode4+"','"+oQ4+"','"+oItemCode5+"','"+oQ5+"','"+oTotalCost+"')");
+            stmt.executeUpdate("insert into Orders " + "values  ('"+oOrderID+"','"+oOrderDate+"','"+oOrderCustomerID+"','"+oItemCode1+"','"+oQ1+"','"+oItemCode2+"','"+oQ2+"','"+oItemCode3+"','"+oQ3+"','"+oItemCode4+"','"+oQ4+"','"+oItemCode5+"','"+oQ5+"','"+oTotalCost+"')");
             stmt.close();
             con.close();
         }//end try
@@ -250,7 +250,7 @@ public class Database {
       
     public OrderRecord[] getQueryOrderData ()
     {
-        OrderRecord orderArray[] = new OrderRecord[90];
+        OrderRecord orderArray[] = new OrderRecord[100];
         int numOrders = 0;
         
         try {

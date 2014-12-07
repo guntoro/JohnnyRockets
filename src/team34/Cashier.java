@@ -9,14 +9,33 @@ package team34;
  *
  * @author Owner
  */
-public class Cashier extends javax.swing.JFrame {
+    
 
+public class Cashier extends javax.swing.JFrame {    
     /**
      * Creates new form Cashier
      */
-    public Cashier() {
+    
+    String orderDetail="";
+    String [][] restaurantMenu = {
+        {"1001","Chicken Nugget     ", "2.00"},
+        {"1002","Fries              ", "2.00"},
+        {"1003","Salad              ", "3.00"},
+        {"1004","Cheese Burger      ", "2.00"},
+        {"1005","Bacon Cheese Burger", "2.00"},
+        {"1006","Hamburger          ", "2.00"},
+        {"1007","Soda               ", "1.00"},
+        {"1008","Tea                ", "1.25"},
+        {"1009","Coffee             ", "1.50"},
+        };
+    
+    
+    public Cashier() {        
         initComponents();
+        jbtAddItem.setEnabled(false);        
     }
+    
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -32,23 +51,23 @@ public class Cashier extends javax.swing.JFrame {
         jtfCustomerID = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         jtfOrderNumber = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        jbtLogout = new javax.swing.JButton();
+        jbtAddNewCustomer = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        jtfNewItemCode = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
+        jtfNewItemDescription = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox();
+        jcbNewItemQuantity = new javax.swing.JComboBox();
         jLabel7 = new javax.swing.JLabel();
-        jTextField3 = new javax.swing.JTextField();
+        jtfNewItemPrice = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
+        jtaOrderDetail = new javax.swing.JTextArea();
         jLabel9 = new javax.swing.JLabel();
         jTextField4 = new javax.swing.JTextField();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
+        jbtConfirmOrder = new javax.swing.JButton();
+        jbtAddItem = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setPreferredSize(new java.awt.Dimension(800, 400));
@@ -67,42 +86,48 @@ public class Cashier extends javax.swing.JFrame {
 
         jLabel3.setText("Order#:");
 
-        jButton1.setText("Logout");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        jtfOrderNumber.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                jtfOrderNumberActionPerformed(evt);
             }
         });
 
-        jButton2.setText("Add New Customer");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        jbtLogout.setText("Logout");
+        jbtLogout.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                jbtLogoutActionPerformed(evt);
+            }
+        });
+
+        jbtAddNewCustomer.setText("Add New Customer");
+        jbtAddNewCustomer.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbtAddNewCustomerActionPerformed(evt);
             }
         });
 
         jLabel4.setText("Item Code");
 
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        jtfNewItemCode.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                jtfNewItemCodeActionPerformed(evt);
             }
         });
 
         jLabel5.setText("Description");
 
-        jTextField2.addActionListener(new java.awt.event.ActionListener() {
+        jtfNewItemDescription.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField2ActionPerformed(evt);
+                jtfNewItemDescriptionActionPerformed(evt);
             }
         });
 
         jLabel6.setText("Quantity");
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10" }));
-        jComboBox1.addActionListener(new java.awt.event.ActionListener() {
+        jcbNewItemQuantity.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10" }));
+        jcbNewItemQuantity.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBox1ActionPerformed(evt);
+                jcbNewItemQuantityActionPerformed(evt);
             }
         });
 
@@ -110,28 +135,32 @@ public class Cashier extends javax.swing.JFrame {
 
         jLabel8.setText("$");
 
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jTextArea1.setText("A01\tCheese Burger\t\t\t\t\t\t2\t$ 8.00\nB03\t5pcs Chicken Nugget\t\t\t\t\t1\t$ 2.00\nD01\tBeverage - Diet Coke - Small\t\t\t\t1\t$ 1.50");
-        jScrollPane1.setViewportView(jTextArea1);
+        jtaOrderDetail.setColumns(20);
+        jtaOrderDetail.setRows(5);
+        jScrollPane1.setViewportView(jtaOrderDetail);
 
         jLabel9.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel9.setText("Total Order $");
 
         jTextField4.setText("11.50");
 
-        jButton3.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jButton3.setForeground(new java.awt.Color(0, 0, 102));
-        jButton3.setText("Confirm Order - Send to Kitchen");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        jbtConfirmOrder.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jbtConfirmOrder.setForeground(new java.awt.Color(0, 0, 102));
+        jbtConfirmOrder.setText("Confirm Order - Send to Kitchen");
+        jbtConfirmOrder.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                jbtConfirmOrderActionPerformed(evt);
             }
         });
 
-        jButton4.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        jButton4.setForeground(new java.awt.Color(0, 0, 102));
-        jButton4.setText("Add Item");
+        jbtAddItem.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jbtAddItem.setForeground(new java.awt.Color(0, 0, 102));
+        jbtAddItem.setText("Add Item");
+        jbtAddItem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbtAddItemActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -147,7 +176,7 @@ public class Cashier extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jScrollPane1)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 465, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jbtConfirmOrder, javax.swing.GroupLayout.PREFERRED_SIZE, 465, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(jLabel9)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -162,19 +191,19 @@ public class Cashier extends javax.swing.JFrame {
                                 .addComponent(jtfOrderNumber, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jButton2)
+                                    .addComponent(jbtAddNewCustomer)
                                     .addGroup(layout.createSequentialGroup()
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                             .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                            .addComponent(jTextField1))
+                                            .addComponent(jtfNewItemCode))
                                         .addGap(18, 18, 18)
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addComponent(jLabel5)
-                                            .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 420, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                            .addComponent(jtfNewItemDescription, javax.swing.GroupLayout.PREFERRED_SIZE, 420, javax.swing.GroupLayout.PREFERRED_SIZE))
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addGroup(layout.createSequentialGroup()
                                                 .addGap(10, 10, 10)
-                                                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                .addComponent(jcbNewItemQuantity, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                                             .addGroup(layout.createSequentialGroup()
                                                 .addGap(8, 8, 8)
                                                 .addComponent(jLabel6)))
@@ -183,15 +212,15 @@ public class Cashier extends javax.swing.JFrame {
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addComponent(jLabel7)
-                                            .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                            .addComponent(jtfNewItemPrice, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE))))
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(layout.createSequentialGroup()
                                         .addGap(10, 10, 10)
-                                        .addComponent(jButton4)
+                                        .addComponent(jbtAddItem)
                                         .addGap(0, 0, Short.MAX_VALUE))
                                     .addGroup(layout.createSequentialGroup()
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(jButton1)))))))
+                                        .addComponent(jbtLogout)))))))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -204,8 +233,8 @@ public class Cashier extends javax.swing.JFrame {
                     .addComponent(jtfCustomerID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel3)
                     .addComponent(jtfOrderNumber, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton2)
-                    .addComponent(jButton1))
+                    .addComponent(jbtAddNewCustomer)
+                    .addComponent(jbtLogout))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
@@ -214,12 +243,12 @@ public class Cashier extends javax.swing.JFrame {
                     .addComponent(jLabel7))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jtfNewItemCode, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jtfNewItemDescription, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jcbNewItemQuantity, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jtfNewItemPrice, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel8)
-                    .addComponent(jButton4))
+                    .addComponent(jbtAddItem))
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -231,7 +260,7 @@ public class Cashier extends javax.swing.JFrame {
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jbtConfirmOrder, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addContainerGap())))
         );
 
@@ -240,36 +269,57 @@ public class Cashier extends javax.swing.JFrame {
 
     private void jtfCustomerIDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtfCustomerIDActionPerformed
         // TODO add your handling code here:
+        System.out.println("Customer code typed");
+        Login varLogin = new Login();                
+        jtfOrderNumber.setText(varLogin.getLastOrderNumber());
     }//GEN-LAST:event_jtfCustomerIDActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void jbtAddNewCustomerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtAddNewCustomerActionPerformed
         AddCustomer s1 = new AddCustomer();
         s1.setVisible(true);
          
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_jbtAddNewCustomerActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void jbtLogoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtLogoutActionPerformed
         Login s2 = new Login();
-        s2.setVisible(true);
-        
+        s2.setVisible(true);        
         this.setVisible(false);
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_jbtLogoutActionPerformed
 
-    private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
+    private void jcbNewItemQuantityActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jcbNewItemQuantityActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jComboBox1ActionPerformed
+    }//GEN-LAST:event_jcbNewItemQuantityActionPerformed
+    
+    private void jtfNewItemDescriptionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtfNewItemDescriptionActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jtfNewItemDescriptionActionPerformed
+        
+    private void jtfNewItemCodeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtfNewItemCodeActionPerformed
+        // TODO add your handling code here:        
+        
+        jtfNewItemDescription.setText("Cheese Burger");
+        jtfNewItemPrice.setText("2.00");
+        jbtAddItem.setEnabled(true);        
+    }//GEN-LAST:event_jtfNewItemCodeActionPerformed
 
-    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
+    private void jbtConfirmOrderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtConfirmOrderActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField2ActionPerformed
+    }//GEN-LAST:event_jbtConfirmOrderActionPerformed
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void jtfOrderNumberActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtfOrderNumberActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    }//GEN-LAST:event_jtfOrderNumberActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void jbtAddItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtAddItemActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton3ActionPerformed
+        jbtAddItem.setEnabled(false);
+        orderDetail=(orderDetail+jtfNewItemCode.getText()+ "\t" + jtfNewItemDescription.getText() + "\t\t" + jcbNewItemQuantity.getSelectedItem()+ "\t" + jtfNewItemPrice.getText()+ "\n");
+        jtaOrderDetail.setText(orderDetail);
+        jtfNewItemCode.setText("");
+        jtfNewItemDescription.setText("");
+        
+        
+    }//GEN-LAST:event_jbtAddItemActionPerformed
 
     /**
      * @param args the command line arguments
@@ -304,14 +354,11 @@ public class Cashier extends javax.swing.JFrame {
                 new Cashier().setVisible(true);
             }
         });
+        
+        
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JComboBox jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -322,12 +369,17 @@ public class Cashier extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextArea jTextArea1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField jTextField4;
+    private javax.swing.JButton jbtAddItem;
+    private javax.swing.JButton jbtAddNewCustomer;
+    private javax.swing.JButton jbtConfirmOrder;
+    private javax.swing.JButton jbtLogout;
+    private javax.swing.JComboBox jcbNewItemQuantity;
+    private javax.swing.JTextArea jtaOrderDetail;
     private javax.swing.JTextField jtfCustomerID;
+    private javax.swing.JTextField jtfNewItemCode;
+    private javax.swing.JTextField jtfNewItemDescription;
+    private javax.swing.JTextField jtfNewItemPrice;
     private javax.swing.JTextField jtfOrderNumber;
     // End of variables declaration//GEN-END:variables
 }
