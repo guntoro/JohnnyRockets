@@ -26,48 +26,48 @@
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="jButton1" max="32767" attributes="0"/>
+                  <Component id="refreshb" max="32767" attributes="0"/>
                   <Group type="102" alignment="0" attributes="0">
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
                           <Component id="jLabel1" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Group type="102" alignment="0" attributes="0">
-                              <Component id="textField3" min="-2" pref="50" max="-2" attributes="0"/>
+                              <Component id="order1code2tf" min="-2" pref="50" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="textField7" min="-2" pref="240" max="-2" attributes="0"/>
+                              <Component id="o1c2destf" min="-2" pref="240" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="button2" min="-2" pref="26" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
-                              <Component id="textField4" min="-2" pref="50" max="-2" attributes="0"/>
+                              <Component id="order1code3tf" min="-2" pref="50" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="textField8" min="-2" pref="240" max="-2" attributes="0"/>
+                              <Component id="o1c3destf" min="-2" pref="240" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="button4" min="-2" pref="26" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
-                              <Component id="textField5" min="-2" pref="50" max="-2" attributes="0"/>
+                              <Component id="order1code4tf" min="-2" pref="50" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="textField9" min="-2" pref="240" max="-2" attributes="0"/>
+                              <Component id="o1c4destf" min="-2" pref="240" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="button3" max="32767" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
-                              <Component id="textField6" min="-2" pref="50" max="-2" attributes="0"/>
+                              <Component id="order1code5tf" min="-2" pref="50" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="textField10" min="-2" pref="240" max="-2" attributes="0"/>
+                              <Component id="o1c5destf" min="-2" pref="240" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="button5" max="32767" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="textField2" alignment="0" min="-2" pref="50" max="-2" attributes="0"/>
+                                  <Component id="order1code1tf" alignment="0" min="-2" pref="50" max="-2" attributes="0"/>
                                   <Component id="jLabel2" alignment="0" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Component id="jLabel3" alignment="0" min="-2" max="-2" attributes="0"/>
                                   <Group type="102" alignment="0" attributes="0">
-                                      <Component id="textField11" min="-2" pref="240" max="-2" attributes="0"/>
+                                      <Component id="o1c1destf" min="-2" pref="240" max="-2" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>
                                       <Component id="button1" min="-2" pref="26" max="-2" attributes="0"/>
                                   </Group>
@@ -77,27 +77,27 @@
                       <EmptySpace pref="28" max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
                           <Group type="102" alignment="1" attributes="0">
-                              <Component id="textField12" min="-2" pref="40" max="-2" attributes="0"/>
+                              <Component id="o1c1quantf" min="-2" pref="40" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="button6" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="1" attributes="0">
-                              <Component id="textField27" max="32767" attributes="0"/>
+                              <Component id="o1c2quantf" max="32767" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="button7" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="1" attributes="0">
-                              <Component id="textField13" min="-2" pref="40" max="-2" attributes="0"/>
+                              <Component id="o1c3quantf" min="-2" pref="40" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="button8" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="1" attributes="0">
-                              <Component id="textField15" min="-2" pref="40" max="-2" attributes="0"/>
+                              <Component id="o1c4quantf" min="-2" pref="40" max="-2" attributes="0"/>
                               <EmptySpace max="32767" attributes="0"/>
                               <Component id="button9" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="1" attributes="0">
-                              <Component id="textField16" min="-2" pref="40" max="-2" attributes="0"/>
+                              <Component id="o1c5quantf" min="-2" pref="40" max="-2" attributes="0"/>
                               <EmptySpace max="32767" attributes="0"/>
                               <Component id="button10" min="-2" max="-2" attributes="0"/>
                           </Group>
@@ -107,43 +107,43 @@
                   <Group type="102" alignment="0" attributes="0">
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
-                              <Component id="textField31" min="-2" pref="50" max="-2" attributes="0"/>
+                              <Component id="order2code2tf" min="-2" pref="50" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="textField20" min="-2" pref="240" max="-2" attributes="0"/>
+                              <Component id="o2c2destf" min="-2" pref="240" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="button13" min="-2" pref="26" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
-                              <Component id="textField32" min="-2" pref="50" max="-2" attributes="0"/>
+                              <Component id="order2code3tf" min="-2" pref="50" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="textField21" min="-2" pref="240" max="-2" attributes="0"/>
+                              <Component id="o2c3destf" min="-2" pref="240" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="button14" min="-2" pref="26" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
-                              <Component id="textField18" min="-2" pref="50" max="-2" attributes="0"/>
+                              <Component id="order2code4tf" min="-2" pref="50" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="textField22" min="-2" pref="240" max="-2" attributes="0"/>
+                              <Component id="o2c4destf" min="-2" pref="240" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="button20" max="32767" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
-                              <Component id="textField19" min="-2" pref="50" max="-2" attributes="0"/>
+                              <Component id="order2code5tf" min="-2" pref="50" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="textField24" min="-2" pref="240" max="-2" attributes="0"/>
+                              <Component id="o2c5destf" min="-2" pref="240" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="button11" max="32767" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="textField17" alignment="0" min="-2" pref="50" max="-2" attributes="0"/>
+                                  <Component id="order2code1tf" alignment="0" min="-2" pref="50" max="-2" attributes="0"/>
                                   <Component id="jLabel6" alignment="0" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Component id="jLabel7" alignment="0" min="-2" max="-2" attributes="0"/>
                                   <Group type="102" alignment="0" attributes="0">
-                                      <Component id="textField26" min="-2" pref="240" max="-2" attributes="0"/>
+                                      <Component id="o2c1destf" min="-2" pref="240" max="-2" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>
                                       <Component id="button19" min="-2" pref="26" max="-2" attributes="0"/>
                                   </Group>
@@ -153,27 +153,27 @@
                       <EmptySpace max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
                           <Group type="102" alignment="1" attributes="0">
-                              <Component id="textField23" min="-2" pref="40" max="-2" attributes="0"/>
+                              <Component id="o2c1quantf" min="-2" pref="40" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="button12" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="1" attributes="0">
-                              <Component id="textField14" max="32767" attributes="0"/>
+                              <Component id="o2c2quantf" max="32767" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="button15" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="1" attributes="0">
-                              <Component id="textField25" min="-2" pref="40" max="-2" attributes="0"/>
+                              <Component id="o2c3quantf" min="-2" pref="40" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="button16" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="1" attributes="0">
-                              <Component id="textField28" min="-2" pref="40" max="-2" attributes="0"/>
+                              <Component id="o2c4quantf" min="-2" pref="40" max="-2" attributes="0"/>
                               <EmptySpace max="32767" attributes="0"/>
                               <Component id="button17" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="1" attributes="0">
-                              <Component id="textField30" min="-2" pref="40" max="-2" attributes="0"/>
+                              <Component id="o2c5quantf" min="-2" pref="40" max="-2" attributes="0"/>
                               <EmptySpace max="32767" attributes="0"/>
                               <Component id="button18" min="-2" max="-2" attributes="0"/>
                           </Group>
@@ -181,13 +181,13 @@
                       </Group>
                   </Group>
                   <Group type="102" attributes="0">
-                      <Component id="textField29" min="-2" pref="150" max="-2" attributes="0"/>
+                      <Component id="order2Numbertf" min="-2" pref="150" max="-2" attributes="0"/>
                       <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
-                      <Component id="textField1" min="-2" pref="150" max="-2" attributes="0"/>
+                      <Component id="order1Numbertf" min="-2" pref="150" max="-2" attributes="0"/>
                       <EmptySpace max="32767" attributes="0"/>
-                      <Component id="jButton2" min="-2" pref="173" max="-2" attributes="0"/>
+                      <Component id="logOutb" min="-2" pref="173" max="-2" attributes="0"/>
                   </Group>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
@@ -201,8 +201,8 @@
               <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="1" attributes="0">
-                  <Component id="textField1" min="-2" max="-2" attributes="0"/>
-                  <Component id="jButton2" min="-2" max="-2" attributes="0"/>
+                  <Component id="order1Numbertf" min="-2" max="-2" attributes="0"/>
+                  <Component id="logOutb" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
@@ -213,20 +213,20 @@
               <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
-                      <Component id="textField2" alignment="1" max="32767" attributes="0"/>
-                      <Component id="textField11" alignment="1" max="32767" attributes="0"/>
+                      <Component id="order1code1tf" alignment="1" max="32767" attributes="0"/>
+                      <Component id="o1c1destf" alignment="1" max="32767" attributes="0"/>
                       <Component id="button1" alignment="1" pref="0" max="32767" attributes="0"/>
                       <Component id="button6" alignment="1" pref="0" max="32767" attributes="0"/>
                   </Group>
-                  <Component id="textField12" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Component id="o1c1quantf" alignment="0" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
                           <Component id="button2" alignment="1" min="-2" pref="20" max="-2" attributes="0"/>
-                          <Component id="textField7" alignment="0" max="32767" attributes="0"/>
-                          <Component id="textField3" alignment="0" max="32767" attributes="0"/>
+                          <Component id="o1c2destf" alignment="0" max="32767" attributes="0"/>
+                          <Component id="order1code2tf" alignment="0" max="32767" attributes="0"/>
                           <Component id="button7" alignment="0" pref="0" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
@@ -237,8 +237,8 @@
                                       <Group type="103" groupAlignment="0" attributes="0">
                                           <Component id="button4" alignment="0" min="-2" pref="20" max="-2" attributes="0"/>
                                           <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
-                                              <Component id="textField8" alignment="1" max="32767" attributes="0"/>
-                                              <Component id="textField4" alignment="1" min="-2" max="-2" attributes="0"/>
+                                              <Component id="o1c3destf" alignment="1" max="32767" attributes="0"/>
+                                              <Component id="order1code3tf" alignment="1" min="-2" max="-2" attributes="0"/>
                                           </Group>
                                           <Component id="button8" alignment="0" min="-2" pref="20" max="-2" attributes="0"/>
                                       </Group>
@@ -246,8 +246,8 @@
                                       <Group type="103" groupAlignment="0" attributes="0">
                                           <Group type="103" alignment="0" groupAlignment="0" attributes="0">
                                               <Group type="103" alignment="0" groupAlignment="0" attributes="0">
-                                                  <Component id="textField5" alignment="1" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="textField9" alignment="1" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="order1code4tf" alignment="1" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="o1c4destf" alignment="1" min="-2" max="-2" attributes="0"/>
                                               </Group>
                                               <Component id="button3" alignment="1" min="-2" pref="20" max="-2" attributes="0"/>
                                           </Group>
@@ -255,29 +255,29 @@
                                       </Group>
                                   </Group>
                                   <Group type="102" attributes="0">
-                                      <Component id="textField13" min="-2" max="-2" attributes="0"/>
+                                      <Component id="o1c3quantf" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
-                                      <Component id="textField15" min="-2" max="-2" attributes="0"/>
+                                      <Component id="o1c4quantf" min="-2" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                               <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                   <Component id="button10" alignment="0" pref="0" max="32767" attributes="0"/>
                                   <Component id="button5" alignment="0" pref="0" max="32767" attributes="0"/>
-                                  <Component id="textField6" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="textField10" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="order1code5tf" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="o1c5destf" alignment="0" min="-2" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace min="-2" pref="68" max="-2" attributes="0"/>
-                              <Component id="textField16" min="-2" max="-2" attributes="0"/>
+                              <Component id="o1c5quantf" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
-                  <Component id="textField27" min="-2" max="-2" attributes="0"/>
+                  <Component id="o1c2quantf" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace pref="37" max="32767" attributes="0"/>
-              <Component id="textField29" min="-2" max="-2" attributes="0"/>
+              <Component id="order2Numbertf" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jLabel6" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -287,20 +287,20 @@
               <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
-                      <Component id="textField17" alignment="1" max="32767" attributes="0"/>
-                      <Component id="textField26" alignment="1" max="32767" attributes="0"/>
+                      <Component id="order2code1tf" alignment="1" max="32767" attributes="0"/>
+                      <Component id="o2c1destf" alignment="1" max="32767" attributes="0"/>
                       <Component id="button19" alignment="1" pref="0" max="32767" attributes="0"/>
                       <Component id="button12" alignment="1" min="-2" pref="20" max="-2" attributes="0"/>
                   </Group>
-                  <Component id="textField23" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Component id="o2c1quantf" alignment="0" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
                           <Component id="button13" alignment="1" min="-2" pref="20" max="-2" attributes="0"/>
-                          <Component id="textField20" alignment="0" max="32767" attributes="0"/>
-                          <Component id="textField31" alignment="0" max="32767" attributes="0"/>
+                          <Component id="o2c2destf" alignment="0" max="32767" attributes="0"/>
+                          <Component id="order2code2tf" alignment="0" max="32767" attributes="0"/>
                           <Component id="button15" alignment="0" min="-2" pref="20" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
@@ -311,8 +311,8 @@
                                       <Group type="103" groupAlignment="0" attributes="0">
                                           <Component id="button14" alignment="0" min="-2" pref="20" max="-2" attributes="0"/>
                                           <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
-                                              <Component id="textField21" alignment="1" max="32767" attributes="0"/>
-                                              <Component id="textField32" alignment="1" min="-2" max="-2" attributes="0"/>
+                                              <Component id="o2c3destf" alignment="1" max="32767" attributes="0"/>
+                                              <Component id="order2code3tf" alignment="1" min="-2" max="-2" attributes="0"/>
                                           </Group>
                                           <Component id="button16" alignment="0" min="-2" pref="20" max="-2" attributes="0"/>
                                       </Group>
@@ -320,8 +320,8 @@
                                       <Group type="103" groupAlignment="0" attributes="0">
                                           <Group type="103" alignment="0" groupAlignment="0" attributes="0">
                                               <Group type="103" alignment="0" groupAlignment="0" attributes="0">
-                                                  <Component id="textField18" alignment="1" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="textField22" alignment="1" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="order2code4tf" alignment="1" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="o2c4destf" alignment="1" min="-2" max="-2" attributes="0"/>
                                               </Group>
                                               <Component id="button20" alignment="1" min="-2" pref="20" max="-2" attributes="0"/>
                                           </Group>
@@ -329,28 +329,28 @@
                                       </Group>
                                   </Group>
                                   <Group type="102" alignment="0" attributes="0">
-                                      <Component id="textField25" min="-2" max="-2" attributes="0"/>
+                                      <Component id="o2c3quantf" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
-                                      <Component id="textField28" min="-2" max="-2" attributes="0"/>
+                                      <Component id="o2c4quantf" min="-2" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                               <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                   <Component id="button18" alignment="0" pref="0" max="32767" attributes="0"/>
                                   <Component id="button11" alignment="0" pref="0" max="32767" attributes="0"/>
-                                  <Component id="textField19" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="textField24" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="order2code5tf" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="o2c5destf" alignment="0" min="-2" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace min="-2" pref="68" max="-2" attributes="0"/>
-                              <Component id="textField30" min="-2" max="-2" attributes="0"/>
+                              <Component id="o2c5quantf" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jButton1" min="-2" max="-2" attributes="0"/>
+                      <Component id="refreshb" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <Component id="textField14" min="-2" max="-2" attributes="0"/>
+                  <Component id="o2c2quantf" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
           </Group>
@@ -358,14 +358,14 @@
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Component class="java.awt.TextField" name="textField3">
+    <Component class="java.awt.TextField" name="order1code2tf">
     </Component>
     <Component class="java.awt.Button" name="button3">
       <Properties>
         <Property name="label" type="java.lang.String" value="?"/>
       </Properties>
     </Component>
-    <Component class="java.awt.TextField" name="textField4">
+    <Component class="java.awt.TextField" name="order1code3tf">
     </Component>
     <Component class="java.awt.Button" name="button5">
       <Properties>
@@ -377,51 +377,51 @@
         <Property name="label" type="java.lang.String" value="DONE"/>
       </Properties>
     </Component>
-    <Component class="java.awt.TextField" name="textField5">
+    <Component class="java.awt.TextField" name="order1code4tf">
     </Component>
     <Component class="java.awt.Button" name="button7">
       <Properties>
         <Property name="label" type="java.lang.String" value="DONE"/>
       </Properties>
     </Component>
-    <Component class="java.awt.TextField" name="textField6">
+    <Component class="java.awt.TextField" name="order1code5tf">
     </Component>
     <Component class="java.awt.Button" name="button8">
       <Properties>
         <Property name="label" type="java.lang.String" value="DONE"/>
       </Properties>
     </Component>
-    <Component class="java.awt.TextField" name="textField7">
+    <Component class="java.awt.TextField" name="o1c2destf">
     </Component>
     <Component class="java.awt.Button" name="button9">
       <Properties>
         <Property name="label" type="java.lang.String" value="DONE"/>
       </Properties>
     </Component>
-    <Component class="java.awt.TextField" name="textField8">
+    <Component class="java.awt.TextField" name="o1c3destf">
     </Component>
     <Component class="java.awt.Button" name="button10">
       <Properties>
         <Property name="label" type="java.lang.String" value="DONE"/>
       </Properties>
     </Component>
-    <Component class="java.awt.TextField" name="textField9">
+    <Component class="java.awt.TextField" name="o1c4destf">
     </Component>
-    <Component class="java.awt.TextField" name="textField12">
+    <Component class="java.awt.TextField" name="o1c1quantf">
       <Properties>
         <Property name="text" type="java.lang.String" value="1"/>
       </Properties>
     </Component>
-    <Component class="java.awt.TextField" name="textField10">
+    <Component class="java.awt.TextField" name="o1c5destf">
     </Component>
-    <Component class="java.awt.TextField" name="textField13">
+    <Component class="java.awt.TextField" name="o1c3quantf">
       <Properties>
         <Property name="text" type="java.lang.String" value="1"/>
       </Properties>
     </Component>
-    <Component class="java.awt.TextField" name="textField11">
+    <Component class="java.awt.TextField" name="o1c1destf">
     </Component>
-    <Component class="java.awt.TextField" name="textField15">
+    <Component class="java.awt.TextField" name="o1c4quantf">
       <Properties>
         <Property name="text" type="java.lang.String" value="1"/>
       </Properties>
@@ -434,12 +434,12 @@
         <Property name="text" type="java.lang.String" value="Kitchen Screen"/>
       </Properties>
     </Component>
-    <Component class="java.awt.TextField" name="textField1">
+    <Component class="java.awt.TextField" name="order1Numbertf">
       <Properties>
         <Property name="text" type="java.lang.String" value="Order#"/>
       </Properties>
     </Component>
-    <Component class="java.awt.TextField" name="textField16">
+    <Component class="java.awt.TextField" name="o1c5quantf">
       <Properties>
         <Property name="text" type="java.lang.String" value="1"/>
       </Properties>
@@ -469,7 +469,7 @@
         <Property name="text" type="java.lang.String" value="Code"/>
       </Properties>
     </Component>
-    <Component class="java.awt.TextField" name="textField2">
+    <Component class="java.awt.TextField" name="order1code1tf">
     </Component>
     <Component class="java.awt.Button" name="button4">
       <Properties>
@@ -501,68 +501,68 @@
         <Property name="text" type="java.lang.String" value="Code"/>
       </Properties>
     </Component>
-    <Component class="java.awt.TextField" name="textField17">
+    <Component class="java.awt.TextField" name="order2code1tf">
     </Component>
     <Component class="java.awt.Button" name="button14">
       <Properties>
         <Property name="label" type="java.lang.String" value="?"/>
       </Properties>
     </Component>
-    <Component class="java.awt.TextField" name="textField18">
+    <Component class="java.awt.TextField" name="order2code4tf">
     </Component>
     <Component class="java.awt.Button" name="button15">
       <Properties>
         <Property name="label" type="java.lang.String" value="DONE"/>
       </Properties>
     </Component>
-    <Component class="java.awt.TextField" name="textField19">
+    <Component class="java.awt.TextField" name="order2code5tf">
     </Component>
     <Component class="java.awt.Button" name="button16">
       <Properties>
         <Property name="label" type="java.lang.String" value="DONE"/>
       </Properties>
     </Component>
-    <Component class="java.awt.TextField" name="textField20">
+    <Component class="java.awt.TextField" name="o2c2destf">
     </Component>
     <Component class="java.awt.Button" name="button17">
       <Properties>
         <Property name="label" type="java.lang.String" value="DONE"/>
       </Properties>
     </Component>
-    <Component class="java.awt.TextField" name="textField21">
+    <Component class="java.awt.TextField" name="o2c3destf">
     </Component>
     <Component class="java.awt.Button" name="button18">
       <Properties>
         <Property name="label" type="java.lang.String" value="DONE"/>
       </Properties>
     </Component>
-    <Component class="java.awt.TextField" name="textField22">
+    <Component class="java.awt.TextField" name="o2c4destf">
     </Component>
-    <Component class="java.awt.TextField" name="textField23">
+    <Component class="java.awt.TextField" name="o2c1quantf">
       <Properties>
         <Property name="text" type="java.lang.String" value="1"/>
       </Properties>
     </Component>
-    <Component class="java.awt.TextField" name="textField24">
+    <Component class="java.awt.TextField" name="o2c5destf">
     </Component>
-    <Component class="java.awt.TextField" name="textField25">
+    <Component class="java.awt.TextField" name="o2c3quantf">
       <Properties>
         <Property name="text" type="java.lang.String" value="1"/>
       </Properties>
     </Component>
-    <Component class="java.awt.TextField" name="textField26">
+    <Component class="java.awt.TextField" name="o2c1destf">
     </Component>
-    <Component class="java.awt.TextField" name="textField28">
+    <Component class="java.awt.TextField" name="o2c4quantf">
       <Properties>
         <Property name="text" type="java.lang.String" value="1"/>
       </Properties>
     </Component>
-    <Component class="java.awt.TextField" name="textField29">
+    <Component class="java.awt.TextField" name="order2Numbertf">
       <Properties>
         <Property name="text" type="java.lang.String" value="Order#"/>
       </Properties>
     </Component>
-    <Component class="java.awt.TextField" name="textField30">
+    <Component class="java.awt.TextField" name="o2c5quantf">
       <Properties>
         <Property name="text" type="java.lang.String" value="1"/>
       </Properties>
@@ -577,34 +577,37 @@
         <Property name="label" type="java.lang.String" value="?"/>
       </Properties>
     </Component>
-    <Component class="java.awt.TextField" name="textField31">
+    <Component class="java.awt.TextField" name="order2code2tf">
     </Component>
     <Component class="java.awt.Button" name="button20">
       <Properties>
         <Property name="label" type="java.lang.String" value="?"/>
       </Properties>
     </Component>
-    <Component class="java.awt.TextField" name="textField32">
+    <Component class="java.awt.TextField" name="order2code3tf">
     </Component>
-    <Component class="javax.swing.JButton" name="jButton1">
+    <Component class="javax.swing.JButton" name="refreshb">
       <Properties>
         <Property name="text" type="java.lang.String" value="Refresh"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="refreshbActionPerformed"/>
+      </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="jButton2">
+    <Component class="javax.swing.JButton" name="logOutb">
       <Properties>
         <Property name="text" type="java.lang.String" value="Log Out"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton2ActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="logOutbActionPerformed"/>
       </Events>
     </Component>
-    <Component class="java.awt.TextField" name="textField14">
+    <Component class="java.awt.TextField" name="o2c2quantf">
       <Properties>
         <Property name="text" type="java.lang.String" value="1"/>
       </Properties>
     </Component>
-    <Component class="java.awt.TextField" name="textField27">
+    <Component class="java.awt.TextField" name="o1c2quantf">
       <Properties>
         <Property name="text" type="java.lang.String" value="1"/>
       </Properties>

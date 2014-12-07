@@ -35,10 +35,10 @@
                           <Group type="102" alignment="1" attributes="0">
                               <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="textField2" alignment="1" min="-2" pref="250" max="-2" attributes="0"/>
-                                  <Component id="textField3" alignment="1" min="-2" pref="250" max="-2" attributes="0"/>
-                                  <Component id="textField4" alignment="1" min="-2" pref="250" max="-2" attributes="0"/>
-                                  <Component id="textField5" alignment="1" min="-2" pref="250" max="-2" attributes="0"/>
+                                  <Component id="nametf" alignment="1" min="-2" pref="250" max="-2" attributes="0"/>
+                                  <Component id="addresstf" alignment="1" min="-2" pref="250" max="-2" attributes="0"/>
+                                  <Component id="phonetf" alignment="1" min="-2" pref="250" max="-2" attributes="0"/>
+                                  <Component id="tabtf" alignment="1" min="-2" pref="250" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                       </Group>
@@ -49,7 +49,7 @@
                           <Group type="102" attributes="0">
                               <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
                               <EmptySpace pref="26" max="32767" attributes="0"/>
-                              <Component id="textField1" min="-2" pref="250" max="-2" attributes="0"/>
+                              <Component id="custIDtf" min="-2" pref="250" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" attributes="0">
                               <Group type="103" groupAlignment="0" attributes="0">
@@ -61,7 +61,7 @@
                               <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
-                              <Component id="jButton1" min="-2" pref="180" max="-2" attributes="0"/>
+                              <Component id="addb" min="-2" pref="180" max="-2" attributes="0"/>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
                               <Component id="jButton2" max="32767" attributes="0"/>
                           </Group>
@@ -79,32 +79,32 @@
               <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="textField1" min="-2" max="-2" attributes="0"/>
+                  <Component id="custIDtf" min="-2" max="-2" attributes="0"/>
                   <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="textField2" min="-2" max="-2" attributes="0"/>
+                  <Component id="nametf" min="-2" max="-2" attributes="0"/>
                   <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="textField3" min="-2" max="-2" attributes="0"/>
+                  <Component id="addresstf" min="-2" max="-2" attributes="0"/>
                   <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="textField4" min="-2" max="-2" attributes="0"/>
+                  <Component id="phonetf" min="-2" max="-2" attributes="0"/>
                   <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="textField5" min="-2" max="-2" attributes="0"/>
+                  <Component id="tabtf" min="-2" max="-2" attributes="0"/>
                   <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="jButton1" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="addb" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="jButton2" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace pref="12" max="32767" attributes="0"/>
@@ -121,15 +121,15 @@
         <Property name="text" type="java.lang.String" value="Add Customer"/>
       </Properties>
     </Component>
-    <Component class="java.awt.TextField" name="textField1">
+    <Component class="java.awt.TextField" name="custIDtf">
     </Component>
-    <Component class="java.awt.TextField" name="textField2">
+    <Component class="java.awt.TextField" name="nametf">
     </Component>
-    <Component class="java.awt.TextField" name="textField3">
+    <Component class="java.awt.TextField" name="addresstf">
     </Component>
-    <Component class="java.awt.TextField" name="textField4">
+    <Component class="java.awt.TextField" name="phonetf">
     </Component>
-    <Component class="java.awt.TextField" name="textField5">
+    <Component class="java.awt.TextField" name="tabtf">
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel2">
       <Properties>
@@ -156,7 +156,7 @@
         <Property name="text" type="java.lang.String" value="Spend $"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JButton" name="jButton1">
+    <Component class="javax.swing.JButton" name="addb">
       <Properties>
         <Property name="text" type="java.lang.String" value="Add New Customer"/>
       </Properties>

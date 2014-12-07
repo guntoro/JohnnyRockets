@@ -38,28 +38,28 @@
                       </Group>
                       <EmptySpace max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                          <Component id="textField14" max="32767" attributes="0"/>
-                          <Component id="textField12" alignment="0" max="32767" attributes="0"/>
-                          <Component id="textField10" alignment="1" max="32767" attributes="0"/>
-                          <Component id="textField6" alignment="1" max="32767" attributes="0"/>
+                          <Component id="mayoStocktf" max="32767" attributes="0"/>
+                          <Component id="ketchupStocktf" alignment="0" max="32767" attributes="0"/>
+                          <Component id="lettuceStocktf" alignment="1" max="32767" attributes="0"/>
+                          <Component id="cheeseStocktf" alignment="1" max="32767" attributes="0"/>
                           <Component id="jLabel2" alignment="0" max="32767" attributes="0"/>
-                          <Component id="textField4" alignment="1" max="32767" attributes="0"/>
-                          <Component id="textField2" alignment="0" max="32767" attributes="0"/>
-                          <Component id="textField8" alignment="1" max="32767" attributes="0"/>
+                          <Component id="baconStocktf" alignment="1" max="32767" attributes="0"/>
+                          <Component id="bunStocktf" alignment="0" max="32767" attributes="0"/>
+                          <Component id="tomatoStocktf" alignment="1" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
                           <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
-                              <Component id="textField7" alignment="0" pref="46" max="32767" attributes="0"/>
-                              <Component id="textField5" alignment="0" max="32767" attributes="0"/>
-                              <Component id="textField3" alignment="0" max="32767" attributes="0"/>
-                              <Component id="textField1" alignment="0" max="32767" attributes="0"/>
+                              <Component id="tomatoAdd" alignment="0" pref="46" max="32767" attributes="0"/>
+                              <Component id="cheeseAdd" alignment="0" max="32767" attributes="0"/>
+                              <Component id="baconAdd" alignment="0" max="32767" attributes="0"/>
+                              <Component id="bunAdd" alignment="0" max="32767" attributes="0"/>
                           </Group>
                           <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
-                              <Component id="textField13" alignment="0" pref="46" max="32767" attributes="0"/>
-                              <Component id="textField11" alignment="0" max="32767" attributes="0"/>
-                              <Component id="textField9" alignment="0" max="32767" attributes="0"/>
+                              <Component id="mayoAdd" alignment="0" pref="46" max="32767" attributes="0"/>
+                              <Component id="ketchupAdd" alignment="0" max="32767" attributes="0"/>
+                              <Component id="lettuceAdd" alignment="0" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
@@ -68,7 +68,7 @@
                       <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
-                      <Component id="jButton1" min="-2" pref="150" max="-2" attributes="0"/>
+                      <Component id="updateb" min="-2" pref="150" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="jButton2" pref="120" max="32767" attributes="0"/>
                   </Group>
@@ -89,49 +89,49 @@
               </Group>
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="textField1" min="-2" max="-2" attributes="0"/>
-                  <Component id="textField2" min="-2" max="-2" attributes="0"/>
+                  <Component id="bunAdd" min="-2" max="-2" attributes="0"/>
+                  <Component id="bunStocktf" min="-2" max="-2" attributes="0"/>
                   <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="textField3" alignment="0" min="-2" max="-2" attributes="0"/>
-                  <Component id="textField4" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Component id="baconAdd" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Component id="baconStocktf" alignment="0" min="-2" max="-2" attributes="0"/>
                   <Component id="jLabel5" alignment="0" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="textField5" alignment="0" min="-2" max="-2" attributes="0"/>
-                  <Component id="textField6" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Component id="cheeseAdd" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Component id="cheeseStocktf" alignment="0" min="-2" max="-2" attributes="0"/>
                   <Component id="jLabel6" alignment="0" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="textField7" alignment="0" min="-2" max="-2" attributes="0"/>
-                  <Component id="textField8" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Component id="tomatoAdd" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Component id="tomatoStocktf" alignment="0" min="-2" max="-2" attributes="0"/>
                   <Component id="jLabel7" alignment="0" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="textField9" alignment="0" min="-2" max="-2" attributes="0"/>
-                  <Component id="textField10" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Component id="lettuceAdd" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Component id="lettuceStocktf" alignment="0" min="-2" max="-2" attributes="0"/>
                   <Component id="jLabel8" alignment="0" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="textField11" alignment="0" min="-2" max="-2" attributes="0"/>
-                  <Component id="textField12" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Component id="ketchupAdd" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Component id="ketchupStocktf" alignment="0" min="-2" max="-2" attributes="0"/>
                   <Component id="jLabel9" alignment="0" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="textField13" alignment="0" min="-2" max="-2" attributes="0"/>
-                  <Component id="textField14" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Component id="mayoAdd" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Component id="mayoStocktf" alignment="0" min="-2" max="-2" attributes="0"/>
                   <Component id="jLabel10" alignment="0" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="jButton1" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="updateb" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="jButton2" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="32767" attributes="0"/>
@@ -148,12 +148,21 @@
         <Property name="text" type="java.lang.String" value="Inventory Screen"/>
       </Properties>
     </Component>
-    <Component class="java.awt.TextField" name="textField1">
-    </Component>
-    <Component class="java.awt.TextField" name="textField2">
+    <Component class="java.awt.TextField" name="bunAdd">
       <Properties>
-        <Property name="text" type="java.lang.String" value="125"/>
+        <Property name="text" type="java.lang.String" value="0"/>
       </Properties>
+    </Component>
+    <Component class="java.awt.TextField" name="bunStocktf">
+      <Properties>
+        <Property name="editable" type="boolean" value="false"/>
+        <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+          <Connection code="Integer.toString(bunStock)" type="code"/>
+        </Property>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bunStocktfActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel2">
       <Properties>
@@ -176,11 +185,17 @@
         <Property name="text" type="java.lang.String" value="Bun"/>
       </Properties>
     </Component>
-    <Component class="java.awt.TextField" name="textField3">
-    </Component>
-    <Component class="java.awt.TextField" name="textField4">
+    <Component class="java.awt.TextField" name="baconAdd">
       <Properties>
-        <Property name="text" type="java.lang.String" value="75"/>
+        <Property name="text" type="java.lang.String" value="0"/>
+      </Properties>
+    </Component>
+    <Component class="java.awt.TextField" name="baconStocktf">
+      <Properties>
+        <Property name="editable" type="boolean" value="false"/>
+        <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+          <Connection code="Integer.toString(baconStock)" type="code"/>
+        </Property>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel5">
@@ -188,11 +203,17 @@
         <Property name="text" type="java.lang.String" value="Bacon"/>
       </Properties>
     </Component>
-    <Component class="java.awt.TextField" name="textField5">
-    </Component>
-    <Component class="java.awt.TextField" name="textField6">
+    <Component class="java.awt.TextField" name="cheeseAdd">
       <Properties>
-        <Property name="text" type="java.lang.String" value="80"/>
+        <Property name="text" type="java.lang.String" value="0"/>
+      </Properties>
+    </Component>
+    <Component class="java.awt.TextField" name="cheeseStocktf">
+      <Properties>
+        <Property name="editable" type="boolean" value="false"/>
+        <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+          <Connection code="Integer.toString(cheeseStock)" type="code"/>
+        </Property>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel6">
@@ -200,11 +221,17 @@
         <Property name="text" type="java.lang.String" value="Cheese"/>
       </Properties>
     </Component>
-    <Component class="java.awt.TextField" name="textField7">
-    </Component>
-    <Component class="java.awt.TextField" name="textField8">
+    <Component class="java.awt.TextField" name="tomatoAdd">
       <Properties>
-        <Property name="text" type="java.lang.String" value="60"/>
+        <Property name="text" type="java.lang.String" value="0"/>
+      </Properties>
+    </Component>
+    <Component class="java.awt.TextField" name="tomatoStocktf">
+      <Properties>
+        <Property name="editable" type="boolean" value="false"/>
+        <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+          <Connection code="Integer.toString(tomatoStock)" type="code"/>
+        </Property>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel7">
@@ -212,11 +239,17 @@
         <Property name="text" type="java.lang.String" value="Tomato"/>
       </Properties>
     </Component>
-    <Component class="java.awt.TextField" name="textField9">
-    </Component>
-    <Component class="java.awt.TextField" name="textField10">
+    <Component class="java.awt.TextField" name="lettuceAdd">
       <Properties>
-        <Property name="text" type="java.lang.String" value="60"/>
+        <Property name="text" type="java.lang.String" value="0"/>
+      </Properties>
+    </Component>
+    <Component class="java.awt.TextField" name="lettuceStocktf">
+      <Properties>
+        <Property name="editable" type="boolean" value="false"/>
+        <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+          <Connection code="Integer.toString(lettuceStock)" type="code"/>
+        </Property>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel8">
@@ -224,11 +257,17 @@
         <Property name="text" type="java.lang.String" value="Lettuce"/>
       </Properties>
     </Component>
-    <Component class="java.awt.TextField" name="textField11">
-    </Component>
-    <Component class="java.awt.TextField" name="textField12">
+    <Component class="java.awt.TextField" name="ketchupAdd">
       <Properties>
-        <Property name="text" type="java.lang.String" value="50"/>
+        <Property name="text" type="java.lang.String" value="0"/>
+      </Properties>
+    </Component>
+    <Component class="java.awt.TextField" name="ketchupStocktf">
+      <Properties>
+        <Property name="editable" type="boolean" value="false"/>
+        <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+          <Connection code="Integer.toString(ketchupStock)" type="code"/>
+        </Property>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel9">
@@ -236,11 +275,17 @@
         <Property name="text" type="java.lang.String" value="Ketchup"/>
       </Properties>
     </Component>
-    <Component class="java.awt.TextField" name="textField13">
-    </Component>
-    <Component class="java.awt.TextField" name="textField14">
+    <Component class="java.awt.TextField" name="mayoAdd">
       <Properties>
-        <Property name="text" type="java.lang.String" value="50"/>
+        <Property name="text" type="java.lang.String" value="0"/>
+      </Properties>
+    </Component>
+    <Component class="java.awt.TextField" name="mayoStocktf">
+      <Properties>
+        <Property name="editable" type="boolean" value="false"/>
+        <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+          <Connection code="Integer.toString(mayoStock)" type="code"/>
+        </Property>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel10">
@@ -248,10 +293,13 @@
         <Property name="text" type="java.lang.String" value="Mayonnaise"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JButton" name="jButton1">
+    <Component class="javax.swing.JButton" name="updateb">
       <Properties>
         <Property name="text" type="java.lang.String" value="Update Inventory"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="updatebActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="jButton2">
       <Properties>

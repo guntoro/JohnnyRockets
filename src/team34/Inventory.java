@@ -15,6 +15,15 @@ public class Inventory extends javax.swing.JFrame {
     /**
      * Creates new form Inventory
      */
+    
+    int bunStock = 18;
+    int baconStock = 10;
+    int cheeseStock = 30;
+    int tomatoStock = 25;
+    int lettuceStock = 15;
+    int ketchupStock = 25;
+    int mayoStock = 5;
+    
     public Inventory() {
         initComponents();
     }
@@ -29,30 +38,30 @@ public class Inventory extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        textField1 = new java.awt.TextField();
-        textField2 = new java.awt.TextField();
+        bunAdd = new java.awt.TextField();
+        bunStocktf = new java.awt.TextField();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        textField3 = new java.awt.TextField();
-        textField4 = new java.awt.TextField();
+        baconAdd = new java.awt.TextField();
+        baconStocktf = new java.awt.TextField();
         jLabel5 = new javax.swing.JLabel();
-        textField5 = new java.awt.TextField();
-        textField6 = new java.awt.TextField();
+        cheeseAdd = new java.awt.TextField();
+        cheeseStocktf = new java.awt.TextField();
         jLabel6 = new javax.swing.JLabel();
-        textField7 = new java.awt.TextField();
-        textField8 = new java.awt.TextField();
+        tomatoAdd = new java.awt.TextField();
+        tomatoStocktf = new java.awt.TextField();
         jLabel7 = new javax.swing.JLabel();
-        textField9 = new java.awt.TextField();
-        textField10 = new java.awt.TextField();
+        lettuceAdd = new java.awt.TextField();
+        lettuceStocktf = new java.awt.TextField();
         jLabel8 = new javax.swing.JLabel();
-        textField11 = new java.awt.TextField();
-        textField12 = new java.awt.TextField();
+        ketchupAdd = new java.awt.TextField();
+        ketchupStocktf = new java.awt.TextField();
         jLabel9 = new javax.swing.JLabel();
-        textField13 = new java.awt.TextField();
-        textField14 = new java.awt.TextField();
+        mayoAdd = new java.awt.TextField();
+        mayoStocktf = new java.awt.TextField();
         jLabel10 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        updateb = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -60,7 +69,15 @@ public class Inventory extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel1.setText("Inventory Screen");
 
-        textField2.setText("125");
+        bunAdd.setText("0");
+
+        bunStocktf.setEditable(false);
+        bunStocktf.setText(Integer.toString(bunStock));
+        bunStocktf.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bunStocktfActionPerformed(evt);
+            }
+        });
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel2.setText("In Stock");
@@ -70,31 +87,54 @@ public class Inventory extends javax.swing.JFrame {
 
         jLabel4.setText("Bun");
 
-        textField4.setText("75");
+        baconAdd.setText("0");
+
+        baconStocktf.setEditable(false);
+        baconStocktf.setText(Integer.toString(baconStock));
 
         jLabel5.setText("Bacon");
 
-        textField6.setText("80");
+        cheeseAdd.setText("0");
+
+        cheeseStocktf.setEditable(false);
+        cheeseStocktf.setText(Integer.toString(cheeseStock));
 
         jLabel6.setText("Cheese");
 
-        textField8.setText("60");
+        tomatoAdd.setText("0");
+
+        tomatoStocktf.setEditable(false);
+        tomatoStocktf.setText(Integer.toString(tomatoStock));
 
         jLabel7.setText("Tomato");
 
-        textField10.setText("60");
+        lettuceAdd.setText("0");
+
+        lettuceStocktf.setEditable(false);
+        lettuceStocktf.setText(Integer.toString(lettuceStock));
 
         jLabel8.setText("Lettuce");
 
-        textField12.setText("50");
+        ketchupAdd.setText("0");
+
+        ketchupStocktf.setEditable(false);
+        ketchupStocktf.setText(Integer.toString(ketchupStock));
 
         jLabel9.setText("Ketchup");
 
-        textField14.setText("50");
+        mayoAdd.setText("0");
+
+        mayoStocktf.setEditable(false);
+        mayoStocktf.setText(Integer.toString(mayoStock));
 
         jLabel10.setText("Mayonnaise");
 
-        jButton1.setText("Update Inventory");
+        updateb.setText("Update Inventory");
+        updateb.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                updatebActionPerformed(evt);
+            }
+        });
 
         jButton2.setText("Go Back");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -121,31 +161,31 @@ public class Inventory extends javax.swing.JFrame {
                             .addComponent(jLabel10))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(textField14, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(textField12, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(textField10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(textField6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(mayoStocktf, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(ketchupStocktf, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(lettuceStocktf, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(cheeseStocktf, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(textField4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(textField2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(textField8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(baconStocktf, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(bunStocktf, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(tomatoStocktf, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel3)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addComponent(textField7, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 46, Short.MAX_VALUE)
-                                .addComponent(textField5, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(textField3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(textField1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addComponent(tomatoAdd, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 46, Short.MAX_VALUE)
+                                .addComponent(cheeseAdd, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(baconAdd, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(bunAdd, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addComponent(textField13, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 46, Short.MAX_VALUE)
-                                .addComponent(textField11, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(textField9, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                                .addComponent(mayoAdd, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 46, Short.MAX_VALUE)
+                                .addComponent(ketchupAdd, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(lettuceAdd, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel1)
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(updateb, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, 120, Short.MAX_VALUE)))
                 .addContainerGap())
@@ -161,52 +201,129 @@ public class Inventory extends javax.swing.JFrame {
                     .addComponent(jLabel3))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(textField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(textField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(bunAdd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(bunStocktf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel4))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(textField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(textField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(baconAdd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(baconStocktf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel5))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(textField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(textField6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cheeseAdd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cheeseStocktf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel6))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(textField7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(textField8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(tomatoAdd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(tomatoStocktf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel7))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(textField9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(textField10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lettuceAdd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lettuceStocktf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel8))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(textField11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(textField12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(ketchupAdd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(ketchupStocktf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel9))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(textField13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(textField14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(mayoAdd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(mayoStocktf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel10))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
+                    .addComponent(updateb)
                     .addComponent(jButton2))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+ 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         this.setVisible(false);
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void bunStocktfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bunStocktfActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_bunStocktfActionPerformed
+
+    private void updatebActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updatebActionPerformed
+        
+        try {
+            Integer.parseInt(bunAdd.getText());
+            bunStock = bunStock + Integer.parseInt(bunAdd.getText());
+            bunStocktf.setText(Integer.toString(bunStock));
+            bunAdd.setText("0");
+        }
+        catch (NumberFormatException a){
+            bunAdd.setText("Error");
+        }
+        
+        try {
+            Integer.parseInt(baconAdd.getText());
+            baconStock = baconStock + Integer.parseInt(baconAdd.getText());
+            baconStocktf.setText(Integer.toString(baconStock));
+            baconAdd.setText("0");
+        }
+        catch (NumberFormatException b){
+            baconAdd.setText("Error");
+        }
+        
+        try {
+            Integer.parseInt(cheeseAdd.getText());
+            cheeseStock = cheeseStock + Integer.parseInt(cheeseAdd.getText());
+            cheeseStocktf.setText(Integer.toString(cheeseStock));
+            cheeseAdd.setText("0");
+        }
+        catch (NumberFormatException c){
+            cheeseAdd.setText("Error");
+        }
+        
+        try {
+            Integer.parseInt(tomatoAdd.getText());
+            tomatoStock = tomatoStock + Integer.parseInt(tomatoAdd.getText());
+            tomatoStocktf.setText(Integer.toString(tomatoStock));
+            tomatoAdd.setText("0");
+        }
+        catch (NumberFormatException d){
+            tomatoAdd.setText("Error");
+        }
+        
+        try {
+            Integer.parseInt(lettuceAdd.getText());
+            lettuceStock = lettuceStock + Integer.parseInt(lettuceAdd.getText());
+            lettuceStocktf.setText(Integer.toString(lettuceStock));
+            lettuceAdd.setText("0");
+        }
+        catch (NumberFormatException e){
+            lettuceAdd.setText("Error");
+        }
+        
+        try {
+            Integer.parseInt(ketchupAdd.getText());
+            ketchupStock = ketchupStock + Integer.parseInt(ketchupAdd.getText());
+            ketchupStocktf.setText(Integer.toString(ketchupStock));
+            ketchupAdd.setText("0");
+        }
+        catch (NumberFormatException f){
+            ketchupAdd.setText("Error");
+        }
+        
+        try {
+            Integer.parseInt(mayoAdd.getText());
+            mayoStock = mayoStock + Integer.parseInt(mayoAdd.getText());
+            mayoStocktf.setText(Integer.toString(mayoStock));
+            mayoAdd.setText("0");
+        }
+        catch (NumberFormatException g){
+            mayoAdd.setText("Error");
+        }
+    }//GEN-LAST:event_updatebActionPerformed
 
     /**
      * @param args the command line arguments
@@ -234,6 +351,7 @@ public class Inventory extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(Inventory.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
+        //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -244,7 +362,12 @@ public class Inventory extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
+    private java.awt.TextField baconAdd;
+    private java.awt.TextField baconStocktf;
+    private java.awt.TextField bunAdd;
+    private java.awt.TextField bunStocktf;
+    private java.awt.TextField cheeseAdd;
+    private java.awt.TextField cheeseStocktf;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -256,19 +379,14 @@ public class Inventory extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private java.awt.TextField textField1;
-    private java.awt.TextField textField10;
-    private java.awt.TextField textField11;
-    private java.awt.TextField textField12;
-    private java.awt.TextField textField13;
-    private java.awt.TextField textField14;
-    private java.awt.TextField textField2;
-    private java.awt.TextField textField3;
-    private java.awt.TextField textField4;
-    private java.awt.TextField textField5;
-    private java.awt.TextField textField6;
-    private java.awt.TextField textField7;
-    private java.awt.TextField textField8;
-    private java.awt.TextField textField9;
+    private java.awt.TextField ketchupAdd;
+    private java.awt.TextField ketchupStocktf;
+    private java.awt.TextField lettuceAdd;
+    private java.awt.TextField lettuceStocktf;
+    private java.awt.TextField mayoAdd;
+    private java.awt.TextField mayoStocktf;
+    private java.awt.TextField tomatoAdd;
+    private java.awt.TextField tomatoStocktf;
+    private javax.swing.JButton updateb;
     // End of variables declaration//GEN-END:variables
 }
