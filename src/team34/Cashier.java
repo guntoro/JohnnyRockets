@@ -8,35 +8,48 @@ package team34;
 /**
  *
  * @author Owner
- */
-    
+ */    
 
 public class Cashier extends javax.swing.JFrame {    
     /**
      * Creates new form Cashier
      */
     
-    String orderDetail="";
-    String [][] restaurantMenu = {
+    String Size, orderDetail="";    
+    int foundInMenu=0;
+    int indexOfOrderNumber=0;
+    int currentItemNumber=0;
+    int indexOfItem;
+    private static final int MAX_NEWORDERS = 5;
+    Double TotalOrder = 0.00;
+    String cOrderID, cOrderDate, cOrderCustomerID, cItemCode1, cQ1, cItemCode2, cQ2, cItemCode3, cQ3, cItemCode4, cQ4, cItemCode5, cQ5, cTotalCost;
+    
+    public String [][] restaurantMenu = {
         {"1001","Chicken Nugget     ", "2.00"},
-        {"1002","Fries              ", "2.00"},
-        {"1003","Salad              ", "3.00"},
+        {"1002","Fries              ", "2.75"},
+        {"1003","Salad              ", "3.50"},
         {"1004","Cheese Burger      ", "2.00"},
-        {"1005","Bacon Cheese Burger", "2.00"},
+        {"1005","Bacon Cheese Burger", "2.75"},
         {"1006","Hamburger          ", "2.00"},
         {"1007","Soda               ", "1.00"},
         {"1008","Tea                ", "1.25"},
         {"1009","Coffee             ", "1.50"},
-        };
+        };    
     
+    public String [][] customerOrders = {
+        {"","","","","","","","","","","","","",""},
+        {"","","","","","","","","","","","","",""},
+        {"","","","","","","","","","","","","",""},
+        {"","","","","","","","","","","","","",""},
+        {"","","","","","","","","","","","","",""},
+        //{cOrderID, cOrderDate, cOrderCustomerID, cItemCode1, cQ1, cItemCode2, cQ2, cItemCode3, cQ3, cItemCode4, cQ4, cItemCode5, cQ5, cTotalCost},
+    };
     
     public Cashier() {        
         initComponents();
         jbtAddItem.setEnabled(false);        
-    }
+    }  
     
-    
-
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -65,7 +78,7 @@ public class Cashier extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         jtaOrderDetail = new javax.swing.JTextArea();
         jLabel9 = new javax.swing.JLabel();
-        jTextField4 = new javax.swing.JTextField();
+        jtfTotalOrder = new javax.swing.JTextField();
         jbtConfirmOrder = new javax.swing.JButton();
         jbtAddItem = new javax.swing.JButton();
 
@@ -136,13 +149,12 @@ public class Cashier extends javax.swing.JFrame {
         jLabel8.setText("$");
 
         jtaOrderDetail.setColumns(20);
+        jtaOrderDetail.setFont(new java.awt.Font("Courier New", 0, 12)); // NOI18N
         jtaOrderDetail.setRows(5);
         jScrollPane1.setViewportView(jtaOrderDetail);
 
         jLabel9.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel9.setText("Total Order $");
-
-        jTextField4.setText("11.50");
 
         jbtConfirmOrder.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jbtConfirmOrder.setForeground(new java.awt.Color(0, 0, 102));
@@ -180,7 +192,7 @@ public class Cashier extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(jLabel9)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(jtfTotalOrder, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel2)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -255,7 +267,7 @@ public class Cashier extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(14, 14, 14)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jtfTotalOrder, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel9))
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
@@ -276,8 +288,7 @@ public class Cashier extends javax.swing.JFrame {
 
     private void jbtAddNewCustomerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtAddNewCustomerActionPerformed
         AddCustomer s1 = new AddCustomer();
-        s1.setVisible(true);
-         
+        s1.setVisible(true);         
     }//GEN-LAST:event_jbtAddNewCustomerActionPerformed
 
     private void jbtLogoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtLogoutActionPerformed
@@ -287,7 +298,11 @@ public class Cashier extends javax.swing.JFrame {
     }//GEN-LAST:event_jbtLogoutActionPerformed
 
     private void jcbNewItemQuantityActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jcbNewItemQuantityActionPerformed
-        // TODO add your handling code here:
+        // TODO add your handling code here:        
+        Double x;
+        x = Double.valueOf(restaurantMenu[foundInMenu][2]);
+        String y = (String)jcbNewItemQuantity.getSelectedItem();
+        jtfNewItemPrice.setText(String.valueOf(x*(Double.valueOf(y))));        
     }//GEN-LAST:event_jcbNewItemQuantityActionPerformed
     
     private void jtfNewItemDescriptionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtfNewItemDescriptionActionPerformed
@@ -295,15 +310,45 @@ public class Cashier extends javax.swing.JFrame {
     }//GEN-LAST:event_jtfNewItemDescriptionActionPerformed
         
     private void jtfNewItemCodeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtfNewItemCodeActionPerformed
-        // TODO add your handling code here:        
-        
-        jtfNewItemDescription.setText("Cheese Burger");
-        jtfNewItemPrice.setText("2.00");
-        jbtAddItem.setEnabled(true);        
+        // TODO add your handling code here:         
+        for (int i = 0; i < 9; i++) {
+            if (jtfNewItemCode.getText().equals(restaurantMenu[i][0])){
+                foundInMenu=i;
+                if (jtfNewItemCode.getText().equals("1007")){
+                    Drink s3 = new Drink();
+                    s3.setVisible(true);                    
+                }
+                i=10;
+                jbtAddItem.setEnabled(true);
+            }                
+            else foundInMenu=99;
+        }        
+        if (foundInMenu<99) {            
+            jtfNewItemDescription.setText(restaurantMenu[foundInMenu][1]);
+            jtfNewItemPrice.setText(restaurantMenu[foundInMenu][2]);            
+        }
+            else {
+            jtfNewItemDescription.setText("Item Code NOT FOUND");
+            jbtAddItem.setEnabled(false); 
+        }      
     }//GEN-LAST:event_jtfNewItemCodeActionPerformed
-
+     
     private void jbtConfirmOrderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtConfirmOrderActionPerformed
         // TODO add your handling code here:
+        for (int i=0; i<5; i++){
+            for (int j=0; j<13; j++){
+                System.out.print(customerOrders[i][j]+", ");
+            }
+            System.out.println();
+        }
+        jtfCustomerID.setText("");
+        jtfOrderNumber.setText("");
+        jtaOrderDetail.setText("");
+        jtfTotalOrder.setText("");
+        orderDetail="";
+        indexOfOrderNumber++;
+        indexOfItem=0;
+        
     }//GEN-LAST:event_jbtConfirmOrderActionPerformed
 
     private void jtfOrderNumberActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtfOrderNumberActionPerformed
@@ -313,14 +358,54 @@ public class Cashier extends javax.swing.JFrame {
     private void jbtAddItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtAddItemActionPerformed
         // TODO add your handling code here:
         jbtAddItem.setEnabled(false);
-        orderDetail=(orderDetail+jtfNewItemCode.getText()+ "\t" + jtfNewItemDescription.getText() + "\t\t" + jcbNewItemQuantity.getSelectedItem()+ "\t" + jtfNewItemPrice.getText()+ "\n");
+        Size = Drink.sodaSize;
+        if (jtfNewItemCode.getText().equals("1007")){
+            jtfNewItemPrice.setText(Drink.sodaPrice);
+            orderDetail=(orderDetail+jtfNewItemCode.getText()+ "\t" + jtfNewItemDescription.getText()+Size + "\t" + jcbNewItemQuantity.getSelectedItem()+ "\t" + jtfNewItemPrice.getText()+ "\n");
+        }
+        else 
+            orderDetail=(orderDetail+jtfNewItemCode.getText()+ "\t" + jtfNewItemDescription.getText() + "\t" + jcbNewItemQuantity.getSelectedItem()+ "\t" + jtfNewItemPrice.getText()+ "\n");
         jtaOrderDetail.setText(orderDetail);
+        TotalOrder = TotalOrder + Double.valueOf(jtfNewItemPrice.getText());
+        jtfTotalOrder.setText(String.valueOf(TotalOrder));
+        recordOneOrderDetail(jtfOrderNumber.getText(), "20141208",jtfCustomerID.getText(), jtfNewItemCode.getText(),"11111111", String.valueOf(TotalOrder), indexOfItem); //change 11111111 with jcbNewItemQuantity.getSelectedItem()
         jtfNewItemCode.setText("");
         jtfNewItemDescription.setText("");
-        
-        
+        jcbNewItemQuantity.setSelectedItem("1");
+        jtfNewItemPrice.setText("");
+        Drink.sodaSize = "";
+        indexOfItem++;
     }//GEN-LAST:event_jbtAddItemActionPerformed
 
+    public  void recordOneOrderDetail(String xOrderID, String xOrderDate, String xOrderCustomerID, String xItemCode, String xQn, String xTotalCost, int xIndexOfItem){
+        
+        //{cOrderID, cOrderDate, cOrderCustomerID, cItemCode1, cQ1, cItemCode2, cQ2, cItemCode3, cQ3, cItemCode4, cQ4, cItemCode5, cQ5, cTotalCost},
+        customerOrders[indexOfOrderNumber][0] = xOrderID;
+        customerOrders[indexOfOrderNumber][1] = xOrderDate;
+        customerOrders[indexOfOrderNumber][2] = xOrderCustomerID;
+        if (xIndexOfItem==0){
+            customerOrders[indexOfOrderNumber][3] = xItemCode;
+            customerOrders[indexOfOrderNumber][4] = xQn;
+        }
+        if (xIndexOfItem==1){
+            customerOrders[indexOfOrderNumber][5] = xItemCode;
+            customerOrders[indexOfOrderNumber][6] = xQn;
+        }
+        if (xIndexOfItem==2){
+            customerOrders[indexOfOrderNumber][7] = xItemCode;
+            customerOrders[indexOfOrderNumber][8] = xQn;
+        }
+        if (xIndexOfItem==3){
+            customerOrders[indexOfOrderNumber][9] = xItemCode;
+            customerOrders[indexOfOrderNumber][10] = xQn;
+        }
+        if (xIndexOfItem==4){
+            customerOrders[indexOfOrderNumber][11] = xItemCode;
+            customerOrders[indexOfOrderNumber][12] = xQn;
+        }
+        customerOrders[indexOfOrderNumber][12] = xTotalCost;
+    }
+    
     /**
      * @param args the command line arguments
      */
@@ -369,7 +454,6 @@ public class Cashier extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextField jTextField4;
     private javax.swing.JButton jbtAddItem;
     private javax.swing.JButton jbtAddNewCustomer;
     private javax.swing.JButton jbtConfirmOrder;
@@ -381,5 +465,6 @@ public class Cashier extends javax.swing.JFrame {
     private javax.swing.JTextField jtfNewItemDescription;
     private javax.swing.JTextField jtfNewItemPrice;
     private javax.swing.JTextField jtfOrderNumber;
+    private javax.swing.JTextField jtfTotalOrder;
     // End of variables declaration//GEN-END:variables
 }
