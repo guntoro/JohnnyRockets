@@ -1,11 +1,8 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 
 package team34;
 
+import java.sql.*;
+import javax.swing.JOptionPane;
 /**
  *
  * @author Daniel2
@@ -31,6 +28,15 @@ public class UpdateCustomer extends javax.swing.JFrame {
         String address0003 = "632 Applewood Dr";
         String phone0003 = "900-800-9876";
         String tab0003 = "$10.08";
+        
+        Connection con;
+        Statement st;
+        ResultSet rs;
+        
+       
+        
+        
+       
         
     public UpdateCustomer() {
         initComponents();
@@ -193,7 +199,16 @@ public class UpdateCustomer extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void searchbActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchbActionPerformed
+        
+        String lastName = custIDtf.getText();
+        
+        
+         
+         // if last name was input, search for it; otherwise,
+         // do nothing
        
+        
+        /*
         nametf.setText("ID not found in records.");
         addresstf.setText("");
         phonetf.setText("");
@@ -222,11 +237,34 @@ public class UpdateCustomer extends javax.swing.JFrame {
             phonetf.setText(phone0003);
             tabtf.setText(tab0003);
         }
-        
+        */
+             
     }//GEN-LAST:event_searchbActionPerformed
 
     private void updatebActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updatebActionPerformed
-        if (custIDtf.getText().equals(person1))
+        
+        connect();
+        
+        String name = nametf.getText();
+        String address = addresstf.getText();
+        String phoneNumber = phonetf.getText();
+        String tab = tabtf.getText();
+        
+        try{
+            
+            rs.updateString("Name", name);
+            rs.updateString("Address", address);
+            rs.updateString("Phone", phoneNumber);
+            rs.updateString("Spending", tab);
+            rs.updateRow();
+            
+            JOptionPane.showMessageDialog(null, "Record successfully updated!");
+            
+        }catch(Exception ex)
+        {
+            
+        }
+        /*if (custIDtf.getText().equals(person1))
         {
             name0001 = nametf.getText();
             address0001 = addresstf.getText();
@@ -249,11 +287,48 @@ public class UpdateCustomer extends javax.swing.JFrame {
             phone0003 = phonetf.getText();
             tab0003 = tabtf.getText();
         }
+        */
+        
     }//GEN-LAST:event_updatebActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
+    
+    
+    public void connect()
+    {
+        try{
+            
+            String driver = "sun.jbdc.odbc.JdbcOdbcDriver";
+            Class.forName(driver);
+            String database = "jdbc:odbc:RestaurantDB";
+            con = DriverManager.getConnection(database);
+            st = con.createStatement();
+            String sql = "select * from Customers";
+            rs = st.executeQuery(sql);
+            
+            /*
+            while(rs.next())
+            {
+                String customerID = rs.getString("CustomerID");
+                String name = rs.getString("Name");
+                String address = rs.getString("Address");
+                String phone = rs.getString("Phone");
+                String email = rs.getString("Email");
+                String tab = rs.getString("Spending");
+                
+                nametf.setText(name);
+                addresstf.setText(address);
+                phonetf.setText(phone);
+                tabtf.setText(tab);
+                
+            }
+            */
+        }catch (Exception ex){
+            
+        }
+    }
+    
+   
+    
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -279,6 +354,8 @@ public class UpdateCustomer extends javax.swing.JFrame {
         //</editor-fold>
         //</editor-fold>
 
+        new UpdateCustomer();
+        
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {

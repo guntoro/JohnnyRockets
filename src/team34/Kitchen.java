@@ -6,6 +6,11 @@
 
 package team34;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.Statement;
+
 /**
  *
  * @author Daniel2
@@ -31,6 +36,27 @@ public class Kitchen extends javax.swing.JFrame {
     String order1 = "0001";
     String order2 = "0002";
     String order3 = "0003";
+    
+    Connection con;
+    Statement st;
+    ResultSet rs;
+    
+    public String [][] restaurantMenu = {
+        {"1001","Chicken Nugget     ", "2.00"},
+        {"1002","Fries              ", "2.75"},
+        {"1003","Salad              ", "3.50"},
+        {"1004","Cheese Burger      ", "2.00"},
+        {"1005","Bacon Cheese Burger", "2.75"},
+        {"1006","Hamburger          ", "2.00"},
+        {"1007","Soda               ", "1.00"},
+        {"1008","Tea                ", "1.25"},
+        {"1009","Coffee             ", "1.50"},
+        };
+    
+    public String [][] customerOrders = Cashier.customerOrders;
+        
+    public String[] items = new String[]{"", "", "", "", ""};
+    
     
     public Kitchen() {
         initComponents();
@@ -106,22 +132,39 @@ public class Kitchen extends javax.swing.JFrame {
         logOutb = new javax.swing.JButton();
         o2c2quantf = new java.awt.TextField();
         o1c2quantf = new java.awt.TextField();
+        jButton1 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         button3.setLabel("?");
+        button3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                button3ActionPerformed(evt);
+            }
+        });
 
         button5.setLabel("?");
+        button5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                button5ActionPerformed(evt);
+            }
+        });
 
-        button6.setLabel("DONE");
+        button6.setLabel("CHK");
+        button6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                button6ActionPerformed(evt);
+            }
+        });
 
-        button7.setLabel("DONE");
+        button7.setLabel("CHK");
 
-        button8.setLabel("DONE");
+        button8.setLabel("CHK");
 
-        button9.setLabel("DONE");
+        button9.setLabel("CHK");
 
-        button10.setLabel("DONE");
+        button10.setLabel("CHK");
 
         o1c1quantf.setText("1");
 
@@ -139,34 +182,64 @@ public class Kitchen extends javax.swing.JFrame {
         jLabel3.setText("Description");
 
         button1.setLabel("?");
+        button1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                button1ActionPerformed(evt);
+            }
+        });
 
         jLabel4.setText("Quantity");
 
         button2.setLabel("?");
+        button2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                button2ActionPerformed(evt);
+            }
+        });
 
         jLabel2.setText("Code");
 
         button4.setLabel("?");
+        button4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                button4ActionPerformed(evt);
+            }
+        });
 
         button11.setLabel("?");
+        button11.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                button11ActionPerformed(evt);
+            }
+        });
 
-        button12.setLabel("DONE");
+        button12.setLabel("CHK");
 
         jLabel5.setText("Quantity");
 
         button13.setLabel("?");
+        button13.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                button13ActionPerformed(evt);
+            }
+        });
 
         jLabel6.setText("Code");
 
         button14.setLabel("?");
+        button14.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                button14ActionPerformed(evt);
+            }
+        });
 
-        button15.setLabel("DONE");
+        button15.setLabel("CHK");
 
-        button16.setLabel("DONE");
+        button16.setLabel("CHK");
 
-        button17.setLabel("DONE");
+        button17.setLabel("CHK");
 
-        button18.setLabel("DONE");
+        button18.setLabel("CHK");
 
         o2c1quantf.setText("1");
 
@@ -181,8 +254,18 @@ public class Kitchen extends javax.swing.JFrame {
         jLabel7.setText("Description");
 
         button19.setLabel("?");
+        button19.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                button19ActionPerformed(evt);
+            }
+        });
 
         button20.setLabel("?");
+        button20.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                button20ActionPerformed(evt);
+            }
+        });
 
         refreshb.setText("Refresh");
         refreshb.addActionListener(new java.awt.event.ActionListener() {
@@ -202,6 +285,15 @@ public class Kitchen extends javax.swing.JFrame {
 
         o1c2quantf.setText("1");
 
+        jButton1.setText("ALL DONE");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
+        jButton2.setText("ALL DONE");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -211,6 +303,13 @@ public class Kitchen extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(refreshb, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
+                        .addComponent(order2Numbertf, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(order1Numbertf, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(logOutb, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jLabel1)
                             .addGroup(layout.createSequentialGroup()
@@ -248,20 +347,8 @@ public class Kitchen extends javax.swing.JFrame {
                                         .addComponent(o1c1destf, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(button1, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 28, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 37, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(o1c1quantf, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(button6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(o1c2quantf, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(button7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(o1c3quantf, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(button8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                 .addComponent(o1c4quantf, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -270,8 +357,20 @@ public class Kitchen extends javax.swing.JFrame {
                                 .addComponent(o1c5quantf, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(button10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jLabel4)))
-                    .addGroup(layout.createSequentialGroup()
+                            .addComponent(jLabel4)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(o1c1quantf, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                        .addComponent(o1c2quantf, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(o1c3quantf, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(button8, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(button7, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(button6, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(jButton1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(order2code2tf, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -330,14 +429,8 @@ public class Kitchen extends javax.swing.JFrame {
                                 .addComponent(o2c5quantf, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(button18, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jLabel5)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(order2Numbertf, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(order1Numbertf, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(logOutb, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(jLabel5)
+                            .addComponent(jButton2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -403,7 +496,9 @@ public class Kitchen extends javax.swing.JFrame {
                                 .addGap(68, 68, 68)
                                 .addComponent(o1c5quantf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addComponent(o1c2quantf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 37, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jButton1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(order2Numbertf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -457,10 +552,12 @@ public class Kitchen extends javax.swing.JFrame {
                                     .addComponent(o2c5destf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(68, 68, 68)
-                                .addComponent(o2c5quantf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(refreshb))
+                                .addComponent(o2c5quantf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addComponent(o2c2quantf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jButton2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(refreshb)
                 .addGap(21, 21, 21))
         );
 
@@ -475,22 +572,683 @@ public class Kitchen extends javax.swing.JFrame {
     }//GEN-LAST:event_logOutbActionPerformed
 
     private void refreshbActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_refreshbActionPerformed
-        order1Numbertf.setText(order1);
-        order1code1tf.setText("A3");
-        order1code2tf.setText("C2");
-        order1code3tf.setText("E1");
-        o1c1destf.setText(baconCheeseburger);
-        o1c2destf.setText(curlyFries);
-        o1c3destf.setText(pepsi);
-        order2Numbertf.setText(order2);
-        order2code1tf.setText("A1");
-        order2code2tf.setText("E2");
-        o2c1destf.setText(hamburger);
-        o2c2destf.setText(coke);
         
-        //Set all to call database.
+        /*for (int i=0; i<5; i++){
+            for (int j=0; j<13; j++){
+                System.out.print(customerOrders[i][j]+", ");
+            }
+            System.out.println();
+        }
+        */
+        
+        order1Numbertf.setText(customerOrders[0][0]);
+        order1code1tf.setText(customerOrders[0][3]);
+        order1code2tf.setText(customerOrders[0][5]);
+        order1code3tf.setText(customerOrders[0][7]);
+        order1code4tf.setText(customerOrders[0][9]);
+        order1code5tf.setText(customerOrders[0][11]);
+        
+        order2Numbertf.setText(customerOrders[1][0]);
+        order2code1tf.setText(customerOrders[1][3]);
+        order2code2tf.setText(customerOrders[1][5]);
+        order2code3tf.setText(customerOrders[1][7]);
+        order2code4tf.setText(customerOrders[1][9]);
+        order2code5tf.setText(customerOrders[1][11]);
+        
+        int m;
+        
+        
+        /*for (m = 0; m > 9; m++)
+        {
+            if (order1code1tf.getText().equals("100" + m))
+            {
+                o1c1destf.setText(restaurantMenu[m][0]);
+            }
+            
+            if (order1code2tf.getText().equals("100" + m))
+            {
+                o1c2destf.setText(restaurantMenu[m][0]);
+            }
+            
+            if (order1code3tf.getText().equals("100" + m))
+            {
+                o1c3destf.setText(restaurantMenu[m][0]);
+            }
+            
+            if (order1code4tf.getText().equals("100" + m))
+            {
+                o1c4destf.setText(restaurantMenu[m][0]);
+            }
+            
+            if (order1code5tf.getText().equals("100" + m))
+            {
+                o1c5destf.setText(restaurantMenu[m][0]);
+            }
+        }
+        */
+        
+    int j = 0;
+    
+    /*for (int i = 3; i < 11; i = i + 2) 
+    {
+       if (customerOrders[0][i].equals("1001"))
+       {
+            items[j].equals("Chicken Nugget"); 
+       }
+       
+       if (customerOrders[0][i].equals("1002"))
+       {
+            items[j].equals("Fries");                    
+       }
+       
+       if (customerOrders[0][i].equals("1003"))
+       {
+            items[j].equals("Salad");                    
+       }
+       
+       if (customerOrders[0][i].equals("1004"))
+       {
+            items[j].equals("Cheese Burger");                    
+       }
+       
+       if (customerOrders[0][i].equals("1005"))
+       {
+            items[j].equals("Bacon Cheese Burger");                    
+       }
+       
+       if (customerOrders[0][i].equals("1006"))
+       {
+            items[j].equals("Hamburger");                    
+       }
+       
+       if (customerOrders[0][i].equals("1007"))
+       {
+            items[j].equals("Soda");                    
+       }
+       
+       if (customerOrders[0][i].equals("1008"))
+       {
+            items[j].equals("Tea");                    
+       }
+       
+       if (customerOrders[0][i].equals("1009"))
+       {
+            items[j].equals("Coffee");                    
+       }
+       
+       else
+       {
+           items[j].equals("Error occurred.");
+       }
+       
+       System.out.println(items[j]);
+       j++;
+    }
+    */
+    
+    /*
+    o1c1destf.setText(items[0]);
+    o1c2destf.setText(items[1]);
+    o1c3destf.setText(items[2]);
+    o1c4destf.setText(items[3]);
+    o1c5destf.setText(items[4]);
+    */
+       
     }//GEN-LAST:event_refreshbActionPerformed
 
+    private void button6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button6ActionPerformed
+        
+        
+    }//GEN-LAST:event_button6ActionPerformed
+
+    private void button1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button1ActionPerformed
+        if (order1code1tf.getText().equals("1001"))
+        {
+            o1c1destf.setText("Chicken Nugget");
+        }
+        
+        if (order1code1tf.getText().equals("1002"))
+        {
+            o1c1destf.setText("Fries");
+        }
+        
+        if (order1code1tf.getText().equals("1003"))
+        {
+            o1c1destf.setText("Salad");
+        }
+        
+        if (order1code1tf.getText().equals("1004"))
+        {
+            o1c1destf.setText("Cheese Burger");
+        }
+        
+        if (order1code1tf.getText().equals("1005"))
+        {
+            o1c1destf.setText("Bacon Cheese Burger");
+        }
+        
+        if (order1code1tf.getText().equals("1006"))
+        {
+            o1c1destf.setText("Hamburger");
+        }
+        
+        if (order1code1tf.getText().equals("1007"))
+        {
+            o1c1destf.setText("Soda");
+        }
+        
+        if (order1code1tf.getText().equals("1008"))
+        {
+            o1c1destf.setText("Tea");
+        }
+        
+        if (order1code1tf.getText().equals("1009"))
+        {
+            o1c1destf.setText("Coffee");
+        }
+    }//GEN-LAST:event_button1ActionPerformed
+
+    private void button2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button2ActionPerformed
+       if (order1code2tf.getText().equals("1001"))
+        {
+            o1c2destf.setText("Chicken Nugget");
+        }
+        
+        if (order1code2tf.getText().equals("1002"))
+        {
+            o1c2destf.setText("Fries");
+        }
+        
+        if (order1code2tf.getText().equals("1003"))
+        {
+            o1c2destf.setText("Salad");
+        }
+        
+        if (order1code2tf.getText().equals("1004"))
+        {
+            o1c2destf.setText("Cheese Burger");
+        }
+        
+        if (order1code2tf.getText().equals("1005"))
+        {
+            o1c2destf.setText("Bacon Cheese Burger");
+        }
+        
+        if (order1code2tf.getText().equals("1006"))
+        {
+            o1c2destf.setText("Hamburger");
+        }
+        
+        if (order1code2tf.getText().equals("1007"))
+        {
+            o1c2destf.setText("Soda");
+        }
+        
+        if (order1code2tf.getText().equals("1008"))
+        {
+            o1c2destf.setText("Tea");
+        }
+        
+        if (order1code2tf.getText().equals("1009"))
+        {
+            o1c2destf.setText("Coffee");
+        }
+    }//GEN-LAST:event_button2ActionPerformed
+
+    private void button4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button4ActionPerformed
+        if (order1code3tf.getText().equals("1001"))
+        {
+            o1c3destf.setText("Chicken Nugget");
+        }
+        
+        if (order1code3tf.getText().equals("1002"))
+        {
+            o1c3destf.setText("Fries");
+        }
+        
+        if (order1code3tf.getText().equals("1003"))
+        {
+            o1c3destf.setText("Salad");
+        }
+        
+        if (order1code3tf.getText().equals("1004"))
+        {
+            o1c3destf.setText("Cheese Burger");
+        }
+        
+        if (order1code3tf.getText().equals("1005"))
+        {
+            o1c3destf.setText("Bacon Cheese Burger");
+        }
+        
+        if (order1code3tf.getText().equals("1006"))
+        {
+            o1c3destf.setText("Hamburger");
+        }
+        
+        if (order1code3tf.getText().equals("1007"))
+        {
+            o1c3destf.setText("Soda");
+        }
+        
+        if (order1code3tf.getText().equals("1008"))
+        {
+            o1c3destf.setText("Tea");
+        }
+        
+        if (order1code3tf.getText().equals("1009"))
+        {
+            o1c3destf.setText("Coffee");
+        }
+    }//GEN-LAST:event_button4ActionPerformed
+
+    private void button3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button3ActionPerformed
+        if (order1code4tf.getText().equals("1001"))
+        {
+            o1c4destf.setText("Chicken Nugget");
+        }
+        
+        if (order1code4tf.getText().equals("1002"))
+        {
+            o1c4destf.setText("Fries");
+        }
+        
+        if (order1code4tf.getText().equals("1003"))
+        {
+            o1c4destf.setText("Salad");
+        }
+        
+        if (order1code4tf.getText().equals("1004"))
+        {
+            o1c4destf.setText("Cheese Burger");
+        }
+        
+        if (order1code4tf.getText().equals("1005"))
+        {
+            o1c4destf.setText("Bacon Cheese Burger");
+        }
+        
+        if (order1code4tf.getText().equals("1006"))
+        {
+            o1c4destf.setText("Hamburger");
+        }
+        
+        if (order1code4tf.getText().equals("1007"))
+        {
+            o1c4destf.setText("Soda");
+        }
+        
+        if (order1code4tf.getText().equals("1008"))
+        {
+            o1c4destf.setText("Tea");
+        }
+        
+        if (order1code4tf.getText().equals("1009"))
+        {
+            o1c4destf.setText("Coffee");
+        }
+    }//GEN-LAST:event_button3ActionPerformed
+
+    private void button5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button5ActionPerformed
+        if (order1code5tf.getText().equals("1001"))
+        {
+            o1c5destf.setText("Chicken Nugget");
+        }
+        
+        if (order1code5tf.getText().equals("1002"))
+        {
+            o1c5destf.setText("Fries");
+        }
+        
+        if (order1code5tf.getText().equals("1003"))
+        {
+            o1c5destf.setText("Salad");
+        }
+        
+        if (order1code5tf.getText().equals("1004"))
+        {
+            o1c5destf.setText("Cheese Burger");
+        }
+        
+        if (order1code5tf.getText().equals("1005"))
+        {
+            o1c5destf.setText("Bacon Cheese Burger");
+        }
+        
+        if (order1code5tf.getText().equals("1006"))
+        {
+            o1c5destf.setText("Hamburger");
+        }
+        
+        if (order1code5tf.getText().equals("1007"))
+        {
+            o1c5destf.setText("Soda");
+        }
+        
+        if (order1code5tf.getText().equals("1008"))
+        {
+            o1c5destf.setText("Tea");
+        }
+        
+        if (order1code5tf.getText().equals("1009"))
+        {
+            o1c5destf.setText("Coffee");
+        }
+    }//GEN-LAST:event_button5ActionPerformed
+
+    private void button19ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button19ActionPerformed
+        if (order2code1tf.getText().equals("1001"))
+        {
+            o2c1destf.setText("Chicken Nugget");
+        }
+        
+        if (order2code1tf.getText().equals("1002"))
+        {
+            o2c1destf.setText("Fries");
+        }
+        
+        if (order2code1tf.getText().equals("1003"))
+        {
+            o2c1destf.setText("Salad");
+        }
+        
+        if (order2code1tf.getText().equals("1004"))
+        {
+            o2c1destf.setText("Cheese Burger");
+        }
+        
+        if (order2code1tf.getText().equals("1005"))
+        {
+            o2c1destf.setText("Bacon Cheese Burger");
+        }
+        
+        if (order2code1tf.getText().equals("1006"))
+        {
+            o2c1destf.setText("Hamburger");
+        }
+        
+        if (order2code1tf.getText().equals("1007"))
+        {
+            o2c1destf.setText("Soda");
+        }
+        
+        if (order2code1tf.getText().equals("1008"))
+        {
+            o2c1destf.setText("Tea");
+        }
+        
+        if (order2code1tf.getText().equals("1009"))
+        {
+            o2c1destf.setText("Coffee");
+        }
+    }//GEN-LAST:event_button19ActionPerformed
+
+    private void button13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button13ActionPerformed
+        if (order2code2tf.getText().equals("1001"))
+        {
+            o2c2destf.setText("Chicken Nugget");
+        }
+        
+        if (order2code2tf.getText().equals("1002"))
+        {
+            o2c2destf.setText("Fries");
+        }
+        
+        if (order2code2tf.getText().equals("1003"))
+        {
+            o2c2destf.setText("Salad");
+        }
+        
+        if (order2code2tf.getText().equals("1004"))
+        {
+            o2c2destf.setText("Cheese Burger");
+        }
+        
+        if (order2code2tf.getText().equals("1005"))
+        {
+            o2c2destf.setText("Bacon Cheese Burger");
+        }
+        
+        if (order2code2tf.getText().equals("1006"))
+        {
+            o2c2destf.setText("Hamburger");
+        }
+        
+        if (order2code2tf.getText().equals("1007"))
+        {
+            o2c2destf.setText("Soda");
+        }
+        
+        if (order2code2tf.getText().equals("1008"))
+        {
+            o2c2destf.setText("Tea");
+        }
+        
+        if (order2code2tf.getText().equals("1009"))
+        {
+            o2c2destf.setText("Coffee");
+        }
+    }//GEN-LAST:event_button13ActionPerformed
+
+    private void button14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button14ActionPerformed
+        if (order2code3tf.getText().equals("1001"))
+        {
+            o2c3destf.setText("Chicken Nugget");
+        }
+        
+        if (order2code3tf.getText().equals("1002"))
+        {
+            o2c3destf.setText("Fries");
+        }
+        
+        if (order2code3tf.getText().equals("1003"))
+        {
+            o2c3destf.setText("Salad");
+        }
+        
+        if (order2code3tf.getText().equals("1004"))
+        {
+            o2c3destf.setText("Cheese Burger");
+        }
+        
+        if (order2code3tf.getText().equals("1005"))
+        {
+            o2c3destf.setText("Bacon Cheese Burger");
+        }
+        
+        if (order2code3tf.getText().equals("1006"))
+        {
+            o2c3destf.setText("Hamburger");
+        }
+        
+        if (order2code3tf.getText().equals("1007"))
+        {
+            o2c3destf.setText("Soda");
+        }
+        
+        if (order2code3tf.getText().equals("1008"))
+        {
+            o2c3destf.setText("Tea");
+        }
+        
+        if (order2code3tf.getText().equals("1009"))
+        {
+            o2c3destf.setText("Coffee");
+        }
+    }//GEN-LAST:event_button14ActionPerformed
+
+    private void button20ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button20ActionPerformed
+        if (order2code4tf.getText().equals("1001"))
+        {
+            o2c4destf.setText("Chicken Nugget");
+        }
+        
+        if (order2code4tf.getText().equals("1002"))
+        {
+            o2c4destf.setText("Fries");
+        }
+        
+        if (order2code4tf.getText().equals("1003"))
+        {
+            o2c4destf.setText("Salad");
+        }
+        
+        if (order2code4tf.getText().equals("1004"))
+        {
+            o2c4destf.setText("Cheese Burger");
+        }
+        
+        if (order2code4tf.getText().equals("1005"))
+        {
+            o2c4destf.setText("Bacon Cheese Burger");
+        }
+        
+        if (order2code4tf.getText().equals("1006"))
+        {
+            o2c4destf.setText("Hamburger");
+        }
+        
+        if (order2code4tf.getText().equals("1007"))
+        {
+            o2c4destf.setText("Soda");
+        }
+        
+        if (order2code4tf.getText().equals("1008"))
+        {
+            o2c4destf.setText("Tea");
+        }
+        
+        if (order2code4tf.getText().equals("1009"))
+        {
+            o2c4destf.setText("Coffee");
+        }
+    }//GEN-LAST:event_button20ActionPerformed
+
+    private void button11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button11ActionPerformed
+        if (order2code5tf.getText().equals("1001"))
+        {
+            o2c5destf.setText("Chicken Nugget");
+        }
+        
+        if (order2code5tf.getText().equals("1002"))
+        {
+            o2c5destf.setText("Fries");
+        }
+        
+        if (order2code5tf.getText().equals("1003"))
+        {
+            o2c5destf.setText("Salad");
+        }
+        
+        if (order2code5tf.getText().equals("1004"))
+        {
+            o2c5destf.setText("Cheese Burger");
+        }
+        
+        if (order2code5tf.getText().equals("1005"))
+        {
+            o2c5destf.setText("Bacon Cheese Burger");
+        }
+        
+        if (order2code5tf.getText().equals("1006"))
+        {
+            o2c5destf.setText("Hamburger");
+        }
+        
+        if (order2code5tf.getText().equals("1007"))
+        {
+            o2c5destf.setText("Soda");
+        }
+        
+        if (order2code5tf.getText().equals("1008"))
+        {
+            o2c5destf.setText("Tea");
+        }
+        
+        if (order2code5tf.getText().equals("1009"))
+        {
+            o2c5destf.setText("Coffee");
+        }
+    }//GEN-LAST:event_button11ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        
+        /*
+        order1Numbertf.setText("");
+        order1code1tf.setText("");
+        order1code2tf.setText("");
+        order1code3tf.setText("");
+        order1code4tf.setText("");
+        order1code5tf.setText("");
+        o1c1destf.setText("");
+        o1c2destf.setText("");
+        o1c3destf.setText("");
+        o1c4destf.setText("");
+        o1c5destf.setText("");
+        */
+        
+        String orderID = customerOrders[0][0];
+        String orderDate = customerOrders[0][1];
+        String custID = customerOrders[0][2];
+        String itemCode1 = customerOrders[0][3];
+        String itemQuantity1 = customerOrders[0][4];
+        String itemCode2 = customerOrders[0][5];
+        String itemQuantity2 = customerOrders[0][6];
+        String itemCode3 = customerOrders[0][7];
+        String itemQuantity3 = customerOrders[0][8];
+        String itemCode4 = customerOrders[0][9];
+        String itemQuantity4 = customerOrders[0][10];
+        String itemCode5 = customerOrders[0][11];
+        String itemQuantity5 = customerOrders[0][12];
+        String orderTotal = customerOrders[0][13];
+        
+        try{
+            
+            rs.moveToInsertRow();
+            
+            rs.updateString("OrderID", orderID);
+            rs.updateString("OrderDate", orderDate);
+            rs.updateString("CustomerID", custID);
+            rs.updateString("ItemCode1", itemCode1);
+            rs.updateString("Q1", itemQuantity1);
+            rs.updateString("ItemCode2", itemCode2);
+            rs.updateString("Q2", itemQuantity2);
+            rs.updateString("ItemCode3", itemCode3);
+            rs.updateString("Q3", itemQuantity3);
+            rs.updateString("ItemCode4", itemCode4);
+            rs.updateString("Q4", itemQuantity4);
+            rs.updateString("ItemCode5", itemCode5);
+            rs.updateString("Q5", itemQuantity5);
+            rs.updateString("TotalCost", orderTotal);
+            rs.insertRow();
+            
+            st.close();
+            rs.close();
+            
+            
+        }catch(Exception ex)
+        {
+            
+        }
+        
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    
+    public void connect()
+    {
+        try{
+        String driver = "sun.jbdc.odbc.JdbcOdbcDriver";
+            Class.forName(driver);
+            String database = "jdbc:odbc:RestaurantDB";
+            con = DriverManager.getConnection(database);
+            st = con.createStatement();
+            String sql = "select * from Customers";
+            rs = st.executeQuery(sql);
+        }catch(Exception ex)
+        {
+            
+        }
+    }
     /**
      * @param args the command line arguments
      */
@@ -548,6 +1306,8 @@ public class Kitchen extends javax.swing.JFrame {
     private java.awt.Button button7;
     private java.awt.Button button8;
     private java.awt.Button button9;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

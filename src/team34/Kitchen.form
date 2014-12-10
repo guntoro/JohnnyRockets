@@ -23,11 +23,20 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" alignment="0" attributes="0">
+          <Group type="102" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="refreshb" max="32767" attributes="0"/>
+                  <Group type="102" attributes="0">
+                      <Component id="order2Numbertf" min="-2" pref="150" max="-2" attributes="0"/>
+                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                  </Group>
                   <Group type="102" alignment="0" attributes="0">
+                      <Component id="order1Numbertf" min="-2" pref="150" max="-2" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
+                      <Component id="logOutb" min="-2" pref="173" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="1" attributes="0">
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
                           <Component id="jLabel1" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Group type="102" alignment="0" attributes="0">
@@ -74,23 +83,8 @@
                               </Group>
                           </Group>
                       </Group>
-                      <EmptySpace pref="28" max="32767" attributes="0"/>
+                      <EmptySpace pref="37" max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Group type="102" alignment="1" attributes="0">
-                              <Component id="o1c1quantf" min="-2" pref="40" max="-2" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="button6" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="102" alignment="1" attributes="0">
-                              <Component id="o1c2quantf" max="32767" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="button7" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="102" alignment="1" attributes="0">
-                              <Component id="o1c3quantf" min="-2" pref="40" max="-2" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="button8" min="-2" max="-2" attributes="0"/>
-                          </Group>
                           <Group type="102" alignment="1" attributes="0">
                               <Component id="o1c4quantf" min="-2" pref="40" max="-2" attributes="0"/>
                               <EmptySpace max="32767" attributes="0"/>
@@ -102,9 +96,25 @@
                               <Component id="button10" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <Component id="jLabel4" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Group type="103" groupAlignment="1" attributes="0">
+                                  <Component id="o1c1quantf" min="-2" pref="40" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                                      <Component id="o1c2quantf" max="32767" attributes="0"/>
+                                      <Component id="o1c3quantf" pref="40" max="32767" attributes="0"/>
+                                  </Group>
+                              </Group>
+                              <EmptySpace max="32767" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="button8" alignment="1" min="-2" max="-2" attributes="0"/>
+                                  <Component id="button7" alignment="1" min="-2" max="-2" attributes="0"/>
+                                  <Component id="button6" alignment="1" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                          <Component id="jButton1" alignment="1" max="32767" attributes="0"/>
                       </Group>
                   </Group>
-                  <Group type="102" alignment="0" attributes="0">
+                  <Group type="102" alignment="1" attributes="0">
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
                               <Component id="order2code2tf" min="-2" pref="50" max="-2" attributes="0"/>
@@ -178,16 +188,8 @@
                               <Component id="button18" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <Component id="jLabel5" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="jButton2" alignment="1" max="32767" attributes="0"/>
                       </Group>
-                  </Group>
-                  <Group type="102" attributes="0">
-                      <Component id="order2Numbertf" min="-2" pref="150" max="-2" attributes="0"/>
-                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                  </Group>
-                  <Group type="102" alignment="0" attributes="0">
-                      <Component id="order1Numbertf" min="-2" pref="150" max="-2" attributes="0"/>
-                      <EmptySpace max="32767" attributes="0"/>
-                      <Component id="logOutb" min="-2" pref="173" max="-2" attributes="0"/>
                   </Group>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
@@ -276,7 +278,9 @@
                   </Group>
                   <Component id="o1c2quantf" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace pref="37" max="32767" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="jButton1" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
               <Component id="order2Numbertf" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
@@ -347,11 +351,13 @@
                               <Component id="o2c5quantf" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="refreshb" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <Component id="o2c2quantf" min="-2" max="-2" attributes="0"/>
               </Group>
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="jButton2" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="32767" attributes="0"/>
+              <Component id="refreshb" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
           </Group>
       </Group>
@@ -364,6 +370,9 @@
       <Properties>
         <Property name="label" type="java.lang.String" value="?"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="button3ActionPerformed"/>
+      </Events>
     </Component>
     <Component class="java.awt.TextField" name="order1code3tf">
     </Component>
@@ -371,38 +380,44 @@
       <Properties>
         <Property name="label" type="java.lang.String" value="?"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="button5ActionPerformed"/>
+      </Events>
     </Component>
     <Component class="java.awt.Button" name="button6">
       <Properties>
-        <Property name="label" type="java.lang.String" value="DONE"/>
+        <Property name="label" type="java.lang.String" value="CHK"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="button6ActionPerformed"/>
+      </Events>
     </Component>
     <Component class="java.awt.TextField" name="order1code4tf">
     </Component>
     <Component class="java.awt.Button" name="button7">
       <Properties>
-        <Property name="label" type="java.lang.String" value="DONE"/>
+        <Property name="label" type="java.lang.String" value="CHK"/>
       </Properties>
     </Component>
     <Component class="java.awt.TextField" name="order1code5tf">
     </Component>
     <Component class="java.awt.Button" name="button8">
       <Properties>
-        <Property name="label" type="java.lang.String" value="DONE"/>
+        <Property name="label" type="java.lang.String" value="CHK"/>
       </Properties>
     </Component>
     <Component class="java.awt.TextField" name="o1c2destf">
     </Component>
     <Component class="java.awt.Button" name="button9">
       <Properties>
-        <Property name="label" type="java.lang.String" value="DONE"/>
+        <Property name="label" type="java.lang.String" value="CHK"/>
       </Properties>
     </Component>
     <Component class="java.awt.TextField" name="o1c3destf">
     </Component>
     <Component class="java.awt.Button" name="button10">
       <Properties>
-        <Property name="label" type="java.lang.String" value="DONE"/>
+        <Property name="label" type="java.lang.String" value="CHK"/>
       </Properties>
     </Component>
     <Component class="java.awt.TextField" name="o1c4destf">
@@ -453,6 +468,9 @@
       <Properties>
         <Property name="label" type="java.lang.String" value="?"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="button1ActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel4">
       <Properties>
@@ -463,6 +481,9 @@
       <Properties>
         <Property name="label" type="java.lang.String" value="?"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="button2ActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel2">
       <Properties>
@@ -475,15 +496,21 @@
       <Properties>
         <Property name="label" type="java.lang.String" value="?"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="button4ActionPerformed"/>
+      </Events>
     </Component>
     <Component class="java.awt.Button" name="button11">
       <Properties>
         <Property name="label" type="java.lang.String" value="?"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="button11ActionPerformed"/>
+      </Events>
     </Component>
     <Component class="java.awt.Button" name="button12">
       <Properties>
-        <Property name="label" type="java.lang.String" value="DONE"/>
+        <Property name="label" type="java.lang.String" value="CHK"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel5">
@@ -495,6 +522,9 @@
       <Properties>
         <Property name="label" type="java.lang.String" value="?"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="button13ActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel6">
       <Properties>
@@ -507,33 +537,36 @@
       <Properties>
         <Property name="label" type="java.lang.String" value="?"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="button14ActionPerformed"/>
+      </Events>
     </Component>
     <Component class="java.awt.TextField" name="order2code4tf">
     </Component>
     <Component class="java.awt.Button" name="button15">
       <Properties>
-        <Property name="label" type="java.lang.String" value="DONE"/>
+        <Property name="label" type="java.lang.String" value="CHK"/>
       </Properties>
     </Component>
     <Component class="java.awt.TextField" name="order2code5tf">
     </Component>
     <Component class="java.awt.Button" name="button16">
       <Properties>
-        <Property name="label" type="java.lang.String" value="DONE"/>
+        <Property name="label" type="java.lang.String" value="CHK"/>
       </Properties>
     </Component>
     <Component class="java.awt.TextField" name="o2c2destf">
     </Component>
     <Component class="java.awt.Button" name="button17">
       <Properties>
-        <Property name="label" type="java.lang.String" value="DONE"/>
+        <Property name="label" type="java.lang.String" value="CHK"/>
       </Properties>
     </Component>
     <Component class="java.awt.TextField" name="o2c3destf">
     </Component>
     <Component class="java.awt.Button" name="button18">
       <Properties>
-        <Property name="label" type="java.lang.String" value="DONE"/>
+        <Property name="label" type="java.lang.String" value="CHK"/>
       </Properties>
     </Component>
     <Component class="java.awt.TextField" name="o2c4destf">
@@ -576,6 +609,9 @@
       <Properties>
         <Property name="label" type="java.lang.String" value="?"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="button19ActionPerformed"/>
+      </Events>
     </Component>
     <Component class="java.awt.TextField" name="order2code2tf">
     </Component>
@@ -583,6 +619,9 @@
       <Properties>
         <Property name="label" type="java.lang.String" value="?"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="button20ActionPerformed"/>
+      </Events>
     </Component>
     <Component class="java.awt.TextField" name="order2code3tf">
     </Component>
@@ -610,6 +649,19 @@
     <Component class="java.awt.TextField" name="o1c2quantf">
       <Properties>
         <Property name="text" type="java.lang.String" value="1"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="jButton1">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="ALL DONE"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton1ActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="jButton2">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="ALL DONE"/>
       </Properties>
     </Component>
   </SubComponents>
