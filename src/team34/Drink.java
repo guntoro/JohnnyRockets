@@ -102,21 +102,21 @@ public class Drink extends javax.swing.JFrame {
     private void jbdMediumActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbdMediumActionPerformed
         // TODO add your handling code here:
         sodaSize="- Medium";
-        sodaPrice="1.50";
+        Cashier.sodaPrice="1.50";
         this.setVisible(false);
     }//GEN-LAST:event_jbdMediumActionPerformed
 
     private void jbdSmallActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbdSmallActionPerformed
         // TODO add your handling code here:        
         sodaSize="- Small";
-        sodaPrice="1.00";
+        Cashier.sodaPrice="1.00";
         this.setVisible(false);
     }//GEN-LAST:event_jbdSmallActionPerformed
 
     private void jbdLargeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbdLargeActionPerformed
         // TODO add your handling code here:
         sodaSize="- Large";
-        sodaPrice="1.75";
+        Cashier.sodaPrice="1.75";
         this.setVisible(false);
     }//GEN-LAST:event_jbdLargeActionPerformed
 

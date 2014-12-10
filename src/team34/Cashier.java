@@ -5,6 +5,8 @@
  */
 package team34;
 
+import java.awt.Color;
+
 /**
  *
  * @author Owner
@@ -15,11 +17,15 @@ public class Cashier extends javax.swing.JFrame {
      * Creates new form Cashier
      */
     
-    String Size, orderDetail="";    
+    String Size, orderDetail="";
+    String itemQuantity;
+    Boolean oldCustomer;
+    public static String sodaPrice;
     int foundInMenu=0;
     int indexOfOrderNumber=0;
     int currentItemNumber=0;
     int indexOfItem;
+    int newOrderNumber;
     private static final int MAX_NEWORDERS = 5;
     Double TotalOrder = 0.00;
     String cOrderID, cOrderDate, cOrderCustomerID, cItemCode1, cQ1, cItemCode2, cQ2, cItemCode3, cQ3, cItemCode4, cQ4, cItemCode5, cQ5, cTotalCost;
@@ -31,7 +37,7 @@ public class Cashier extends javax.swing.JFrame {
         {"1004","Cheese Burger      ", "2.00"},
         {"1005","Bacon Cheese Burger", "2.75"},
         {"1006","Hamburger          ", "2.00"},
-        {"1007","Soda               ", "1.00"},
+        {"1007","Soda        ", "1.00"},
         {"1008","Tea                ", "1.25"},
         {"1009","Coffee             ", "1.50"},
         };    
@@ -47,7 +53,18 @@ public class Cashier extends javax.swing.JFrame {
     
     public Cashier() {        
         initComponents();
-        jbtAddItem.setEnabled(false);        
+        //set property of text-fields and buttons
+        jtfOrderNumber.setEditable(false);
+        jbtAddItem.setEnabled(false);
+        jtfNewItemCode.setEnabled(false);
+        jtfNewItemDescription.setEnabled(false);
+        jtaOrderDetail.setEnabled(false);
+        jtfNewItemPrice.setEnabled(false);
+        jtfTotalOrder.setEnabled(false);
+        jbtConfirmOrder.setEnabled(false);        
+        
+        Login varLogin = new Login();                
+        newOrderNumber=Integer.valueOf(varLogin.getLastOrderNumber());
     }  
     
     /**
@@ -155,6 +172,12 @@ public class Cashier extends javax.swing.JFrame {
 
         jLabel9.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel9.setText("Total Order $");
+
+        jtfTotalOrder.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jtfTotalOrderActionPerformed(evt);
+            }
+        });
 
         jbtConfirmOrder.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jbtConfirmOrder.setForeground(new java.awt.Color(0, 0, 102));
@@ -280,10 +303,28 @@ public class Cashier extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jtfCustomerIDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtfCustomerIDActionPerformed
-        // TODO add your handling code here:
-        System.out.println("Customer code typed");
-        Login varLogin = new Login();                
-        jtfOrderNumber.setText(varLogin.getLastOrderNumber());
+        // TODO add your handling code here:        
+        jtfOrderNumber.setText(Integer.toString(newOrderNumber));        
+        
+        //check if customerID is in customerArray
+        for (int i = 0; i<Login.numCustomers; i++){            
+            if (jtfCustomerID.getText().equals(Login.customerArray[i].getCustomerID())){
+                oldCustomer=true;
+                i=999; //exit from loop
+            }
+            else oldCustomer=false;             
+        }
+        if (oldCustomer==false) jtfCustomerID.setBackground(Color.red);  //warn cashier CustomerID not found in database/customerArray
+        else {
+            //set property of text-fields and buttons
+            jtfCustomerID.setBackground(Color.white);
+            jtfNewItemCode.setEnabled(true);
+            jtfNewItemDescription.setEnabled(true);
+            jtaOrderDetail.setEnabled(true);
+            jtfNewItemPrice.setEnabled(true);
+            jtfTotalOrder.setEnabled(true);
+            newOrderNumber++;
+        }         
     }//GEN-LAST:event_jtfCustomerIDActionPerformed
 
     private void jbtAddNewCustomerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtAddNewCustomerActionPerformed
@@ -314,21 +355,25 @@ public class Cashier extends javax.swing.JFrame {
         for (int i = 0; i < 9; i++) {
             if (jtfNewItemCode.getText().equals(restaurantMenu[i][0])){
                 foundInMenu=i;
-                if (jtfNewItemCode.getText().equals("1007")){
+                
+                //pop-up beverage selection window
+                if (jtfNewItemCode.getText().equals("1007")){   
                     Drink s3 = new Drink();
                     s3.setVisible(true);                    
                 }
-                i=10;
+                i=10;   //to exit from loop
                 jbtAddItem.setEnabled(true);
             }                
-            else foundInMenu=99;
+            else foundInMenu=99; //flag index for not found in menu
         }        
-        if (foundInMenu<99) {            
+        if (foundInMenu<99) {   //foundInMenu is index location of the array menu where ItemCode match         
             jtfNewItemDescription.setText(restaurantMenu[foundInMenu][1]);
-            jtfNewItemPrice.setText(restaurantMenu[foundInMenu][2]);            
+            jtfNewItemPrice.setText(restaurantMenu[foundInMenu][2]);
+            jtfNewItemCode.setBackground(Color.white);
         }
             else {
             jtfNewItemDescription.setText("Item Code NOT FOUND");
+            jtfNewItemCode.setBackground(Color.red);
             jbtAddItem.setEnabled(false); 
         }      
     }//GEN-LAST:event_jtfNewItemCodeActionPerformed
@@ -341,13 +386,24 @@ public class Cashier extends javax.swing.JFrame {
             }
             System.out.println();
         }
+        //set property of text-fields and buttons
         jtfCustomerID.setText("");
         jtfOrderNumber.setText("");
         jtaOrderDetail.setText("");
         jtfTotalOrder.setText("");
         orderDetail="";
+        jtfCustomerID.setEditable(true);
+        jtfNewItemCode.setEnabled(false);
+        jtfNewItemDescription.setEnabled(false);
+        jtaOrderDetail.setEnabled(false);
+        jtfNewItemPrice.setEnabled(false);
+        jtfTotalOrder.setEnabled(false);
+        jbtConfirmOrder.setEnabled(false);
+        
+        //adjust new value
         indexOfOrderNumber++;
         indexOfItem=0;
+        TotalOrder=0.00;
         
     }//GEN-LAST:event_jbtConfirmOrderActionPerformed
 
@@ -357,18 +413,30 @@ public class Cashier extends javax.swing.JFrame {
 
     private void jbtAddItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtAddItemActionPerformed
         // TODO add your handling code here:
+        double sodaSizePrice;               //variable to calculate soda price * quantity
+        jtfCustomerID.setEditable(false);
         jbtAddItem.setEnabled(false);
+        jbtConfirmOrder.setEnabled(true);
         Size = Drink.sodaSize;
-        if (jtfNewItemCode.getText().equals("1007")){
-            jtfNewItemPrice.setText(Drink.sodaPrice);
+        if (jtfNewItemCode.getText().equals("1007")){  //if itemCode entered is for soda, adjust the price
+            jtfNewItemPrice.setText(sodaPrice);
+            sodaSizePrice=Double.valueOf(sodaPrice)*Double.valueOf((String)jcbNewItemQuantity.getSelectedItem());
+            jtfNewItemPrice.setText(Double.toString(sodaSizePrice));
             orderDetail=(orderDetail+jtfNewItemCode.getText()+ "\t" + jtfNewItemDescription.getText()+Size + "\t" + jcbNewItemQuantity.getSelectedItem()+ "\t" + jtfNewItemPrice.getText()+ "\n");
         }
         else 
             orderDetail=(orderDetail+jtfNewItemCode.getText()+ "\t" + jtfNewItemDescription.getText() + "\t" + jcbNewItemQuantity.getSelectedItem()+ "\t" + jtfNewItemPrice.getText()+ "\n");
         jtaOrderDetail.setText(orderDetail);
+        
+        //calculate Total Order
         TotalOrder = TotalOrder + Double.valueOf(jtfNewItemPrice.getText());
         jtfTotalOrder.setText(String.valueOf(TotalOrder));
-        recordOneOrderDetail(jtfOrderNumber.getText(), "20141208",jtfCustomerID.getText(), jtfNewItemCode.getText(),"11111111", String.valueOf(TotalOrder), indexOfItem); //change 11111111 with jcbNewItemQuantity.getSelectedItem()
+        itemQuantity = (String) jcbNewItemQuantity.getSelectedItem();
+        
+        //Write one order into customerOrders array
+        recordOneOrderDetail(jtfOrderNumber.getText(), "20141211",jtfCustomerID.getText(), jtfNewItemCode.getText(),itemQuantity, String.valueOf(TotalOrder), indexOfItem); //change 11111111 with jcbNewItemQuantity.getSelectedItem()
+        
+        //set property of text-fields and buttons
         jtfNewItemCode.setText("");
         jtfNewItemDescription.setText("");
         jcbNewItemQuantity.setSelectedItem("1");
@@ -377,9 +445,13 @@ public class Cashier extends javax.swing.JFrame {
         indexOfItem++;
     }//GEN-LAST:event_jbtAddItemActionPerformed
 
+    private void jtfTotalOrderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtfTotalOrderActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jtfTotalOrderActionPerformed
+
     public  void recordOneOrderDetail(String xOrderID, String xOrderDate, String xOrderCustomerID, String xItemCode, String xQn, String xTotalCost, int xIndexOfItem){
         
-        //{cOrderID, cOrderDate, cOrderCustomerID, cItemCode1, cQ1, cItemCode2, cQ2, cItemCode3, cQ3, cItemCode4, cQ4, cItemCode5, cQ5, cTotalCost},
+        //Order or information in array: xOrderID, xOrderDate, xOrderCustomerID, xItemCode1, xQ1, xItemCode2, xQ2, xItemCode3, xQ3, xItemCode4, xQ4, xItemCode5, xQ5, xTotalCost
         customerOrders[indexOfOrderNumber][0] = xOrderID;
         customerOrders[indexOfOrderNumber][1] = xOrderDate;
         customerOrders[indexOfOrderNumber][2] = xOrderCustomerID;

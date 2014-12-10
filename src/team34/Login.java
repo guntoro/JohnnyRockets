@@ -27,7 +27,7 @@ public class Login extends javax.swing.JFrame {
     
     
     // Variables and Instances of Classes
-    public static String lastOrderNumber="5009";
+    public static String lastOrderNumber="5004";
     
     public String getLastOrderNumber() {
         return lastOrderNumber;
@@ -36,21 +36,21 @@ public class Login extends javax.swing.JFrame {
         lastOrderNumber = lNumber;
     }    
     
-    private static CustomerRecord currentCustomer;       //store an instance of current Customer which is a CustomerRecord
-    private static CustomerRecord customerArray[] = new CustomerRecord[MAX_CUSTOMERRECORDS];        //store all customer records
-    private static int nextCustomer = 0;       // location of next empty position in the array
-    private static int numCustomers = 0;       // number of input customer records            
+    public static CustomerRecord currentCustomer;       //store an instance of current Customer which is a CustomerRecord
+    public static CustomerRecord customerArray[] = new CustomerRecord[MAX_CUSTOMERRECORDS];        //store all customer records
+    public static int nextCustomer = 0;       // location of next empty position in the array
+    public static int numCustomers = 0;       // number of input customer records            
     private static String xmlCustomerID;       // temporary storage for customerID from xml
     private static String xmlName;             // temporary storage for customer name from xml
     private static String xmlAddress;          // temporary storage for customer address from xml
     private static String xmlPhone;            // temporary storage for customer phone from xml
-    private static String xmlEmail;            // temporary storage for customer phone from xml
+    private static String xmlEmail;            // temporary storage for customer email from xml
     private static String xmlSpending;         // temporary storage for customer spending from xml
     
     private static InventoryRecord currentInventory;       //store an instance of current Customer which is a CustomerRecord
     private static InventoryRecord inventoryArray[] = new InventoryRecord[MAX_INVENTORYRECORDS];        //store all customer records
     private static int nextInventory = 0;       // location of next empty position in the array
-    private static int numInventory = 0;       // number of input customer records
+    private static int numInventory = 0;       // number of input inventory records
     private static String xmlIngName;          // temporary storage for ingredient name from xml
     private static String xmlStock;            // temporary storage for ingredient stock on hand from xml
     
@@ -242,7 +242,8 @@ public class Login extends javax.swing.JFrame {
                 readInventoryXMLFile();
                 storeInventoryData();
                 readOrdersXMLFile();
-                storeOrderData(); 
+                storeOrderData();
+                lastOrderNumber=Integer.toString(nextOrder+5000);
             }
             
             if (rbChef.isSelected())
@@ -281,17 +282,12 @@ public class Login extends javax.swing.JFrame {
             DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
             DocumentBuilder db = dbf.newDocumentBuilder();
             org.w3c.dom.Document doc = db.parse(file);
-            doc.getDocumentElement().normalize();
-            //System.out.println("Root element " + doc.getDocumentElement().getNodeName());
+            doc.getDocumentElement().normalize();            
             NodeList nodeLst = doc.getElementsByTagName("Customer");
-            //System.out.println("Information of all customers");
 
             for (int s = 0; s < nodeLst.getLength(); s++) {
-
-                Node fstNode = nodeLst.item(s);
-    
-                if (fstNode.getNodeType() == Node.ELEMENT_NODE) {
-  
+                Node fstNode = nodeLst.item(s);    
+                if (fstNode.getNodeType() == Node.ELEMENT_NODE) {  
                     org.w3c.dom.Element fstElmnt = (org.w3c.dom.Element) fstNode;
                     NodeList fstNmElmntLst = fstElmnt.getElementsByTagName("CustomerID");
                     org.w3c.dom.Element fstNmElmnt = (org.w3c.dom.Element) fstNmElmntLst.item(0);
@@ -322,16 +318,6 @@ public class Login extends javax.swing.JFrame {
                     org.w3c.dom.Element sixNmElmnt = (org.w3c.dom.Element) sixNmElmntLst.item(0);
                     NodeList sixNm = sixNmElmnt.getChildNodes();
                     xmlSpending = ((Node) sixNm.item(0)).getNodeValue();
-                    
-                    /*
-                    //Print to Output console
-                    System.out.println("CustomerID : "  + ((Node) fstNm.item(0)).getNodeValue());
-                    System.out.println("Name : " + ((Node) secNm.item(0)).getNodeValue());
-                    System.out.println("Address : " + ((Node) trdNm.item(0)).getNodeValue());
-                    System.out.println("Phone : " + ((Node) frtNm.item(0)).getNodeValue());
-                    System.out.println("Email : " + ((Node) fivNm.item(0)).getNodeValue());
-                    System.out.println("Spending : " + ((Node) sixNm.item(0)).getNodeValue());
-                    */
                     
                     CustomerRecord customer = new CustomerRecord(xmlCustomerID, xmlName, xmlAddress, xmlPhone, xmlEmail, xmlSpending);
                     // store customer record in array
@@ -373,16 +359,11 @@ public class Login extends javax.swing.JFrame {
             DocumentBuilder db = dbf.newDocumentBuilder();
             org.w3c.dom.Document doc = db.parse(file);
             doc.getDocumentElement().normalize();
-            //System.out.println("Root element " + doc.getDocumentElement().getNodeName());
             NodeList nodeLst = doc.getElementsByTagName("Ingredient");
-            //System.out.println("Information of all customers");
 
             for (int s = 0; s < nodeLst.getLength(); s++) {
-
-                Node fstNode = nodeLst.item(s);
-    
-                if (fstNode.getNodeType() == Node.ELEMENT_NODE) {
-  
+                Node fstNode = nodeLst.item(s);    
+                if (fstNode.getNodeType() == Node.ELEMENT_NODE) {  
                     org.w3c.dom.Element fstElmnt = (org.w3c.dom.Element) fstNode;
                     NodeList fstNmElmntLst = fstElmnt.getElementsByTagName("IngName");
                     org.w3c.dom.Element fstNmElmnt = (org.w3c.dom.Element) fstNmElmntLst.item(0);
@@ -394,17 +375,11 @@ public class Login extends javax.swing.JFrame {
                     NodeList secNm = secNmElmnt.getChildNodes();
                     xmlStock = ((Node) secNm.item(0)).getNodeValue();
                     
-                    /*
-                    //Print to Output console
-                    System.out.println("IngName : "  + ((Node) fstNm.item(0)).getNodeValue());
-                    System.out.println("Stock : " + ((Node) secNm.item(0)).getNodeValue());
-                    */
-                    
                     InventoryRecord inventory = new InventoryRecord(xmlIngName, xmlStock);
-                    // store customer record in array
+                    // store inventory record in array
                     inventoryArray[nextInventory] = inventory;
                 
-                    // increment number of customer records and move to next position in customerArray
+                    // increment number of inventory records and move to next position in customerArray
                     numInventory++;
                     nextInventory++;
                 }
@@ -436,19 +411,12 @@ public class Login extends javax.swing.JFrame {
             DocumentBuilder db = dbf.newDocumentBuilder();
             org.w3c.dom.Document doc = db.parse(file);
             doc.getDocumentElement().normalize();
-            //System.out.println("Root element " + doc.getDocumentElement().getNodeName());
             NodeList nodeLst = doc.getElementsByTagName("Order");
-            //System.out.println("Information of all customers");
-            setLastOrderNumber(Integer.toString(nodeLst.getLength()));
-            //System.out.println("*************"+Integer.toString(nodeLst.getLength()+1));
-            
+            setLastOrderNumber(Integer.toString(nodeLst.getLength()));            
 
             for (int s = 0; s < nodeLst.getLength(); s++) {
-
-                Node fstNode = nodeLst.item(s);
-    
-                if (fstNode.getNodeType() == Node.ELEMENT_NODE) {
-  
+                Node fstNode = nodeLst.item(s);    
+                if (fstNode.getNodeType() == Node.ELEMENT_NODE) {  
                     org.w3c.dom.Element fstElmnt = (org.w3c.dom.Element) fstNode;
                     NodeList fstNmElmntLst = fstElmnt.getElementsByTagName("OrderID");
                     org.w3c.dom.Element fstNmElmnt = (org.w3c.dom.Element) fstNmElmntLst.item(0);
@@ -520,32 +488,12 @@ public class Login extends javax.swing.JFrame {
                     NodeList ftnNm = ftnNmElmnt.getChildNodes();
                     xmlTotalCost = ((Node) ftnNm.item(0)).getNodeValue();
                     
-                    /*
-                    //Print to Output console
-                    System.out.println("OrderID : "  + ((Node) fstNm.item(0)).getNodeValue());
-                    System.out.println("OrderDate : " + ((Node) secNm.item(0)).getNodeValue());
-                    System.out.println("OrderCustomerID : " + ((Node) trdNm.item(0)).getNodeValue());
-                    System.out.println("ItemCode1 : " + ((Node) frtNm.item(0)).getNodeValue());
-                    System.out.println("Q1 : " + ((Node) fivNm.item(0)).getNodeValue());
-                    System.out.println("ItemCode2 : " + ((Node) sixNm.item(0)).getNodeValue());
-                    System.out.println("Q2 : " + ((Node) svnNm.item(0)).getNodeValue());
-                    System.out.println("ItemCode3 : " + ((Node) eigNm.item(0)).getNodeValue());
-                    System.out.println("ItemCode3 : " + ((Node) eigNm.item(0)).getNodeValue());
-                    System.out.println("Q3 : " + ((Node) ninNm.item(0)).getNodeValue());
-                    System.out.println("ItemCode4 : " + ((Node) tenNm.item(0)).getNodeValue());
-                    System.out.println("Q4 : " + ((Node) elvNm.item(0)).getNodeValue());
-                    System.out.println("ItemCode5 : " + ((Node) twlNm.item(0)).getNodeValue());
-                    System.out.println("Q5 : " + ((Node) thrNm.item(0)).getNodeValue());
-                    System.out.println("TotalCost : " + ((Node) ftnNm.item(0)).getNodeValue());
-                    */
-                    
-                    
                     OrderRecord order = new OrderRecord(xmlOrderID, xmlOrderDate, xmlOrderCustomerID, xmlItemCode1, xmlQ1, xmlItemCode2, xmlQ2, 
                                                         xmlItemCode3, xmlQ3, xmlItemCode4, xmlQ4, xmlItemCode5, xmlQ5, xmlTotalCost);
-                    // store customer record in array
+                    // store order record in array
                     orderArray[nextOrder] = order;
                 
-                    // increment number of customer records and move to next position in customerArray
+                    // increment number of order records and move to next position in customerArray
                     numOrders++;
                     nextOrder++;
                 }
