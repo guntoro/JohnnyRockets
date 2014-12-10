@@ -36,7 +36,7 @@ public class Cashier extends javax.swing.JFrame {
         {"1009","Coffee             ", "1.50"},
         };    
     
-    public String [][] customerOrders = {
+    public static String [][] customerOrders = {
         {"","","","","","","","","","","","","",""},
         {"","","","","","","","","","","","","",""},
         {"","","","","","","","","","","","","",""},
