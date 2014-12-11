@@ -365,6 +365,9 @@
   </Layout>
   <SubComponents>
     <Component class="java.awt.TextField" name="order1code2tf">
+      <Properties>
+        <Property name="editable" type="boolean" value="false"/>
+      </Properties>
     </Component>
     <Component class="java.awt.Button" name="button3">
       <Properties>
@@ -375,6 +378,9 @@
       </Events>
     </Component>
     <Component class="java.awt.TextField" name="order1code3tf">
+      <Properties>
+        <Property name="editable" type="boolean" value="false"/>
+      </Properties>
     </Component>
     <Component class="java.awt.Button" name="button5">
       <Properties>
@@ -393,51 +399,87 @@
       </Events>
     </Component>
     <Component class="java.awt.TextField" name="order1code4tf">
+      <Properties>
+        <Property name="editable" type="boolean" value="false"/>
+      </Properties>
     </Component>
     <Component class="java.awt.Button" name="button7">
       <Properties>
         <Property name="label" type="java.lang.String" value="CHK"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="button7ActionPerformed"/>
+      </Events>
     </Component>
     <Component class="java.awt.TextField" name="order1code5tf">
+      <Properties>
+        <Property name="editable" type="boolean" value="false"/>
+      </Properties>
     </Component>
     <Component class="java.awt.Button" name="button8">
       <Properties>
         <Property name="label" type="java.lang.String" value="CHK"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="button8ActionPerformed"/>
+      </Events>
     </Component>
     <Component class="java.awt.TextField" name="o1c2destf">
+      <Properties>
+        <Property name="editable" type="boolean" value="false"/>
+      </Properties>
     </Component>
     <Component class="java.awt.Button" name="button9">
       <Properties>
         <Property name="label" type="java.lang.String" value="CHK"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="button9ActionPerformed"/>
+      </Events>
     </Component>
     <Component class="java.awt.TextField" name="o1c3destf">
+      <Properties>
+        <Property name="editable" type="boolean" value="false"/>
+      </Properties>
     </Component>
     <Component class="java.awt.Button" name="button10">
       <Properties>
         <Property name="label" type="java.lang.String" value="CHK"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="button10ActionPerformed"/>
+      </Events>
     </Component>
     <Component class="java.awt.TextField" name="o1c4destf">
+      <Properties>
+        <Property name="editable" type="boolean" value="false"/>
+      </Properties>
     </Component>
     <Component class="java.awt.TextField" name="o1c1quantf">
       <Properties>
+        <Property name="editable" type="boolean" value="false"/>
         <Property name="text" type="java.lang.String" value="1"/>
       </Properties>
     </Component>
     <Component class="java.awt.TextField" name="o1c5destf">
+      <Properties>
+        <Property name="editable" type="boolean" value="false"/>
+      </Properties>
     </Component>
     <Component class="java.awt.TextField" name="o1c3quantf">
       <Properties>
+        <Property name="editable" type="boolean" value="false"/>
         <Property name="text" type="java.lang.String" value="1"/>
       </Properties>
     </Component>
     <Component class="java.awt.TextField" name="o1c1destf">
+      <Properties>
+        <Property name="editable" type="boolean" value="false"/>
+      </Properties>
     </Component>
     <Component class="java.awt.TextField" name="o1c4quantf">
       <Properties>
+        <Property name="editable" type="boolean" value="false"/>
         <Property name="text" type="java.lang.String" value="1"/>
       </Properties>
     </Component>
@@ -451,11 +493,13 @@
     </Component>
     <Component class="java.awt.TextField" name="order1Numbertf">
       <Properties>
+        <Property name="editable" type="boolean" value="false"/>
         <Property name="text" type="java.lang.String" value="Order#"/>
       </Properties>
     </Component>
     <Component class="java.awt.TextField" name="o1c5quantf">
       <Properties>
+        <Property name="editable" type="boolean" value="false"/>
         <Property name="text" type="java.lang.String" value="1"/>
       </Properties>
     </Component>
@@ -491,6 +535,9 @@
       </Properties>
     </Component>
     <Component class="java.awt.TextField" name="order1code1tf">
+      <Properties>
+        <Property name="editable" type="boolean" value="false"/>
+      </Properties>
     </Component>
     <Component class="java.awt.Button" name="button4">
       <Properties>
@@ -512,6 +559,9 @@
       <Properties>
         <Property name="label" type="java.lang.String" value="CHK"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="button12ActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel5">
       <Properties>
@@ -532,6 +582,9 @@
       </Properties>
     </Component>
     <Component class="java.awt.TextField" name="order2code1tf">
+      <Properties>
+        <Property name="editable" type="boolean" value="false"/>
+      </Properties>
     </Component>
     <Component class="java.awt.Button" name="button14">
       <Properties>
@@ -542,61 +595,99 @@
       </Events>
     </Component>
     <Component class="java.awt.TextField" name="order2code4tf">
+      <Properties>
+        <Property name="editable" type="boolean" value="false"/>
+      </Properties>
     </Component>
     <Component class="java.awt.Button" name="button15">
       <Properties>
         <Property name="label" type="java.lang.String" value="CHK"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="button15ActionPerformed"/>
+      </Events>
     </Component>
     <Component class="java.awt.TextField" name="order2code5tf">
+      <Properties>
+        <Property name="editable" type="boolean" value="false"/>
+      </Properties>
     </Component>
     <Component class="java.awt.Button" name="button16">
       <Properties>
         <Property name="label" type="java.lang.String" value="CHK"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="button16ActionPerformed"/>
+      </Events>
     </Component>
     <Component class="java.awt.TextField" name="o2c2destf">
+      <Properties>
+        <Property name="editable" type="boolean" value="false"/>
+      </Properties>
     </Component>
     <Component class="java.awt.Button" name="button17">
       <Properties>
         <Property name="label" type="java.lang.String" value="CHK"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="button17ActionPerformed"/>
+      </Events>
     </Component>
     <Component class="java.awt.TextField" name="o2c3destf">
+      <Properties>
+        <Property name="editable" type="boolean" value="false"/>
+      </Properties>
     </Component>
     <Component class="java.awt.Button" name="button18">
       <Properties>
         <Property name="label" type="java.lang.String" value="CHK"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="button18ActionPerformed"/>
+      </Events>
     </Component>
     <Component class="java.awt.TextField" name="o2c4destf">
+      <Properties>
+        <Property name="editable" type="boolean" value="false"/>
+      </Properties>
     </Component>
     <Component class="java.awt.TextField" name="o2c1quantf">
       <Properties>
+        <Property name="editable" type="boolean" value="false"/>
         <Property name="text" type="java.lang.String" value="1"/>
       </Properties>
     </Component>
     <Component class="java.awt.TextField" name="o2c5destf">
+      <Properties>
+        <Property name="editable" type="boolean" value="false"/>
+      </Properties>
     </Component>
     <Component class="java.awt.TextField" name="o2c3quantf">
       <Properties>
+        <Property name="editable" type="boolean" value="false"/>
         <Property name="text" type="java.lang.String" value="1"/>
       </Properties>
     </Component>
     <Component class="java.awt.TextField" name="o2c1destf">
+      <Properties>
+        <Property name="editable" type="boolean" value="false"/>
+      </Properties>
     </Component>
     <Component class="java.awt.TextField" name="o2c4quantf">
       <Properties>
+        <Property name="editable" type="boolean" value="false"/>
         <Property name="text" type="java.lang.String" value="1"/>
       </Properties>
     </Component>
     <Component class="java.awt.TextField" name="order2Numbertf">
       <Properties>
+        <Property name="editable" type="boolean" value="false"/>
         <Property name="text" type="java.lang.String" value="Order#"/>
       </Properties>
     </Component>
     <Component class="java.awt.TextField" name="o2c5quantf">
       <Properties>
+        <Property name="editable" type="boolean" value="false"/>
         <Property name="text" type="java.lang.String" value="1"/>
       </Properties>
     </Component>
@@ -614,6 +705,9 @@
       </Events>
     </Component>
     <Component class="java.awt.TextField" name="order2code2tf">
+      <Properties>
+        <Property name="editable" type="boolean" value="false"/>
+      </Properties>
     </Component>
     <Component class="java.awt.Button" name="button20">
       <Properties>
@@ -624,6 +718,9 @@
       </Events>
     </Component>
     <Component class="java.awt.TextField" name="order2code3tf">
+      <Properties>
+        <Property name="editable" type="boolean" value="false"/>
+      </Properties>
     </Component>
     <Component class="javax.swing.JButton" name="refreshb">
       <Properties>
@@ -643,17 +740,20 @@
     </Component>
     <Component class="java.awt.TextField" name="o2c2quantf">
       <Properties>
+        <Property name="editable" type="boolean" value="false"/>
         <Property name="text" type="java.lang.String" value="1"/>
       </Properties>
     </Component>
     <Component class="java.awt.TextField" name="o1c2quantf">
       <Properties>
+        <Property name="editable" type="boolean" value="false"/>
         <Property name="text" type="java.lang.String" value="1"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JButton" name="jButton1">
       <Properties>
         <Property name="text" type="java.lang.String" value="ALL DONE"/>
+        <Property name="enabled" type="boolean" value="false"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton1ActionPerformed"/>
@@ -662,7 +762,11 @@
     <Component class="javax.swing.JButton" name="jButton2">
       <Properties>
         <Property name="text" type="java.lang.String" value="ALL DONE"/>
+        <Property name="enabled" type="boolean" value="false"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton2ActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>

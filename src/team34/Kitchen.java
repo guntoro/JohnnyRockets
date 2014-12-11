@@ -137,12 +137,16 @@ public class Kitchen extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        order1code2tf.setEditable(false);
+
         button3.setLabel("?");
         button3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 button3ActionPerformed(evt);
             }
         });
+
+        order1code3tf.setEditable(false);
 
         button5.setLabel("?");
         button5.addActionListener(new java.awt.event.ActionListener() {
@@ -158,25 +162,64 @@ public class Kitchen extends javax.swing.JFrame {
             }
         });
 
+        order1code4tf.setEditable(false);
+
         button7.setLabel("CHK");
+        button7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                button7ActionPerformed(evt);
+            }
+        });
+
+        order1code5tf.setEditable(false);
 
         button8.setLabel("CHK");
+        button8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                button8ActionPerformed(evt);
+            }
+        });
+
+        o1c2destf.setEditable(false);
 
         button9.setLabel("CHK");
+        button9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                button9ActionPerformed(evt);
+            }
+        });
+
+        o1c3destf.setEditable(false);
 
         button10.setLabel("CHK");
+        button10.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                button10ActionPerformed(evt);
+            }
+        });
 
+        o1c4destf.setEditable(false);
+
+        o1c1quantf.setEditable(false);
         o1c1quantf.setText("1");
 
+        o1c5destf.setEditable(false);
+
+        o1c3quantf.setEditable(false);
         o1c3quantf.setText("1");
 
+        o1c1destf.setEditable(false);
+
+        o1c4quantf.setEditable(false);
         o1c4quantf.setText("1");
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel1.setText("Kitchen Screen");
 
+        order1Numbertf.setEditable(false);
         order1Numbertf.setText("Order#");
 
+        o1c5quantf.setEditable(false);
         o1c5quantf.setText("1");
 
         jLabel3.setText("Description");
@@ -199,6 +242,8 @@ public class Kitchen extends javax.swing.JFrame {
 
         jLabel2.setText("Code");
 
+        order1code1tf.setEditable(false);
+
         button4.setLabel("?");
         button4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -214,6 +259,11 @@ public class Kitchen extends javax.swing.JFrame {
         });
 
         button12.setLabel("CHK");
+        button12.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                button12ActionPerformed(evt);
+            }
+        });
 
         jLabel5.setText("Quantity");
 
@@ -226,6 +276,8 @@ public class Kitchen extends javax.swing.JFrame {
 
         jLabel6.setText("Code");
 
+        order2code1tf.setEditable(false);
+
         button14.setLabel("?");
         button14.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -233,22 +285,61 @@ public class Kitchen extends javax.swing.JFrame {
             }
         });
 
+        order2code4tf.setEditable(false);
+
         button15.setLabel("CHK");
+        button15.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                button15ActionPerformed(evt);
+            }
+        });
+
+        order2code5tf.setEditable(false);
 
         button16.setLabel("CHK");
+        button16.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                button16ActionPerformed(evt);
+            }
+        });
+
+        o2c2destf.setEditable(false);
 
         button17.setLabel("CHK");
+        button17.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                button17ActionPerformed(evt);
+            }
+        });
+
+        o2c3destf.setEditable(false);
 
         button18.setLabel("CHK");
+        button18.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                button18ActionPerformed(evt);
+            }
+        });
 
+        o2c4destf.setEditable(false);
+
+        o2c1quantf.setEditable(false);
         o2c1quantf.setText("1");
 
+        o2c5destf.setEditable(false);
+
+        o2c3quantf.setEditable(false);
         o2c3quantf.setText("1");
 
+        o2c1destf.setEditable(false);
+
+        o2c4quantf.setEditable(false);
         o2c4quantf.setText("1");
 
+        order2Numbertf.setEditable(false);
         order2Numbertf.setText("Order#");
 
+        o2c5quantf.setEditable(false);
         o2c5quantf.setText("1");
 
         jLabel7.setText("Description");
@@ -260,12 +351,16 @@ public class Kitchen extends javax.swing.JFrame {
             }
         });
 
+        order2code2tf.setEditable(false);
+
         button20.setLabel("?");
         button20.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 button20ActionPerformed(evt);
             }
         });
+
+        order2code3tf.setEditable(false);
 
         refreshb.setText("Refresh");
         refreshb.addActionListener(new java.awt.event.ActionListener() {
@@ -281,11 +376,14 @@ public class Kitchen extends javax.swing.JFrame {
             }
         });
 
+        o2c2quantf.setEditable(false);
         o2c2quantf.setText("1");
 
+        o1c2quantf.setEditable(false);
         o1c2quantf.setText("1");
 
         jButton1.setText("ALL DONE");
+        jButton1.setEnabled(false);
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
@@ -293,6 +391,12 @@ public class Kitchen extends javax.swing.JFrame {
         });
 
         jButton2.setText("ALL DONE");
+        jButton2.setEnabled(false);
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -573,13 +677,6 @@ public class Kitchen extends javax.swing.JFrame {
 
     private void refreshbActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_refreshbActionPerformed
         
-        /*for (int i=0; i<5; i++){
-            for (int j=0; j<13; j++){
-                System.out.print(customerOrders[i][j]+", ");
-            }
-            System.out.println();
-        }
-        */
         
         order1Numbertf.setText(customerOrders[0][0]);
         order1code1tf.setText(customerOrders[0][3]);
@@ -587,6 +684,11 @@ public class Kitchen extends javax.swing.JFrame {
         order1code3tf.setText(customerOrders[0][7]);
         order1code4tf.setText(customerOrders[0][9]);
         order1code5tf.setText(customerOrders[0][11]);
+        o1c1quantf.setText(customerOrders[0][4]);
+        o1c2quantf.setText(customerOrders[0][6]);
+        o1c3quantf.setText(customerOrders[0][8]);
+        o1c4quantf.setText(customerOrders[0][10]);
+        o1c5quantf.setText(customerOrders[0][12]);
         
         order2Numbertf.setText(customerOrders[1][0]);
         order2code1tf.setText(customerOrders[1][3]);
@@ -594,110 +696,63 @@ public class Kitchen extends javax.swing.JFrame {
         order2code3tf.setText(customerOrders[1][7]);
         order2code4tf.setText(customerOrders[1][9]);
         order2code5tf.setText(customerOrders[1][11]);
+        o2c1quantf.setText(customerOrders[1][4]);
+        o2c2quantf.setText(customerOrders[1][6]);
+        o2c3quantf.setText(customerOrders[1][8]);
+        o2c4quantf.setText(customerOrders[1][10]);
+        o2c5quantf.setText(customerOrders[1][12]);
         
-        int m;
-        
-        
-        /*for (m = 0; m > 9; m++)
-        {
-            if (order1code1tf.getText().equals("100" + m))
-            {
-                o1c1destf.setText(restaurantMenu[m][0]);
-            }
-            
-            if (order1code2tf.getText().equals("100" + m))
-            {
-                o1c2destf.setText(restaurantMenu[m][0]);
-            }
-            
-            if (order1code3tf.getText().equals("100" + m))
-            {
-                o1c3destf.setText(restaurantMenu[m][0]);
-            }
-            
-            if (order1code4tf.getText().equals("100" + m))
-            {
-                o1c4destf.setText(restaurantMenu[m][0]);
-            }
-            
-            if (order1code5tf.getText().equals("100" + m))
-            {
-                o1c5destf.setText(restaurantMenu[m][0]);
-            }
-        }
-        */
-        
-    int j = 0;
+        jButton1.setEnabled(true);
+        jButton2.setEnabled(true);
+        refreshb.setEnabled(false);
     
-    /*for (int i = 3; i < 11; i = i + 2) 
-    {
-       if (customerOrders[0][i].equals("1001"))
-       {
-            items[j].equals("Chicken Nugget"); 
-       }
-       
-       if (customerOrders[0][i].equals("1002"))
-       {
-            items[j].equals("Fries");                    
-       }
-       
-       if (customerOrders[0][i].equals("1003"))
-       {
-            items[j].equals("Salad");                    
-       }
-       
-       if (customerOrders[0][i].equals("1004"))
-       {
-            items[j].equals("Cheese Burger");                    
-       }
-       
-       if (customerOrders[0][i].equals("1005"))
-       {
-            items[j].equals("Bacon Cheese Burger");                    
-       }
-       
-       if (customerOrders[0][i].equals("1006"))
-       {
-            items[j].equals("Hamburger");                    
-       }
-       
-       if (customerOrders[0][i].equals("1007"))
-       {
-            items[j].equals("Soda");                    
-       }
-       
-       if (customerOrders[0][i].equals("1008"))
-       {
-            items[j].equals("Tea");                    
-       }
-       
-       if (customerOrders[0][i].equals("1009"))
-       {
-            items[j].equals("Coffee");                    
-       }
-       
-       else
-       {
-           items[j].equals("Error occurred.");
-       }
-       
-       System.out.println(items[j]);
-       j++;
-    }
-    */
-    
-    /*
-    o1c1destf.setText(items[0]);
-    o1c2destf.setText(items[1]);
-    o1c3destf.setText(items[2]);
-    o1c4destf.setText(items[3]);
-    o1c5destf.setText(items[4]);
-    */
        
     }//GEN-LAST:event_refreshbActionPerformed
 
     private void button6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button6ActionPerformed
+        String foodHolder = o1c1destf.getText();
+        String orderFoodQuantity = o1c1quantf.getText();
         
+        try{
+            
+                // load database driver class
+         Class.forName("sun.jdbc.odbc.JdbcOdbcDriver");
+           
+         // connect to database
+         Connection con = DriverManager.getConnection("jdbc:odbc:RestaurantDB");
+         
+         Statement stmt = (Statement) con.createStatement();
+         
+         //Select "customer" if the ID I entered matches one in the database.
+         String SQL = "SELECT * FROM Inventory WHERE IngName='" + foodHolder + "'";
+         
+         //Store returned results in rs.
+         ResultSet rs = stmt.executeQuery(SQL);
+         
+         
+         //Use results in rs to populate text fields.
+         while(rs.next())
+         {
+             String checkStock = rs.getString("Stock");
+             
+             if (Integer.parseInt(checkStock) >= Integer.parseInt(orderFoodQuantity))
+             {
+                 o1c1destf.setText("Enough in Stock!");
+             }
+             
+             else
+             {
+                 o1c1destf.setText("Out of stock, order more!");
+             }
+         }
+         
+         stmt.close();
+         con.close();
+         
+        }catch(Exception e)
+        {
+            System.out.println("ERROR: " + e.getMessage());
+        }    
         
     }//GEN-LAST:event_button6ActionPerformed
 
@@ -1172,21 +1227,7 @@ public class Kitchen extends javax.swing.JFrame {
     }//GEN-LAST:event_button11ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        
-        /*
-        order1Numbertf.setText("");
-        order1code1tf.setText("");
-        order1code2tf.setText("");
-        order1code3tf.setText("");
-        order1code4tf.setText("");
-        order1code5tf.setText("");
-        o1c1destf.setText("");
-        o1c2destf.setText("");
-        o1c3destf.setText("");
-        o1c4destf.setText("");
-        o1c5destf.setText("");
-        */
-        
+      
         String orderID = customerOrders[0][0];
         String orderDate = customerOrders[0][1];
         String custID = customerOrders[0][2];
@@ -1202,53 +1243,471 @@ public class Kitchen extends javax.swing.JFrame {
         String itemQuantity5 = customerOrders[0][12];
         String orderTotal = customerOrders[0][13];
         
-        try{
-            
-            rs.moveToInsertRow();
-            
-            rs.updateString("OrderID", orderID);
-            rs.updateString("OrderDate", orderDate);
-            rs.updateString("CustomerID", custID);
-            rs.updateString("ItemCode1", itemCode1);
-            rs.updateString("Q1", itemQuantity1);
-            rs.updateString("ItemCode2", itemCode2);
-            rs.updateString("Q2", itemQuantity2);
-            rs.updateString("ItemCode3", itemCode3);
-            rs.updateString("Q3", itemQuantity3);
-            rs.updateString("ItemCode4", itemCode4);
-            rs.updateString("Q4", itemQuantity4);
-            rs.updateString("ItemCode5", itemCode5);
-            rs.updateString("Q5", itemQuantity5);
-            rs.updateString("TotalCost", orderTotal);
-            rs.insertRow();
-            
-            st.close();
-            rs.close();
-            
-            
-        }catch(Exception ex)
-        {
-            
-        }
+        Database.storeOrderRecord(orderID, orderDate, custID, itemCode1, itemQuantity1, itemCode2, itemQuantity2, itemCode3, itemQuantity3, itemCode4, itemQuantity4, itemCode5, itemQuantity5, orderTotal);
         
+        order1Numbertf.setText("");
+        order1code1tf.setText("");
+        order1code2tf.setText("");
+        order1code3tf.setText("");
+        order1code4tf.setText("");
+        order1code5tf.setText("");
+        o1c1destf.setText("");
+        o1c2destf.setText("");
+        o1c3destf.setText("");
+        o1c4destf.setText("");
+        o1c5destf.setText("");
+        
+        jButton1.setEnabled(false);
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    
-    public void connect()
-    {
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        String orderID = customerOrders[1][0];
+        String orderDate = customerOrders[1][1];
+        String custID = customerOrders[1][2];
+        String itemCode1 = customerOrders[1][3];
+        String itemQuantity1 = customerOrders[1][4];
+        String itemCode2 = customerOrders[1][5];
+        String itemQuantity2 = customerOrders[1][6];
+        String itemCode3 = customerOrders[1][7];
+        String itemQuantity3 = customerOrders[1][8];
+        String itemCode4 = customerOrders[1][9];
+        String itemQuantity4 = customerOrders[1][10];
+        String itemCode5 = customerOrders[1][11];
+        String itemQuantity5 = customerOrders[1][12];
+        String orderTotal = customerOrders[1][13];
+        
+        Database.storeOrderRecord(orderID, orderDate, custID, itemCode1, itemQuantity1, itemCode2, itemQuantity2, itemCode3, itemQuantity3, itemCode4, itemQuantity4, itemCode5, itemQuantity5, orderTotal);
+        
+        order2Numbertf.setText("");
+        order2code1tf.setText("");
+        order2code2tf.setText("");
+        order2code3tf.setText("");
+        order2code4tf.setText("");
+        order2code5tf.setText("");
+        o2c1destf.setText("");
+        o2c2destf.setText("");
+        o2c3destf.setText("");
+        o2c4destf.setText("");
+        o2c5destf.setText("");
+        
+        jButton2.setEnabled(false);
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void button7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button7ActionPerformed
+        String foodHolder = o1c2destf.getText();
+        String orderFoodQuantity = o1c2quantf.getText();
+        
         try{
-        String driver = "sun.jbdc.odbc.JdbcOdbcDriver";
-            Class.forName(driver);
-            String database = "jdbc:odbc:RestaurantDB";
-            con = DriverManager.getConnection(database);
-            st = con.createStatement();
-            String sql = "select * from Customers";
-            rs = st.executeQuery(sql);
-        }catch(Exception ex)
-        {
             
-        }
-    }
+                // load database driver class
+         Class.forName("sun.jdbc.odbc.JdbcOdbcDriver");
+           
+         // connect to database
+         Connection con = DriverManager.getConnection("jdbc:odbc:RestaurantDB");
+         
+         Statement stmt = (Statement) con.createStatement();
+         
+         //Select "customer" if the ID I entered matches one in the database.
+         String SQL = "SELECT * FROM Inventory WHERE IngName='" + foodHolder + "'";
+         
+         //Store returned results in rs.
+         ResultSet rs = stmt.executeQuery(SQL);
+         
+         
+         //Use results in rs to populate text fields.
+         while(rs.next())
+         {
+             String checkStock = rs.getString("Stock");
+             
+             if (Integer.parseInt(checkStock) >= Integer.parseInt(orderFoodQuantity))
+             {
+                 o1c2destf.setText("Enough in Stock!");
+             }
+             
+             else
+             {
+                 o1c2destf.setText("Out of stock, order more!");
+             }
+         }
+         
+         stmt.close();
+         con.close();
+         
+        }catch(Exception e)
+        {
+            System.out.println("ERROR: " + e.getMessage());
+        }  
+    }//GEN-LAST:event_button7ActionPerformed
+
+    private void button8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button8ActionPerformed
+        String foodHolder = o1c3destf.getText();
+        String orderFoodQuantity = o1c3quantf.getText();
+        
+        try{
+            
+                // load database driver class
+         Class.forName("sun.jdbc.odbc.JdbcOdbcDriver");
+           
+         // connect to database
+         Connection con = DriverManager.getConnection("jdbc:odbc:RestaurantDB");
+         
+         Statement stmt = (Statement) con.createStatement();
+         
+         //Select "customer" if the ID I entered matches one in the database.
+         String SQL = "SELECT * FROM Inventory WHERE IngName='" + foodHolder + "'";
+         
+         //Store returned results in rs.
+         ResultSet rs = stmt.executeQuery(SQL);
+         
+         
+         //Use results in rs to populate text fields.
+         while(rs.next())
+         {
+             String checkStock = rs.getString("Stock");
+             
+             if (Integer.parseInt(checkStock) >= Integer.parseInt(orderFoodQuantity))
+             {
+                 o1c3destf.setText("Enough in Stock!");
+             }
+             
+             else
+             {
+                 o1c3destf.setText("Out of stock, order more!");
+             }
+         }
+         
+         stmt.close();
+         con.close();
+         
+        }catch(Exception e)
+        {
+            System.out.println("ERROR: " + e.getMessage());
+        }  
+    }//GEN-LAST:event_button8ActionPerformed
+
+    private void button9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button9ActionPerformed
+        String foodHolder = o1c4destf.getText();
+        String orderFoodQuantity = o1c4quantf.getText();
+        
+        try{
+            
+                // load database driver class
+         Class.forName("sun.jdbc.odbc.JdbcOdbcDriver");
+           
+         // connect to database
+         Connection con = DriverManager.getConnection("jdbc:odbc:RestaurantDB");
+         
+         Statement stmt = (Statement) con.createStatement();
+         
+         //Select "customer" if the ID I entered matches one in the database.
+         String SQL = "SELECT * FROM Inventory WHERE IngName='" + foodHolder + "'";
+         
+         //Store returned results in rs.
+         ResultSet rs = stmt.executeQuery(SQL);
+         
+         
+         //Use results in rs to populate text fields.
+         while(rs.next())
+         {
+             String checkStock = rs.getString("Stock");
+             
+             if (Integer.parseInt(checkStock) >= Integer.parseInt(orderFoodQuantity))
+             {
+                 o1c4destf.setText("Enough in Stock!");
+             }
+             
+             else
+             {
+                 o1c4destf.setText("Out of stock, order more!");
+             }
+         }
+         
+         stmt.close();
+         con.close();
+         
+        }catch(Exception e)
+        {
+            System.out.println("ERROR: " + e.getMessage());
+        }  
+    }//GEN-LAST:event_button9ActionPerformed
+
+    private void button10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button10ActionPerformed
+        String foodHolder = o1c5destf.getText();
+        String orderFoodQuantity = o1c5quantf.getText();
+        
+        try{
+            
+                // load database driver class
+         Class.forName("sun.jdbc.odbc.JdbcOdbcDriver");
+           
+         // connect to database
+         Connection con = DriverManager.getConnection("jdbc:odbc:RestaurantDB");
+         
+         Statement stmt = (Statement) con.createStatement();
+         
+         //Select "customer" if the ID I entered matches one in the database.
+         String SQL = "SELECT * FROM Inventory WHERE IngName='" + foodHolder + "'";
+         
+         //Store returned results in rs.
+         ResultSet rs = stmt.executeQuery(SQL);
+         
+         
+         //Use results in rs to populate text fields.
+         while(rs.next())
+         {
+             String checkStock = rs.getString("Stock");
+             
+             if (Integer.parseInt(checkStock) >= Integer.parseInt(orderFoodQuantity))
+             {
+                 o1c5destf.setText("Enough in Stock!");
+             }
+             
+             else
+             {
+                 o1c5destf.setText("Out of stock, order more!");
+             }
+         }
+         
+         stmt.close();
+         con.close();
+         
+        }catch(Exception e)
+        {
+            System.out.println("ERROR: " + e.getMessage());
+        }  
+    }//GEN-LAST:event_button10ActionPerformed
+
+    private void button12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button12ActionPerformed
+        String foodHolder = o2c1destf.getText();
+        String orderFoodQuantity = o2c1quantf.getText();
+        
+        try{
+            
+                // load database driver class
+         Class.forName("sun.jdbc.odbc.JdbcOdbcDriver");
+           
+         // connect to database
+         Connection con = DriverManager.getConnection("jdbc:odbc:RestaurantDB");
+         
+         Statement stmt = (Statement) con.createStatement();
+         
+         //Select "customer" if the ID I entered matches one in the database.
+         String SQL = "SELECT * FROM Inventory WHERE IngName='" + foodHolder + "'";
+         
+         //Store returned results in rs.
+         ResultSet rs = stmt.executeQuery(SQL);
+         
+         
+         //Use results in rs to populate text fields.
+         while(rs.next())
+         {
+             String checkStock = rs.getString("Stock");
+             
+             if (Integer.parseInt(checkStock) >= Integer.parseInt(orderFoodQuantity))
+             {
+                 o2c1destf.setText("Enough in Stock!");
+             }
+             
+             else
+             {
+                 o2c1destf.setText("Out of stock, order more!");
+             }
+         }
+         
+         stmt.close();
+         con.close();
+         
+        }catch(Exception e)
+        {
+            System.out.println("ERROR: " + e.getMessage());
+        }  
+    }//GEN-LAST:event_button12ActionPerformed
+
+    private void button15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button15ActionPerformed
+        String foodHolder = o2c2destf.getText();
+        String orderFoodQuantity = o2c2quantf.getText();
+        
+        try{
+            
+                // load database driver class
+         Class.forName("sun.jdbc.odbc.JdbcOdbcDriver");
+           
+         // connect to database
+         Connection con = DriverManager.getConnection("jdbc:odbc:RestaurantDB");
+         
+         Statement stmt = (Statement) con.createStatement();
+         
+         //Select "customer" if the ID I entered matches one in the database.
+         String SQL = "SELECT * FROM Inventory WHERE IngName='" + foodHolder + "'";
+         
+         //Store returned results in rs.
+         ResultSet rs = stmt.executeQuery(SQL);
+         
+         
+         //Use results in rs to populate text fields.
+         while(rs.next())
+         {
+             String checkStock = rs.getString("Stock");
+             
+             if (Integer.parseInt(checkStock) >= Integer.parseInt(orderFoodQuantity))
+             {
+                 o2c2destf.setText("Enough in Stock!");
+             }
+             
+             else
+             {
+                 o2c2destf.setText("Out of stock, order more!");
+             }
+         }
+         
+         stmt.close();
+         con.close();
+         
+        }catch(Exception e)
+        {
+            System.out.println("ERROR: " + e.getMessage());
+        }  
+    }//GEN-LAST:event_button15ActionPerformed
+
+    private void button16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button16ActionPerformed
+        String foodHolder = o2c3destf.getText();
+        String orderFoodQuantity = o2c3quantf.getText();
+        
+        try{
+            
+                // load database driver class
+         Class.forName("sun.jdbc.odbc.JdbcOdbcDriver");
+           
+         // connect to database
+         Connection con = DriverManager.getConnection("jdbc:odbc:RestaurantDB");
+         
+         Statement stmt = (Statement) con.createStatement();
+         
+         //Select "customer" if the ID I entered matches one in the database.
+         String SQL = "SELECT * FROM Inventory WHERE IngName='" + foodHolder + "'";
+         
+         //Store returned results in rs.
+         ResultSet rs = stmt.executeQuery(SQL);
+         
+         
+         //Use results in rs to populate text fields.
+         while(rs.next())
+         {
+             String checkStock = rs.getString("Stock");
+             
+             if (Integer.parseInt(checkStock) >= Integer.parseInt(orderFoodQuantity))
+             {
+                 o2c3destf.setText("Enough in Stock!");
+             }
+             
+             else
+             {
+                 o2c3destf.setText("Out of stock, order more!");
+             }
+         }
+         
+         stmt.close();
+         con.close();
+         
+        }catch(Exception e)
+        {
+            System.out.println("ERROR: " + e.getMessage());
+        }  
+    }//GEN-LAST:event_button16ActionPerformed
+
+    private void button17ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button17ActionPerformed
+        String foodHolder = o2c4destf.getText();
+        String orderFoodQuantity = o2c4quantf.getText();
+        
+        try{
+            
+                // load database driver class
+         Class.forName("sun.jdbc.odbc.JdbcOdbcDriver");
+           
+         // connect to database
+         Connection con = DriverManager.getConnection("jdbc:odbc:RestaurantDB");
+         
+         Statement stmt = (Statement) con.createStatement();
+         
+         //Select "customer" if the ID I entered matches one in the database.
+         String SQL = "SELECT * FROM Inventory WHERE IngName='" + foodHolder + "'";
+         
+         //Store returned results in rs.
+         ResultSet rs = stmt.executeQuery(SQL);
+         
+         
+         //Use results in rs to populate text fields.
+         while(rs.next())
+         {
+             String checkStock = rs.getString("Stock");
+             
+             if (Integer.parseInt(checkStock) >= Integer.parseInt(orderFoodQuantity))
+             {
+                 o2c4destf.setText("Enough in Stock!");
+             }
+             
+             else
+             {
+                 o2c4destf.setText("Out of stock, order more!");
+             }
+         }
+         
+         stmt.close();
+         con.close();
+         
+        }catch(Exception e)
+        {
+            System.out.println("ERROR: " + e.getMessage());
+        }  
+    }//GEN-LAST:event_button17ActionPerformed
+
+    private void button18ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button18ActionPerformed
+        String foodHolder = o2c5destf.getText();
+        String orderFoodQuantity = o2c5quantf.getText();
+        
+        try{
+            
+                // load database driver class
+         Class.forName("sun.jdbc.odbc.JdbcOdbcDriver");
+           
+         // connect to database
+         Connection con = DriverManager.getConnection("jdbc:odbc:RestaurantDB");
+         
+         Statement stmt = (Statement) con.createStatement();
+         
+         //Select "customer" if the ID I entered matches one in the database.
+         String SQL = "SELECT * FROM Inventory WHERE IngName='" + foodHolder + "'";
+         
+         //Store returned results in rs.
+         ResultSet rs = stmt.executeQuery(SQL);
+         
+         
+         //Use results in rs to populate text fields.
+         while(rs.next())
+         {
+             String checkStock = rs.getString("Stock");
+             
+             if (Integer.parseInt(checkStock) >= Integer.parseInt(orderFoodQuantity))
+             {
+                 o2c5destf.setText("Enough in Stock!");
+             }
+             
+             else
+             {
+                 o2c5destf.setText("Out of stock, order more!");
+             }
+         }
+         
+         stmt.close();
+         con.close();
+         
+        }catch(Exception e)
+        {
+            System.out.println("ERROR: " + e.getMessage());
+        }  
+    }//GEN-LAST:event_button18ActionPerformed
+
+    
     /**
      * @param args the command line arguments
      */

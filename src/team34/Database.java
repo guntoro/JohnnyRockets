@@ -223,7 +223,7 @@ public class Database {
     }
     
     //this method accepts the student data as input and stores it to the database 
-    public void storeOrderRecord(String oOrderID ,String oOrderDate, String oOrderCustomerID, String oItemCode1, String oQ1, String oItemCode2, String oQ2, String oItemCode3, String oQ3, String oItemCode4, String oQ4, String oItemCode5, String oQ5, String oTotalCost){
+    public static void storeOrderRecord(String oOrderID ,String oOrderDate, String oOrderCustomerID, String oItemCode1, String oQ1, String oItemCode2, String oQ2, String oItemCode3, String oQ3, String oItemCode4, String oQ4, String oItemCode5, String oQ5, String oTotalCost){
        
         try {         
             // load database driver class

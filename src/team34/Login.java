@@ -74,7 +74,7 @@ public class Login extends javax.swing.JFrame {
     private static String xmlTotalCost;            // temporary storage for total cost or oder from xml
     
     
-    private Database myDatabase = new Database();       //instance of the database class
+    public static Database myDatabase = new Database();       //instance of the database class
 
     /**
      * Creates new form Login
@@ -226,7 +226,7 @@ public class Login extends javax.swing.JFrame {
 
     private void jbLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbLoginActionPerformed
         // TODO add your handling code here:
-        if (jtfUsername.getText().equals("guntoro") && jpfPassword.getText().equals("123"))
+        if (jtfUsername.getText().equals("manager") && jpfPassword.getText().equals("123"))
         {
             lMessage.setText("Login Success, Choose Role");
             

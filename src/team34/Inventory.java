@@ -6,6 +6,11 @@
 
 package team34;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.Statement;
+
 /**
  *
  * @author Daniel2
@@ -23,6 +28,8 @@ public class Inventory extends javax.swing.JFrame {
     int lettuceStock = 15;
     int ketchupStock = 25;
     int mayoStock = 5;
+    
+  
     
     public Inventory() {
         initComponents();
@@ -61,8 +68,57 @@ public class Inventory extends javax.swing.JFrame {
         mayoAdd = new java.awt.TextField();
         mayoStocktf = new java.awt.TextField();
         jLabel10 = new javax.swing.JLabel();
-        updateb = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
+        jLabel11 = new javax.swing.JLabel();
+        pattyStocktf = new java.awt.TextField();
+        pattyAdd = new java.awt.TextField();
+        chickenStocktf = new java.awt.TextField();
+        jLabel12 = new javax.swing.JLabel();
+        chickenAdd = new java.awt.TextField();
+        friesStocktf = new java.awt.TextField();
+        friesAdd = new java.awt.TextField();
+        jLabel13 = new javax.swing.JLabel();
+        saladStocktf = new java.awt.TextField();
+        saladAdd = new java.awt.TextField();
+        jLabel14 = new javax.swing.JLabel();
+        sodaStocktf = new java.awt.TextField();
+        sodaAdd = new java.awt.TextField();
+        jLabel15 = new javax.swing.JLabel();
+        teaStocktf = new java.awt.TextField();
+        teaAdd = new java.awt.TextField();
+        jLabel16 = new javax.swing.JLabel();
+        coffeeStocktf = new java.awt.TextField();
+        coffeeAdd = new java.awt.TextField();
+        jLabel17 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
+        jButton3 = new javax.swing.JButton();
+        jButton4 = new javax.swing.JButton();
+        jButton5 = new javax.swing.JButton();
+        jButton6 = new javax.swing.JButton();
+        jButton7 = new javax.swing.JButton();
+        jButton8 = new javax.swing.JButton();
+        jButton9 = new javax.swing.JButton();
+        jButton10 = new javax.swing.JButton();
+        jButton11 = new javax.swing.JButton();
+        jButton12 = new javax.swing.JButton();
+        jButton13 = new javax.swing.JButton();
+        jButton14 = new javax.swing.JButton();
+        jButton15 = new javax.swing.JButton();
+        jButton16 = new javax.swing.JButton();
+        jButton17 = new javax.swing.JButton();
+        jButton18 = new javax.swing.JButton();
+        jButton19 = new javax.swing.JButton();
+        jButton20 = new javax.swing.JButton();
+        jButton21 = new javax.swing.JButton();
+        jButton22 = new javax.swing.JButton();
+        jButton23 = new javax.swing.JButton();
+        jButton24 = new javax.swing.JButton();
+        jButton25 = new javax.swing.JButton();
+        jButton26 = new javax.swing.JButton();
+        jButton27 = new javax.swing.JButton();
+        jButton28 = new javax.swing.JButton();
+        jButton29 = new javax.swing.JButton();
+        jButton30 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -72,7 +128,6 @@ public class Inventory extends javax.swing.JFrame {
         bunAdd.setText("0");
 
         bunStocktf.setEditable(false);
-        bunStocktf.setText(Integer.toString(bunStock));
         bunStocktf.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 bunStocktfActionPerformed(evt);
@@ -90,56 +145,288 @@ public class Inventory extends javax.swing.JFrame {
         baconAdd.setText("0");
 
         baconStocktf.setEditable(false);
-        baconStocktf.setText(Integer.toString(baconStock));
 
         jLabel5.setText("Bacon");
 
         cheeseAdd.setText("0");
 
         cheeseStocktf.setEditable(false);
-        cheeseStocktf.setText(Integer.toString(cheeseStock));
 
         jLabel6.setText("Cheese");
 
         tomatoAdd.setText("0");
 
         tomatoStocktf.setEditable(false);
-        tomatoStocktf.setText(Integer.toString(tomatoStock));
 
         jLabel7.setText("Tomato");
 
         lettuceAdd.setText("0");
 
         lettuceStocktf.setEditable(false);
-        lettuceStocktf.setText(Integer.toString(lettuceStock));
 
         jLabel8.setText("Lettuce");
 
         ketchupAdd.setText("0");
 
         ketchupStocktf.setEditable(false);
-        ketchupStocktf.setText(Integer.toString(ketchupStock));
 
         jLabel9.setText("Ketchup");
 
         mayoAdd.setText("0");
 
         mayoStocktf.setEditable(false);
-        mayoStocktf.setText(Integer.toString(mayoStock));
 
         jLabel10.setText("Mayonnaise");
-
-        updateb.setText("Update Inventory");
-        updateb.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                updatebActionPerformed(evt);
-            }
-        });
 
         jButton2.setText("Go Back");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
+            }
+        });
+
+        jLabel11.setText("Patty");
+
+        pattyStocktf.setEditable(false);
+
+        pattyAdd.setText("0");
+
+        chickenStocktf.setEditable(false);
+
+        jLabel12.setText("Chicken Nugget");
+
+        chickenAdd.setText("0");
+
+        friesStocktf.setEditable(false);
+
+        friesAdd.setText("0");
+
+        jLabel13.setText("Fries");
+
+        saladStocktf.setEditable(false);
+
+        saladAdd.setText("0");
+
+        jLabel14.setText("Salad");
+
+        sodaStocktf.setEditable(false);
+
+        sodaAdd.setText("0");
+
+        jLabel15.setText("Soda");
+
+        teaStocktf.setEditable(false);
+
+        teaAdd.setText("0");
+
+        jLabel16.setText("Tea");
+
+        coffeeStocktf.setEditable(false);
+
+        coffeeAdd.setText("0");
+
+        jLabel17.setText("Coffee");
+
+        jButton1.setText("?");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
+        jButton3.setText("?");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
+
+        jButton4.setText("?");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
+
+        jButton5.setText("?");
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
+
+        jButton6.setText("?");
+        jButton6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton6ActionPerformed(evt);
+            }
+        });
+
+        jButton7.setText("?");
+        jButton7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton7ActionPerformed(evt);
+            }
+        });
+
+        jButton8.setText("?");
+        jButton8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton8ActionPerformed(evt);
+            }
+        });
+
+        jButton9.setText("?");
+        jButton9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton9ActionPerformed(evt);
+            }
+        });
+
+        jButton10.setText("?");
+        jButton10.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton10ActionPerformed(evt);
+            }
+        });
+
+        jButton11.setText("?");
+        jButton11.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton11ActionPerformed(evt);
+            }
+        });
+
+        jButton12.setText("?");
+        jButton12.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton12ActionPerformed(evt);
+            }
+        });
+
+        jButton13.setText("?");
+        jButton13.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton13ActionPerformed(evt);
+            }
+        });
+
+        jButton14.setText("?");
+        jButton14.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton14ActionPerformed(evt);
+            }
+        });
+
+        jButton15.setText("?");
+        jButton15.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton15ActionPerformed(evt);
+            }
+        });
+
+        jButton16.setText("?");
+        jButton16.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton16ActionPerformed(evt);
+            }
+        });
+
+        jButton17.setText("OK");
+        jButton17.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton17ActionPerformed(evt);
+            }
+        });
+
+        jButton18.setText("OK");
+        jButton18.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton18ActionPerformed(evt);
+            }
+        });
+
+        jButton19.setText("OK");
+        jButton19.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton19ActionPerformed(evt);
+            }
+        });
+
+        jButton20.setText("OK");
+        jButton20.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton20ActionPerformed(evt);
+            }
+        });
+
+        jButton21.setText("OK");
+        jButton21.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton21ActionPerformed(evt);
+            }
+        });
+
+        jButton22.setText("OK");
+        jButton22.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton22ActionPerformed(evt);
+            }
+        });
+
+        jButton23.setText("OK");
+        jButton23.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton23ActionPerformed(evt);
+            }
+        });
+
+        jButton24.setText("OK");
+        jButton24.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton24ActionPerformed(evt);
+            }
+        });
+
+        jButton25.setText("OK");
+        jButton25.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton25ActionPerformed(evt);
+            }
+        });
+
+        jButton26.setText("OK");
+        jButton26.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton26ActionPerformed(evt);
+            }
+        });
+
+        jButton27.setText("OK");
+        jButton27.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton27ActionPerformed(evt);
+            }
+        });
+
+        jButton28.setText("OK");
+        jButton28.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton28ActionPerformed(evt);
+            }
+        });
+
+        jButton29.setText("OK");
+        jButton29.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton29ActionPerformed(evt);
+            }
+        });
+
+        jButton30.setText("OK");
+        jButton30.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton30ActionPerformed(evt);
             }
         });
 
@@ -152,42 +439,101 @@ public class Inventory extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel4)
-                            .addComponent(jLabel5)
-                            .addComponent(jLabel6)
-                            .addComponent(jLabel7)
-                            .addComponent(jLabel8)
-                            .addComponent(jLabel9)
-                            .addComponent(jLabel10))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(mayoStocktf, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(ketchupStocktf, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(lettuceStocktf, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(cheeseStocktf, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(baconStocktf, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(bunStocktf, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(tomatoStocktf, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel3)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addComponent(tomatoAdd, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 46, Short.MAX_VALUE)
-                                .addComponent(cheeseAdd, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(baconAdd, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(bunAdd, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addComponent(mayoAdd, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 46, Short.MAX_VALUE)
-                                .addComponent(ketchupAdd, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(lettuceAdd, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel1)
+                            .addComponent(jLabel11)
+                            .addComponent(jLabel1)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel5)
+                                    .addComponent(jLabel6)
+                                    .addComponent(jLabel7)
+                                    .addComponent(jLabel8)
+                                    .addComponent(jLabel9)
+                                    .addComponent(jLabel10)
+                                    .addComponent(jLabel12)
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                        .addGroup(layout.createSequentialGroup()
+                                            .addGap(73, 73, 73)
+                                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                                .addComponent(pattyStocktf, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                .addComponent(baconStocktf, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                .addComponent(cheeseStocktf, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                .addComponent(tomatoStocktf, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                .addComponent(lettuceStocktf, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                .addComponent(ketchupStocktf, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                .addComponent(mayoStocktf, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                .addComponent(chickenStocktf, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 82, Short.MAX_VALUE)
+                                                .addComponent(bunStocktf, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                                        .addGroup(layout.createSequentialGroup()
+                                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addComponent(jLabel17))
+                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                                .addComponent(coffeeStocktf, javax.swing.GroupLayout.DEFAULT_SIZE, 82, Short.MAX_VALUE)
+                                                .addComponent(teaStocktf, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                .addComponent(sodaStocktf, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                .addComponent(saladStocktf, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                .addComponent(friesStocktf, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                                        .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.LEADING)))
+                                .addGap(38, 38, 38)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel3)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                                .addComponent(cheeseAdd, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                .addComponent(baconAdd, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                .addComponent(tomatoAdd, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                .addComponent(lettuceAdd, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                .addComponent(ketchupAdd, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                .addComponent(mayoAdd, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                .addComponent(chickenAdd, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                .addComponent(bunAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                            .addComponent(pattyAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(friesAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(saladAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(coffeeAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(sodaAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(teaAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addGap(45, 45, 45)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                            .addComponent(jButton14, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                            .addComponent(jButton12, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                            .addComponent(jButton11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                            .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                            .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                            .addComponent(jButton4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                            .addComponent(jButton5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                            .addComponent(jButton6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                            .addComponent(jButton7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                            .addComponent(jButton8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                            .addComponent(jButton9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                            .addComponent(jButton10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                            .addComponent(jButton13, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                            .addComponent(jButton15, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                            .addComponent(jButton16, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                        .addGap(18, 18, 18)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jButton17)
+                                            .addComponent(jButton18)
+                                            .addComponent(jButton19)
+                                            .addComponent(jButton20)
+                                            .addComponent(jButton21)
+                                            .addComponent(jButton22)
+                                            .addComponent(jButton23)
+                                            .addComponent(jButton24)
+                                            .addComponent(jButton25)
+                                            .addComponent(jButton26)
+                                            .addComponent(jButton27)
+                                            .addComponent(jButton28)
+                                            .addComponent(jButton29)
+                                            .addComponent(jButton30))))))
                         .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(updateb, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, 120, Short.MAX_VALUE)))
+                    .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -200,45 +546,157 @@ public class Inventory extends javax.swing.JFrame {
                     .addComponent(jLabel2)
                     .addComponent(jLabel3))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jButton17))
+                    .addComponent(bunAdd, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(bunStocktf, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.TRAILING))
+                .addGap(10, 10, 10)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(bunAdd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(bunStocktf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel4))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(6, 6, 6)
+                        .addComponent(jLabel11))
+                    .addComponent(pattyAdd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(pattyStocktf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                        .addComponent(jButton18)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(baconAdd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(baconStocktf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel5))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(cheeseAdd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(cheeseStocktf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel6))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(tomatoAdd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(tomatoStocktf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel7))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lettuceAdd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lettuceStocktf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel8))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(ketchupAdd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(ketchupStocktf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                            .addGroup(layout.createSequentialGroup()
+                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                                    .addComponent(jButton4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                                            .addComponent(baconAdd, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                            .addComponent(baconStocktf, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                        .addGap(0, 0, Short.MAX_VALUE))
+                                                    .addGroup(layout.createSequentialGroup()
+                                                        .addGap(0, 0, Short.MAX_VALUE)
+                                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                                            .addComponent(jLabel5)
+                                                            .addComponent(jButton19))))
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                    .addComponent(cheeseAdd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                    .addComponent(cheeseStocktf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                                        .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                                                        .addComponent(jButton20))))
+                                            .addComponent(jLabel6))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(tomatoAdd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(tomatoStocktf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                                .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                                                .addComponent(jButton21))))
+                                    .addComponent(jLabel7))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(lettuceAdd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(lettuceStocktf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                        .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                                        .addComponent(jButton22))))
+                            .addComponent(jLabel8))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(ketchupAdd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(ketchupStocktf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(jButton8, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                                .addComponent(jButton23))))
                     .addComponent(jLabel9))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(mayoAdd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(mayoStocktf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel10))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(updateb)
-                    .addComponent(jButton2))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(jLabel10)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(mayoAdd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(mayoStocktf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jButton9, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                        .addComponent(jButton24)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(chickenStocktf, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel12, javax.swing.GroupLayout.Alignment.TRAILING))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(friesStocktf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel13)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(chickenAdd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(jButton10, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                                .addComponent(jButton25)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(friesAdd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(jButton11, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                                .addComponent(jButton26)))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(saladStocktf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel14))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(sodaStocktf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel15))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(saladAdd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(jButton12, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                                .addComponent(jButton27)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(sodaAdd, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jButton13, javax.swing.GroupLayout.PREFERRED_SIZE, 0, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(jButton15, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jButton28)))
+                        .addGap(11, 11, 11)))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(teaStocktf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel16))
+                    .addComponent(teaAdd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jButton16)
+                        .addComponent(jButton29)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jButton14, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                            .addComponent(jButton30))
+                        .addGap(154, 154, 154))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(coffeeStocktf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jLabel17))
+                            .addComponent(coffeeAdd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jButton2)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
 
         pack();
@@ -252,79 +710,1049 @@ public class Inventory extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_bunStocktfActionPerformed
 
-    private void updatebActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updatebActionPerformed
-        
-        try {
-            Integer.parseInt(bunAdd.getText());
-            bunStock = bunStock + Integer.parseInt(bunAdd.getText());
-            bunStocktf.setText(Integer.toString(bunStock));
-            bunAdd.setText("0");
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+ 
+        try{
+            
+                // load database driver class
+         Class.forName("sun.jdbc.odbc.JdbcOdbcDriver");
+           
+         // connect to database
+         Connection con = DriverManager.getConnection("jdbc:odbc:RestaurantDB");
+         
+         Statement stmt = (Statement) con.createStatement();
+         
+         //Select "customer" if the ID I entered matches one in the database.
+         String SQL = "SELECT * FROM Inventory WHERE IngName='Bun'";
+         
+         //Store returned results in rs.
+         ResultSet rs = stmt.executeQuery(SQL);
+         
+         //Use results in rs to populate text fields.
+         while(rs.next())
+         {
+             bunStocktf.setText(rs.getString("Stock"));
+         }
+         
+         stmt.close();
+         con.close();
+         
+        }catch(Exception e)
+        {
+            System.out.println("ERROR: " + e.getMessage());
         }
-        catch (NumberFormatException a){
-            bunAdd.setText("Error");
-        }
-        
-        try {
-            Integer.parseInt(baconAdd.getText());
-            baconStock = baconStock + Integer.parseInt(baconAdd.getText());
-            baconStocktf.setText(Integer.toString(baconStock));
-            baconAdd.setText("0");
-        }
-        catch (NumberFormatException b){
-            baconAdd.setText("Error");
-        }
-        
-        try {
-            Integer.parseInt(cheeseAdd.getText());
-            cheeseStock = cheeseStock + Integer.parseInt(cheeseAdd.getText());
-            cheeseStocktf.setText(Integer.toString(cheeseStock));
-            cheeseAdd.setText("0");
-        }
-        catch (NumberFormatException c){
-            cheeseAdd.setText("Error");
-        }
-        
-        try {
-            Integer.parseInt(tomatoAdd.getText());
-            tomatoStock = tomatoStock + Integer.parseInt(tomatoAdd.getText());
-            tomatoStocktf.setText(Integer.toString(tomatoStock));
-            tomatoAdd.setText("0");
-        }
-        catch (NumberFormatException d){
-            tomatoAdd.setText("Error");
-        }
-        
-        try {
-            Integer.parseInt(lettuceAdd.getText());
-            lettuceStock = lettuceStock + Integer.parseInt(lettuceAdd.getText());
-            lettuceStocktf.setText(Integer.toString(lettuceStock));
-            lettuceAdd.setText("0");
-        }
-        catch (NumberFormatException e){
-            lettuceAdd.setText("Error");
-        }
-        
-        try {
-            Integer.parseInt(ketchupAdd.getText());
-            ketchupStock = ketchupStock + Integer.parseInt(ketchupAdd.getText());
-            ketchupStocktf.setText(Integer.toString(ketchupStock));
-            ketchupAdd.setText("0");
-        }
-        catch (NumberFormatException f){
-            ketchupAdd.setText("Error");
-        }
-        
-        try {
-            Integer.parseInt(mayoAdd.getText());
-            mayoStock = mayoStock + Integer.parseInt(mayoAdd.getText());
-            mayoStocktf.setText(Integer.toString(mayoStock));
-            mayoAdd.setText("0");
-        }
-        catch (NumberFormatException g){
-            mayoAdd.setText("Error");
-        }
-    }//GEN-LAST:event_updatebActionPerformed
+    }//GEN-LAST:event_jButton1ActionPerformed
 
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        try{
+            
+                // load database driver class
+         Class.forName("sun.jdbc.odbc.JdbcOdbcDriver");
+           
+         // connect to database
+         Connection con = DriverManager.getConnection("jdbc:odbc:RestaurantDB");
+         
+         Statement stmt = (Statement) con.createStatement();
+         
+         //Select "customer" if the ID I entered matches one in the database.
+         String SQL = "SELECT * FROM Inventory WHERE IngName='Patty'";
+         
+         //Store returned results in rs.
+         ResultSet rs = stmt.executeQuery(SQL);
+         
+         //Use results in rs to populate text fields.
+         while(rs.next())
+         {
+             pattyStocktf.setText(rs.getString("Stock"));
+         }
+         
+         stmt.close();
+         con.close();
+         
+        }catch(Exception e)
+        {
+            System.out.println("ERROR: " + e.getMessage());
+        }
+    }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        try{
+            
+                // load database driver class
+         Class.forName("sun.jdbc.odbc.JdbcOdbcDriver");
+           
+         // connect to database
+         Connection con = DriverManager.getConnection("jdbc:odbc:RestaurantDB");
+         
+         Statement stmt = (Statement) con.createStatement();
+         
+         //Select "customer" if the ID I entered matches one in the database.
+         String SQL = "SELECT * FROM Inventory WHERE IngName='Bacon'";
+         
+         //Store returned results in rs.
+         ResultSet rs = stmt.executeQuery(SQL);
+         
+         //Use results in rs to populate text fields.
+         while(rs.next())
+         {
+             baconStocktf.setText(rs.getString("Stock"));
+         }
+         
+         stmt.close();
+         con.close();
+         
+        }catch(Exception e)
+        {
+            System.out.println("ERROR: " + e.getMessage());
+        }
+    }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        try{
+            
+                // load database driver class
+         Class.forName("sun.jdbc.odbc.JdbcOdbcDriver");
+           
+         // connect to database
+         Connection con = DriverManager.getConnection("jdbc:odbc:RestaurantDB");
+         
+         Statement stmt = (Statement) con.createStatement();
+         
+         //Select "customer" if the ID I entered matches one in the database.
+         String SQL = "SELECT * FROM Inventory WHERE IngName='Cheese'";
+         
+         //Store returned results in rs.
+         ResultSet rs = stmt.executeQuery(SQL);
+         
+         //Use results in rs to populate text fields.
+         while(rs.next())
+         {
+             cheeseStocktf.setText(rs.getString("Stock"));
+         }
+         
+         stmt.close();
+         con.close();
+         
+        }catch(Exception e)
+        {
+            System.out.println("ERROR: " + e.getMessage());
+        }
+    }//GEN-LAST:event_jButton5ActionPerformed
+
+    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+        try{
+            
+                // load database driver class
+         Class.forName("sun.jdbc.odbc.JdbcOdbcDriver");
+           
+         // connect to database
+         Connection con = DriverManager.getConnection("jdbc:odbc:RestaurantDB");
+         
+         Statement stmt = (Statement) con.createStatement();
+         
+         //Select "customer" if the ID I entered matches one in the database.
+         String SQL = "SELECT * FROM Inventory WHERE IngName='Tomato'";
+         
+         //Store returned results in rs.
+         ResultSet rs = stmt.executeQuery(SQL);
+         
+         //Use results in rs to populate text fields.
+         while(rs.next())
+         {
+             tomatoStocktf.setText(rs.getString("Stock"));
+         }
+         
+         stmt.close();
+         con.close();
+         
+        }catch(Exception e)
+        {
+            System.out.println("ERROR: " + e.getMessage());
+        }
+    }//GEN-LAST:event_jButton6ActionPerformed
+
+    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
+        try{
+            
+                // load database driver class
+         Class.forName("sun.jdbc.odbc.JdbcOdbcDriver");
+           
+         // connect to database
+         Connection con = DriverManager.getConnection("jdbc:odbc:RestaurantDB");
+         
+         Statement stmt = (Statement) con.createStatement();
+         
+         //Select "customer" if the ID I entered matches one in the database.
+         String SQL = "SELECT * FROM Inventory WHERE IngName='Lettuce'";
+         
+         //Store returned results in rs.
+         ResultSet rs = stmt.executeQuery(SQL);
+         
+         //Use results in rs to populate text fields.
+         while(rs.next())
+         {
+             lettuceStocktf.setText(rs.getString("Stock"));
+         }
+         
+         stmt.close();
+         con.close();
+         
+        }catch(Exception e)
+        {
+            System.out.println("ERROR: " + e.getMessage());
+        }
+    }//GEN-LAST:event_jButton7ActionPerformed
+
+    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
+        try{
+            
+                // load database driver class
+         Class.forName("sun.jdbc.odbc.JdbcOdbcDriver");
+           
+         // connect to database
+         Connection con = DriverManager.getConnection("jdbc:odbc:RestaurantDB");
+         
+         Statement stmt = (Statement) con.createStatement();
+         
+         //Select "customer" if the ID I entered matches one in the database.
+         String SQL = "SELECT * FROM Inventory WHERE IngName='Ketchup'";
+         
+         //Store returned results in rs.
+         ResultSet rs = stmt.executeQuery(SQL);
+         
+         //Use results in rs to populate text fields.
+         while(rs.next())
+         {
+             ketchupStocktf.setText(rs.getString("Stock"));
+         }
+         
+         stmt.close();
+         con.close();
+         
+        }catch(Exception e)
+        {
+            System.out.println("ERROR: " + e.getMessage());
+        }
+    }//GEN-LAST:event_jButton8ActionPerformed
+
+    private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
+        try{
+            
+                // load database driver class
+         Class.forName("sun.jdbc.odbc.JdbcOdbcDriver");
+           
+         // connect to database
+         Connection con = DriverManager.getConnection("jdbc:odbc:RestaurantDB");
+         
+         Statement stmt = (Statement) con.createStatement();
+         
+         //Select "customer" if the ID I entered matches one in the database.
+         String SQL = "SELECT * FROM Inventory WHERE IngName='Mayonnaise'";
+         
+         //Store returned results in rs.
+         ResultSet rs = stmt.executeQuery(SQL);
+         
+         //Use results in rs to populate text fields.
+         while(rs.next())
+         {
+             mayoStocktf.setText(rs.getString("Stock"));
+         }
+         
+         stmt.close();
+         con.close();
+         
+        }catch(Exception e)
+        {
+            System.out.println("ERROR: " + e.getMessage());
+        }
+    }//GEN-LAST:event_jButton9ActionPerformed
+
+    private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
+        try{
+            
+                // load database driver class
+         Class.forName("sun.jdbc.odbc.JdbcOdbcDriver");
+           
+         // connect to database
+         Connection con = DriverManager.getConnection("jdbc:odbc:RestaurantDB");
+         
+         Statement stmt = (Statement) con.createStatement();
+         
+         //Select "customer" if the ID I entered matches one in the database.
+         String SQL = "SELECT * FROM Inventory WHERE IngName='Chicken Nugget'";
+         
+         //Store returned results in rs.
+         ResultSet rs = stmt.executeQuery(SQL);
+         
+         //Use results in rs to populate text fields.
+         while(rs.next())
+         {
+             chickenStocktf.setText(rs.getString("Stock"));
+         }
+         
+         stmt.close();
+         con.close();
+         
+        }catch(Exception e)
+        {
+            System.out.println("ERROR: " + e.getMessage());
+        }
+    }//GEN-LAST:event_jButton10ActionPerformed
+
+    private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
+        try{
+            
+                // load database driver class
+         Class.forName("sun.jdbc.odbc.JdbcOdbcDriver");
+           
+         // connect to database
+         Connection con = DriverManager.getConnection("jdbc:odbc:RestaurantDB");
+         
+         Statement stmt = (Statement) con.createStatement();
+         
+         //Select "customer" if the ID I entered matches one in the database.
+         String SQL = "SELECT * FROM Inventory WHERE IngName='Fries'";
+         
+         //Store returned results in rs.
+         ResultSet rs = stmt.executeQuery(SQL);
+         
+         //Use results in rs to populate text fields.
+         while(rs.next())
+         {
+             friesStocktf.setText(rs.getString("Stock"));
+         }
+         
+         stmt.close();
+         con.close();
+         
+        }catch(Exception e)
+        {
+            System.out.println("ERROR: " + e.getMessage());
+        }
+    }//GEN-LAST:event_jButton11ActionPerformed
+
+    private void jButton12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton12ActionPerformed
+        try{
+            
+                // load database driver class
+         Class.forName("sun.jdbc.odbc.JdbcOdbcDriver");
+           
+         // connect to database
+         Connection con = DriverManager.getConnection("jdbc:odbc:RestaurantDB");
+         
+         Statement stmt = (Statement) con.createStatement();
+         
+         //Select "customer" if the ID I entered matches one in the database.
+         String SQL = "SELECT * FROM Inventory WHERE IngName='Salad'";
+         
+         //Store returned results in rs.
+         ResultSet rs = stmt.executeQuery(SQL);
+         
+         //Use results in rs to populate text fields.
+         while(rs.next())
+         {
+             saladStocktf.setText(rs.getString("Stock"));
+         }
+         
+         stmt.close();
+         con.close();
+         
+        }catch(Exception e)
+        {
+            System.out.println("ERROR: " + e.getMessage());
+        }
+    }//GEN-LAST:event_jButton12ActionPerformed
+
+    private void jButton13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton13ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton13ActionPerformed
+
+    private void jButton14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton14ActionPerformed
+        try{
+            
+                // load database driver class
+         Class.forName("sun.jdbc.odbc.JdbcOdbcDriver");
+           
+         // connect to database
+         Connection con = DriverManager.getConnection("jdbc:odbc:RestaurantDB");
+         
+         Statement stmt = (Statement) con.createStatement();
+         
+         //Select "customer" if the ID I entered matches one in the database.
+         String SQL = "SELECT * FROM Inventory WHERE IngName='Coffee'";
+         
+         //Store returned results in rs.
+         ResultSet rs = stmt.executeQuery(SQL);
+         
+         //Use results in rs to populate text fields.
+         while(rs.next())
+         {
+             coffeeStocktf.setText(rs.getString("Stock"));
+         }
+         
+         stmt.close();
+         con.close();
+         
+        }catch(Exception e)
+        {
+            System.out.println("ERROR: " + e.getMessage());
+        }
+    }//GEN-LAST:event_jButton14ActionPerformed
+
+    private void jButton15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton15ActionPerformed
+        try{
+            
+                // load database driver class
+         Class.forName("sun.jdbc.odbc.JdbcOdbcDriver");
+           
+         // connect to database
+         Connection con = DriverManager.getConnection("jdbc:odbc:RestaurantDB");
+         
+         Statement stmt = (Statement) con.createStatement();
+         
+         //Select "customer" if the ID I entered matches one in the database.
+         String SQL = "SELECT * FROM Inventory WHERE IngName='Soda'";
+         
+         //Store returned results in rs.
+         ResultSet rs = stmt.executeQuery(SQL);
+         
+         //Use results in rs to populate text fields.
+         while(rs.next())
+         {
+             sodaStocktf.setText(rs.getString("Stock"));
+         }
+         
+         stmt.close();
+         con.close();
+         
+        }catch(Exception e)
+        {
+            System.out.println("ERROR: " + e.getMessage());
+        }
+    }//GEN-LAST:event_jButton15ActionPerformed
+
+    private void jButton16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton16ActionPerformed
+        try{
+            
+                // load database driver class
+         Class.forName("sun.jdbc.odbc.JdbcOdbcDriver");
+           
+         // connect to database
+         Connection con = DriverManager.getConnection("jdbc:odbc:RestaurantDB");
+         
+         Statement stmt = (Statement) con.createStatement();
+         
+         //Select "customer" if the ID I entered matches one in the database.
+         String SQL = "SELECT * FROM Inventory WHERE IngName='Tea'";
+         
+         //Store returned results in rs.
+         ResultSet rs = stmt.executeQuery(SQL);
+         
+         //Use results in rs to populate text fields.
+         while(rs.next())
+         {
+             teaStocktf.setText(rs.getString("Stock"));
+         }
+         
+         stmt.close();
+         con.close();
+         
+        }catch(Exception e)
+        {
+            System.out.println("ERROR: " + e.getMessage());
+        }
+    }//GEN-LAST:event_jButton16ActionPerformed
+
+    private void jButton17ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton17ActionPerformed
+        String inStock = bunStocktf.getText();
+        String addToStock = bunAdd.getText();
+        
+        try{
+            
+            int addConverted = Integer.parseInt(addToStock);
+            int newStock = addConverted + Integer.parseInt(inStock);
+            String updateStock = String.valueOf(newStock);
+            
+            try{
+            
+            // load database driver class
+            Class.forName("sun.jdbc.odbc.JdbcOdbcDriver");
+           
+            // connect to database
+            Connection con =
+                    DriverManager.getConnection("jdbc:odbc:RestaurantDB");
+         
+            Statement stmt = con.createStatement();
+         
+            stmt.executeUpdate("UPDATE Inventory SET " +  "Stock = '"
+                 + updateStock + "'"  + "WHERE IngName ='Bun'");
+            
+            bunStocktf.setText(updateStock);
+            
+            stmt.close();
+            con.close();
+         
+         
+            }catch(Exception e)
+            {
+                System.out.println("ERROR: " + e.getMessage());
+            }
+            
+            
+        }catch(Exception e)
+        {
+            bunAdd.setText("ERROR");
+        }   
+        
+    }//GEN-LAST:event_jButton17ActionPerformed
+
+    private void jButton18ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton18ActionPerformed
+        String inStock = pattyStocktf.getText();
+        String addToStock = pattyAdd.getText();
+        
+        try{
+            
+            int addConverted = Integer.parseInt(addToStock);
+            int newStock = addConverted + Integer.parseInt(inStock);
+            String updateStock = String.valueOf(newStock);
+            
+            try{
+            
+            // load database driver class
+            Class.forName("sun.jdbc.odbc.JdbcOdbcDriver");
+           
+            // connect to database
+            Connection con =
+                    DriverManager.getConnection("jdbc:odbc:RestaurantDB");
+         
+            Statement stmt = con.createStatement();
+         
+            stmt.executeUpdate("UPDATE Inventory SET " +  "Stock = '"
+                 + updateStock + "'"  + "WHERE IngName ='Patty'");
+            
+            pattyStocktf.setText(updateStock);
+            
+            stmt.close();
+            con.close();
+         
+         
+            }catch(Exception e)
+            {
+                System.out.println("ERROR: " + e.getMessage());
+            }
+            
+            
+        }catch(Exception e)
+        {
+            pattyAdd.setText("ERROR");
+        }
+    }//GEN-LAST:event_jButton18ActionPerformed
+
+    private void jButton19ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton19ActionPerformed
+        String inStock = baconStocktf.getText();
+        String addToStock = baconAdd.getText();
+        
+        try{
+            
+            int addConverted = Integer.parseInt(addToStock);
+            int newStock = addConverted + Integer.parseInt(inStock);
+            String updateStock = String.valueOf(newStock);
+            
+            try{
+            
+            // load database driver class
+            Class.forName("sun.jdbc.odbc.JdbcOdbcDriver");
+           
+            // connect to database
+            Connection con =
+                    DriverManager.getConnection("jdbc:odbc:RestaurantDB");
+         
+            Statement stmt = con.createStatement();
+         
+            stmt.executeUpdate("UPDATE Inventory SET " +  "Stock = '"
+                 + updateStock + "'"  + "WHERE IngName ='Bacon'");
+            
+            baconStocktf.setText(updateStock);
+            
+            stmt.close();
+            con.close();
+         
+         
+            }catch(Exception e)
+            {
+                System.out.println("ERROR: " + e.getMessage());
+            }
+            
+            
+        }catch(Exception e)
+        {
+            baconAdd.setText("ERROR");
+        }
+    }//GEN-LAST:event_jButton19ActionPerformed
+
+    private void jButton20ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton20ActionPerformed
+        String inStock = cheeseStocktf.getText();
+        String addToStock = cheeseAdd.getText();
+        
+        try{
+            
+            int addConverted = Integer.parseInt(addToStock);
+            int newStock = addConverted + Integer.parseInt(inStock);
+            String updateStock = String.valueOf(newStock);
+            
+            try{
+            
+            // load database driver class
+            Class.forName("sun.jdbc.odbc.JdbcOdbcDriver");
+           
+            // connect to database
+            Connection con =
+                    DriverManager.getConnection("jdbc:odbc:RestaurantDB");
+         
+            Statement stmt = con.createStatement();
+         
+            stmt.executeUpdate("UPDATE Inventory SET " +  "Stock = '"
+                 + updateStock + "'"  + "WHERE IngName ='Cheese'");
+            
+            cheeseStocktf.setText(updateStock);
+            
+            stmt.close();
+            con.close();
+         
+         
+            }catch(Exception e)
+            {
+                System.out.println("ERROR: " + e.getMessage());
+            }
+            
+            
+        }catch(Exception e)
+        {
+            cheeseAdd.setText("ERROR");
+        }
+    }//GEN-LAST:event_jButton20ActionPerformed
+
+    private void jButton21ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton21ActionPerformed
+        String inStock = tomatoStocktf.getText();
+        String addToStock = tomatoAdd.getText();
+        
+        try{
+            
+            int addConverted = Integer.parseInt(addToStock);
+            int newStock = addConverted + Integer.parseInt(inStock);
+            String updateStock = String.valueOf(newStock);
+            
+            try{
+            
+            // load database driver class
+            Class.forName("sun.jdbc.odbc.JdbcOdbcDriver");
+           
+            // connect to database
+            Connection con =
+                    DriverManager.getConnection("jdbc:odbc:RestaurantDB");
+         
+            Statement stmt = con.createStatement();
+         
+            stmt.executeUpdate("UPDATE Inventory SET " +  "Stock = '"
+                 + updateStock + "'"  + "WHERE IngName ='Tomato'");
+            
+            tomatoStocktf.setText(updateStock);
+            
+            stmt.close();
+            con.close();
+         
+         
+            }catch(Exception e)
+            {
+                System.out.println("ERROR: " + e.getMessage());
+            }
+            
+            
+        }catch(Exception e)
+        {
+            tomatoAdd.setText("ERROR");
+        }
+    }//GEN-LAST:event_jButton21ActionPerformed
+
+    private void jButton22ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton22ActionPerformed
+        String inStock = lettuceStocktf.getText();
+        String addToStock = lettuceAdd.getText();
+        
+        try{
+            
+            int addConverted = Integer.parseInt(addToStock);
+            int newStock = addConverted + Integer.parseInt(inStock);
+            String updateStock = String.valueOf(newStock);
+            
+            try{
+            
+            // load database driver class
+            Class.forName("sun.jdbc.odbc.JdbcOdbcDriver");
+           
+            // connect to database
+            Connection con =
+                    DriverManager.getConnection("jdbc:odbc:RestaurantDB");
+         
+            Statement stmt = con.createStatement();
+         
+            stmt.executeUpdate("UPDATE Inventory SET " +  "Stock = '"
+                 + updateStock + "'"  + "WHERE IngName ='Lettuce'");
+            
+            lettuceStocktf.setText(updateStock);
+            
+            stmt.close();
+            con.close();
+         
+         
+            }catch(Exception e)
+            {
+                System.out.println("ERROR: " + e.getMessage());
+            }
+            
+            
+        }catch(Exception e)
+        {
+            lettuceAdd.setText("ERROR");
+        }
+    }//GEN-LAST:event_jButton22ActionPerformed
+
+    private void jButton23ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton23ActionPerformed
+        String inStock = ketchupStocktf.getText();
+        String addToStock = ketchupAdd.getText();
+        
+        try{
+            
+            int addConverted = Integer.parseInt(addToStock);
+            int newStock = addConverted + Integer.parseInt(inStock);
+            String updateStock = String.valueOf(newStock);
+            
+            try{
+            
+            // load database driver class
+            Class.forName("sun.jdbc.odbc.JdbcOdbcDriver");
+           
+            // connect to database
+            Connection con =
+                    DriverManager.getConnection("jdbc:odbc:RestaurantDB");
+         
+            Statement stmt = con.createStatement();
+         
+            stmt.executeUpdate("UPDATE Inventory SET " +  "Stock = '"
+                 + updateStock + "'"  + "WHERE IngName ='Ketchup'");
+            
+            ketchupStocktf.setText(updateStock);
+            
+            stmt.close();
+            con.close();
+         
+         
+            }catch(Exception e)
+            {
+                System.out.println("ERROR: " + e.getMessage());
+            }
+            
+            
+        }catch(Exception e)
+        {
+            ketchupAdd.setText("ERROR");
+        }
+    }//GEN-LAST:event_jButton23ActionPerformed
+
+    private void jButton24ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton24ActionPerformed
+        String inStock = mayoStocktf.getText();
+        String addToStock = mayoAdd.getText();
+        
+        try{
+            
+            int addConverted = Integer.parseInt(addToStock);
+            int newStock = addConverted + Integer.parseInt(inStock);
+            String updateStock = String.valueOf(newStock);
+            
+            try{
+            
+            // load database driver class
+            Class.forName("sun.jdbc.odbc.JdbcOdbcDriver");
+           
+            // connect to database
+            Connection con =
+                    DriverManager.getConnection("jdbc:odbc:RestaurantDB");
+         
+            Statement stmt = con.createStatement();
+         
+            stmt.executeUpdate("UPDATE Inventory SET " +  "Stock = '"
+                 + updateStock + "'"  + "WHERE IngName ='Mayonnaise'");
+            
+            mayoStocktf.setText(updateStock);
+            
+            stmt.close();
+            con.close();
+         
+         
+            }catch(Exception e)
+            {
+                System.out.println("ERROR: " + e.getMessage());
+            }
+            
+            
+        }catch(Exception e)
+        {
+            mayoAdd.setText("ERROR");
+        }
+    }//GEN-LAST:event_jButton24ActionPerformed
+
+    private void jButton25ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton25ActionPerformed
+        String inStock = chickenStocktf.getText();
+        String addToStock = chickenAdd.getText();
+        
+        try{
+            
+            int addConverted = Integer.parseInt(addToStock);
+            int newStock = addConverted + Integer.parseInt(inStock);
+            String updateStock = String.valueOf(newStock);
+            
+            try{
+            
+            // load database driver class
+            Class.forName("sun.jdbc.odbc.JdbcOdbcDriver");
+           
+            // connect to database
+            Connection con =
+                    DriverManager.getConnection("jdbc:odbc:RestaurantDB");
+         
+            Statement stmt = con.createStatement();
+         
+            stmt.executeUpdate("UPDATE Inventory SET " +  "Stock = '"
+                 + updateStock + "'"  + "WHERE IngName ='Chicken Nugget'");
+            
+            chickenStocktf.setText(updateStock);
+            
+            stmt.close();
+            con.close();
+         
+         
+            }catch(Exception e)
+            {
+                System.out.println("ERROR: " + e.getMessage());
+            }
+            
+            
+        }catch(Exception e)
+        {
+            chickenAdd.setText("ERROR");
+        }
+    }//GEN-LAST:event_jButton25ActionPerformed
+
+    private void jButton26ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton26ActionPerformed
+        String inStock = friesStocktf.getText();
+        String addToStock = friesAdd.getText();
+        
+        try{
+            
+            int addConverted = Integer.parseInt(addToStock);
+            int newStock = addConverted + Integer.parseInt(inStock);
+            String updateStock = String.valueOf(newStock);
+            
+            try{
+            
+            // load database driver class
+            Class.forName("sun.jdbc.odbc.JdbcOdbcDriver");
+           
+            // connect to database
+            Connection con =
+                    DriverManager.getConnection("jdbc:odbc:RestaurantDB");
+         
+            Statement stmt = con.createStatement();
+         
+            stmt.executeUpdate("UPDATE Inventory SET " +  "Stock = '"
+                 + updateStock + "'"  + "WHERE IngName ='Fries'");
+            
+            friesStocktf.setText(updateStock);
+            
+            stmt.close();
+            con.close();
+         
+         
+            }catch(Exception e)
+            {
+                System.out.println("ERROR: " + e.getMessage());
+            }
+            
+            
+        }catch(Exception e)
+        {
+            friesAdd.setText("ERROR");
+        }
+    }//GEN-LAST:event_jButton26ActionPerformed
+
+    private void jButton27ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton27ActionPerformed
+        String inStock = saladStocktf.getText();
+        String addToStock = saladAdd.getText();
+        
+        try{
+            
+            int addConverted = Integer.parseInt(addToStock);
+            int newStock = addConverted + Integer.parseInt(inStock);
+            String updateStock = String.valueOf(newStock);
+            
+            try{
+            
+            // load database driver class
+            Class.forName("sun.jdbc.odbc.JdbcOdbcDriver");
+           
+            // connect to database
+            Connection con =
+                    DriverManager.getConnection("jdbc:odbc:RestaurantDB");
+         
+            Statement stmt = con.createStatement();
+         
+            stmt.executeUpdate("UPDATE Inventory SET " +  "Stock = '"
+                 + updateStock + "'"  + "WHERE IngName ='Salad'");
+            
+            saladStocktf.setText(updateStock);
+            
+            stmt.close();
+            con.close();
+         
+         
+            }catch(Exception e)
+            {
+                System.out.println("ERROR: " + e.getMessage());
+            }
+            
+            
+        }catch(Exception e)
+        {
+            saladAdd.setText("ERROR");
+        }
+    }//GEN-LAST:event_jButton27ActionPerformed
+
+    private void jButton28ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton28ActionPerformed
+        String inStock = sodaStocktf.getText();
+        String addToStock = sodaAdd.getText();
+        
+        try{
+            
+            int addConverted = Integer.parseInt(addToStock);
+            int newStock = addConverted + Integer.parseInt(inStock);
+            String updateStock = String.valueOf(newStock);
+            
+            try{
+            
+            // load database driver class
+            Class.forName("sun.jdbc.odbc.JdbcOdbcDriver");
+           
+            // connect to database
+            Connection con =
+                    DriverManager.getConnection("jdbc:odbc:RestaurantDB");
+         
+            Statement stmt = con.createStatement();
+         
+            stmt.executeUpdate("UPDATE Inventory SET " +  "Stock = '"
+                 + updateStock + "'"  + "WHERE IngName ='Soda'");
+            
+            sodaStocktf.setText(updateStock);
+            
+            stmt.close();
+            con.close();
+         
+         
+            }catch(Exception e)
+            {
+                System.out.println("ERROR: " + e.getMessage());
+            }
+            
+            
+        }catch(Exception e)
+        {
+            sodaAdd.setText("ERROR");
+        }
+    }//GEN-LAST:event_jButton28ActionPerformed
+
+    private void jButton29ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton29ActionPerformed
+        String inStock = teaStocktf.getText();
+        String addToStock = teaAdd.getText();
+        
+        try{
+            
+            int addConverted = Integer.parseInt(addToStock);
+            int newStock = addConverted + Integer.parseInt(inStock);
+            String updateStock = String.valueOf(newStock);
+            
+            try{
+            
+            // load database driver class
+            Class.forName("sun.jdbc.odbc.JdbcOdbcDriver");
+           
+            // connect to database
+            Connection con =
+                    DriverManager.getConnection("jdbc:odbc:RestaurantDB");
+         
+            Statement stmt = con.createStatement();
+         
+            stmt.executeUpdate("UPDATE Inventory SET " +  "Stock = '"
+                 + updateStock + "'"  + "WHERE IngName ='Tea'");
+            
+            teaStocktf.setText(updateStock);
+            
+            stmt.close();
+            con.close();
+         
+         
+            }catch(Exception e)
+            {
+                System.out.println("ERROR: " + e.getMessage());
+            }
+            
+            
+        }catch(Exception e)
+        {
+            teaAdd.setText("ERROR");
+        }
+    }//GEN-LAST:event_jButton29ActionPerformed
+
+    private void jButton30ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton30ActionPerformed
+        String inStock = coffeeStocktf.getText();
+        String addToStock = coffeeAdd.getText();
+        
+        try{
+            
+            int addConverted = Integer.parseInt(addToStock);
+            int newStock = addConverted + Integer.parseInt(inStock);
+            String updateStock = String.valueOf(newStock);
+            
+            try{
+            
+            // load database driver class
+            Class.forName("sun.jdbc.odbc.JdbcOdbcDriver");
+           
+            // connect to database
+            Connection con =
+                    DriverManager.getConnection("jdbc:odbc:RestaurantDB");
+         
+            Statement stmt = con.createStatement();
+         
+            stmt.executeUpdate("UPDATE Inventory SET " +  "Stock = '"
+                 + updateStock + "'"  + "WHERE IngName ='Coffee'");
+            
+            coffeeStocktf.setText(updateStock);
+            
+            stmt.close();
+            con.close();
+         
+         
+            }catch(Exception e)
+            {
+                System.out.println("ERROR: " + e.getMessage());
+            }
+            
+            
+        }catch(Exception e)
+        {
+            coffeeAdd.setText("ERROR");
+        }
+    }//GEN-LAST:event_jButton30ActionPerformed
+       
+        
     /**
      * @param args the command line arguments
      */
@@ -368,9 +1796,51 @@ public class Inventory extends javax.swing.JFrame {
     private java.awt.TextField bunStocktf;
     private java.awt.TextField cheeseAdd;
     private java.awt.TextField cheeseStocktf;
+    private java.awt.TextField chickenAdd;
+    private java.awt.TextField chickenStocktf;
+    private java.awt.TextField coffeeAdd;
+    private java.awt.TextField coffeeStocktf;
+    private java.awt.TextField friesAdd;
+    private java.awt.TextField friesStocktf;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton10;
+    private javax.swing.JButton jButton11;
+    private javax.swing.JButton jButton12;
+    private javax.swing.JButton jButton13;
+    private javax.swing.JButton jButton14;
+    private javax.swing.JButton jButton15;
+    private javax.swing.JButton jButton16;
+    private javax.swing.JButton jButton17;
+    private javax.swing.JButton jButton18;
+    private javax.swing.JButton jButton19;
     private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton20;
+    private javax.swing.JButton jButton21;
+    private javax.swing.JButton jButton22;
+    private javax.swing.JButton jButton23;
+    private javax.swing.JButton jButton24;
+    private javax.swing.JButton jButton25;
+    private javax.swing.JButton jButton26;
+    private javax.swing.JButton jButton27;
+    private javax.swing.JButton jButton28;
+    private javax.swing.JButton jButton29;
+    private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton30;
+    private javax.swing.JButton jButton4;
+    private javax.swing.JButton jButton5;
+    private javax.swing.JButton jButton6;
+    private javax.swing.JButton jButton7;
+    private javax.swing.JButton jButton8;
+    private javax.swing.JButton jButton9;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -385,8 +1855,15 @@ public class Inventory extends javax.swing.JFrame {
     private java.awt.TextField lettuceStocktf;
     private java.awt.TextField mayoAdd;
     private java.awt.TextField mayoStocktf;
+    private java.awt.TextField pattyAdd;
+    private java.awt.TextField pattyStocktf;
+    private java.awt.TextField saladAdd;
+    private java.awt.TextField saladStocktf;
+    private java.awt.TextField sodaAdd;
+    private java.awt.TextField sodaStocktf;
+    private java.awt.TextField teaAdd;
+    private java.awt.TextField teaStocktf;
     private java.awt.TextField tomatoAdd;
     private java.awt.TextField tomatoStocktf;
-    private javax.swing.JButton updateb;
     // End of variables declaration//GEN-END:variables
 }

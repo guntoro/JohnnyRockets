@@ -381,7 +381,7 @@ public class Cashier extends javax.swing.JFrame {
     private void jbtConfirmOrderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtConfirmOrderActionPerformed
         // TODO add your handling code here:
         for (int i=0; i<5; i++){
-            for (int j=0; j<13; j++){
+            for (int j=0; j<14; j++){
                 System.out.print(customerOrders[i][j]+", ");
             }
             System.out.println();
@@ -475,7 +475,7 @@ public class Cashier extends javax.swing.JFrame {
             customerOrders[indexOfOrderNumber][11] = xItemCode;
             customerOrders[indexOfOrderNumber][12] = xQn;
         }
-        customerOrders[indexOfOrderNumber][12] = xTotalCost;
+        customerOrders[indexOfOrderNumber][13] = xTotalCost;
     }
     
     /**

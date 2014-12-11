@@ -66,6 +66,8 @@ public class UpdateCustomer extends javax.swing.JFrame {
         updateb = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
+        emailtf = new java.awt.TextField();
+        jLabel7 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -110,6 +112,8 @@ public class UpdateCustomer extends javax.swing.JFrame {
             }
         });
 
+        jLabel7.setText("Email");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -123,6 +127,10 @@ public class UpdateCustomer extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(36, 36, 36)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel7)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(emailtf, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(searchb, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel6)
@@ -175,6 +183,10 @@ public class UpdateCustomer extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(phonetf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel5))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 12, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(emailtf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel7))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(tabtf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -184,14 +196,42 @@ public class UpdateCustomer extends javax.swing.JFrame {
                     .addComponent(updateb)
                     .addComponent(jButton3)
                     .addComponent(jButton4))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(35, 35, 35))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        // TODO add your handling code here:
+        String custID = custIDtf.getText();
+        String name = nametf.getText();
+        String address = addresstf.getText();
+        String phoneNumber = phonetf.getText();
+        String email = emailtf.getText();
+        String tab = tabtf.getText();
+       
+        try{
+            
+         // load database driver class
+         Class.forName("sun.jdbc.odbc.JdbcOdbcDriver");
+           
+         // connect to database
+         Connection con =
+                    DriverManager.getConnection("jdbc:odbc:RestaurantDB");
+         
+         Statement stmt = con.createStatement();
+         
+         stmt.executeUpdate("DELETE FROM Customers " + "WHERE CustomerID = '" +
+                 custID + "'");
+                     
+         stmt.close();
+         con.close();
+         
+         
+        }catch(Exception e)
+        {
+            System.out.println("ERROR: " + e.getMessage());
+        }
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
@@ -200,94 +240,79 @@ public class UpdateCustomer extends javax.swing.JFrame {
 
     private void searchbActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchbActionPerformed
         
-        String lastName = custIDtf.getText();
-        
-        
-         
-         // if last name was input, search for it; otherwise,
-         // do nothing
+        String custID = custIDtf.getText();
        
-        
-        /*
-        nametf.setText("ID not found in records.");
-        addresstf.setText("");
-        phonetf.setText("");
-        tabtf.setText("");
-        
-        if (custIDtf.getText().equals(person1))
+        try{
+            
+                // load database driver class
+         Class.forName("sun.jdbc.odbc.JdbcOdbcDriver");
+           
+         // connect to database
+         Connection con = DriverManager.getConnection("jdbc:odbc:RestaurantDB");
+         
+         Statement stmt = (Statement) con.createStatement();
+         
+         //Select "customer" if the ID I entered matches one in the database.
+         String SQL = "SELECT * FROM Customers WHERE CustomerID='" + custID + "'";
+         
+         //Store returned results in rs.
+         ResultSet rs = stmt.executeQuery(SQL);
+         
+         //Use results in rs to populate text fields.
+         while(rs.next())
+         {
+             nametf.setText(rs.getString("Name"));
+             addresstf.setText(rs.getString("Address"));
+             phonetf.setText(rs.getString("Phone"));
+             emailtf.setText(rs.getString("Email"));
+             tabtf.setText(rs.getString("Spending"));
+         }
+         
+         stmt.close();
+         con.close();
+         
+        }catch(Exception e)
         {
-            nametf.setText(name0001);
-            addresstf.setText(address0001);
-            phonetf.setText(phone0001);
-            tabtf.setText(tab0001);
+            nametf.setText("Record not found.");
+            System.out.println("ERROR: " + e.getMessage());
         }
         
-        if (custIDtf.getText().equals(person2))
-        {
-            nametf.setText(name0002);
-            addresstf.setText(address0002);
-            phonetf.setText(phone0002);
-            tabtf.setText(tab0002);
-        }
-        
-        if (custIDtf.getText().equals(person3))
-        {
-            nametf.setText(name0003);
-            addresstf.setText(address0003);
-            phonetf.setText(phone0003);
-            tabtf.setText(tab0003);
-        }
-        */
              
     }//GEN-LAST:event_searchbActionPerformed
 
     private void updatebActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updatebActionPerformed
         
-        connect();
-        
+        String custID = custIDtf.getText();
         String name = nametf.getText();
         String address = addresstf.getText();
         String phoneNumber = phonetf.getText();
+        String email = emailtf.getText();
         String tab = tabtf.getText();
-        
+       
         try{
             
-            rs.updateString("Name", name);
-            rs.updateString("Address", address);
-            rs.updateString("Phone", phoneNumber);
-            rs.updateString("Spending", tab);
-            rs.updateRow();
-            
-            JOptionPane.showMessageDialog(null, "Record successfully updated!");
-            
-        }catch(Exception ex)
+         // load database driver class
+         Class.forName("sun.jdbc.odbc.JdbcOdbcDriver");
+           
+         // connect to database
+         Connection con =
+                    DriverManager.getConnection("jdbc:odbc:RestaurantDB");
+         
+         Statement stmt = con.createStatement();
+         
+         stmt.executeUpdate("UPDATE Customers SET " +  "Name = '"
+                 + name + "', " + "Address = '" + address + "', " + "Phone = '" + phoneNumber + "', " + "Email = '"
+                 + email + "', " + "Spending = '" + tab + "'" + "WHERE CustomerID = '" + custID + "'");
+                     
+         stmt.close();
+         con.close();
+         
+         
+        }catch(Exception e)
         {
-            
-        }
-        /*if (custIDtf.getText().equals(person1))
-        {
-            name0001 = nametf.getText();
-            address0001 = addresstf.getText();
-            phone0001 = phonetf.getText();
-            tab0001 = tabtf.getText();
-        }
-        
-        if (custIDtf.getText().equals(person2))
-        {
-            name0002 = nametf.getText();
-            address0002 = addresstf.getText();
-            phone0002 = phonetf.getText();
-            tab0002 = tabtf.getText();
+            System.out.println("ERROR: " + e.getMessage());
         }
         
-        if (custIDtf.getText().equals(person3))
-        {
-            name0003 = nametf.getText();
-            address0003 = addresstf.getText();
-            phone0003 = phonetf.getText();
-            tab0003 = tabtf.getText();
-        }
-        */
         
     }//GEN-LAST:event_updatebActionPerformed
 
@@ -367,6 +392,7 @@ public class UpdateCustomer extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private java.awt.TextField addresstf;
     private java.awt.TextField custIDtf;
+    private java.awt.TextField emailtf;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;
@@ -375,6 +401,7 @@ public class UpdateCustomer extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private java.awt.TextField nametf;
     private java.awt.TextField phonetf;
     private javax.swing.JButton searchb;
